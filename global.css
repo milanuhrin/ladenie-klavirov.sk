@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+   .navLink {
+      @apply font-medium tracking-wide text-black transition-all duration-200 hover:text-gray-800;
+   }
+   .navLi {
+      @apply transition-all duration-300 hover:transform hover:scale-110;
+   }
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+@keyframes mymove {
+   from {
+      background-color: #ffb387;
+   }
+   to {
+      background-color: white;
+   }
+}
