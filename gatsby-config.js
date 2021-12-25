@@ -1,7 +1,10 @@
 module.exports = {
    siteMetadata: {
-      siteUrl: 'https://www.yourdomain.tld',
-      title: 'My Gatsby Site',
+      title: 'Ladenie a oprava klavírov',
+      siteUrl: 'https://ladenie-klavirov.sk',
+      titleTemplate: '%s · Ladenie a oprava klavírov',
+      description: 'Profesionálne ladenie a oprava klavírov',
+      image: '/insidePiano.jpg',
    },
    plugins: [
       'gatsby-plugin-postcss',

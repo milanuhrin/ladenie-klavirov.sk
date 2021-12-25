@@ -18,36 +18,32 @@ export const Nav = () => {
       <DivContainer>
          <ul className='z-20 items-center hidden space-x-8 sm:flex'>
             <Li>
-               <Link to='#experience'>
-                  <A aria-label='Product pricing' title='Product pricing'>
-                     Skúsenosti
-                  </A>
+               <Link to='#experience' aria-label='Skúsenosti'>
+                  Skúsenosti
                </Link>
             </Li>
             <Li>
-               <Link to='#aboutMe'>
-                  <A aria-label='About me'>O mne</A>
+               <Link to='#aboutMe' aria-label='O mne'>
+                  O mne
                </Link>
             </Li>
             <Li>
-               <Link to='/'>
-                  <A aria-label='logo' title='logo'>
-                     <StaticImage
-                        src='../images/logo-black.png'
-                        alt='logo'
-                        className='w-20'
-                     />
-                  </A>
+               <Link aria-label='logo' to='/'>
+                  <StaticImage
+                     src='../images/logo-black.png'
+                     alt='logo'
+                     className='w-20'
+                  />
                </Link>
             </Li>
             <Li>
-               <Link to='#contact'>
-                  <A aria-label='contact'>Kontakt</A>
+               <Link to='#contact' aria-label='Kontakt'>
+                  Kontakt
                </Link>
             </Li>
             <Li>
-               <Link to='#education'>
-                  <A aria-label='education'>Vzdelanie</A>
+               <Link aria-label='Vzdelanie' to='#education'>
+                  Vzdelanie
                </Link>
             </Li>
          </ul>
@@ -100,43 +96,35 @@ export const Nav = () => {
                      <nav>
                         <ul className='space-y-4'>
                            <li>
-                              <Link to='#experience'>
-                                 <A
-                                    onClick={() => setIsMenuOpen(false)}
-                                    aria-label='Our product'
-                                    title='Our product'>
-                                    Skúsenosti
-                                 </A>
+                              <Link
+                                 to='#experience'
+                                 onClick={() => setIsMenuOpen(false)}
+                                 aria-label='Skúsenosti'>
+                                 Skúsenosti
                               </Link>
                            </li>
                            <li>
-                              <Link to='#aboutMe'>
-                                 <A
-                                    onClick={() => setIsMenuOpen(false)}
-                                    aria-label='Our product'
-                                    title='Our product'>
-                                    O mne
-                                 </A>
+                              <Link
+                                 to='#aboutMe'
+                                 onClick={() => setIsMenuOpen(false)}
+                                 aria-label='O mne'>
+                                 O mne
                               </Link>
                            </li>
                            <li>
-                              <Link to='#contact'>
-                                 <A
-                                    onClick={() => setIsMenuOpen(false)}
-                                    aria-label='Product pricing'
-                                    title='Product pricing'>
-                                    Kontakt
-                                 </A>
+                              <Link
+                                 to='#contact'
+                                 onClick={() => setIsMenuOpen(false)}
+                                 aria-label='Kontakt'>
+                                 Kontakt
                               </Link>
                            </li>
                            <li>
-                              <Link to='#education'>
-                                 <A
-                                    onClick={() => setIsMenuOpen(false)}
-                                    aria-label='About us'
-                                    title='About us'>
-                                    Vzdelanie
-                                 </A>
+                              <Link
+                                 to='#education'
+                                 onClick={() => setIsMenuOpen(false)}
+                                 aria-label='Vzdelanie'>
+                                 Vzdelanie
                               </Link>
                            </li>
                         </ul>

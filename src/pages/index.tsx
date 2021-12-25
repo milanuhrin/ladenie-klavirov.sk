@@ -2,6 +2,7 @@ import * as React from 'react';
 import 'tailwindcss/dist/base.min.css';
 import '../../global.css';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet';
 import {
    AnimOnScroll,
    Footer,
@@ -14,6 +15,7 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
+import SEO from '../Components/seo.js';
 
 const IndexPage = () => {
    useEffect(() => {
@@ -63,32 +65,7 @@ const IndexPage = () => {
    console.log('HAHAH', data);
    return (
       <div>
-         <head>
-            <title>Ladenie a oprava klavírov</title>
-            <link rel='icon' href='/favicon.ico' />
-            <meta
-               name='viewport'
-               content='width=device-width, initial-scale=1'
-            />
-            <meta name='main-page' content='Ladenie a oprava klavírov' />
-            <meta property='og:title' content='Ladenie a oprava klavírov' />
-            <meta property='og:url' content='https://ladenie-klavirov.sk' />
-            <meta property='og:image' content='insidePiano.jpg' />
-            <meta property='og:type' content='video.movie' />
-
-            <meta
-               property='og:description'
-               content='Máte rozladený alepo pokazený klavír? Nech ide o čokolvek, môžete sa na mna obrátiť - Milan Uhrin'
-            />
-            <meta
-               name='description'
-               content='Profesionálne ladenie a oprava klavírov'
-            />
-            <meta
-               name='google-site-verification'
-               content='a39ogh6sCTfk6cfkJUNR3UnTayoo_3k5q2Jzt8J7DYA'
-            />
-         </head>
+         <SEO />
          <main>
             <Landing />
             <div className='flex flex-col '>
