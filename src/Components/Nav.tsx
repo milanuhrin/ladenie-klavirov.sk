@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
+import { StaticImage } from 'gatsby-plugin-image';
 
 export const Nav = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,41 +26,37 @@ export const Nav = () => {
             </Li>
             <Li>
                <Link to='#aboutMe'>
-                  <A aria-label='About us' title='About us'>
-                     O mne
-                  </A>
+                  <A aria-label='About me'>O mne</A>
                </Link>
             </Li>
             <Li>
                <Link to='/'>
-                  <A>
-                     <img
-                        src='logo-black.png'
+                  <A aria-label='logo' title='logo'>
+                     <StaticImage
+                        src='../images/logo-black.png'
+                        alt='logo'
                         className='w-20'
-                        alt='logo-oprava-a-ladenie-klavirov'
                      />
                   </A>
                </Link>
             </Li>
             <Li>
                <Link to='#contact'>
-                  <A aria-label='Sign in'>Kontakt</A>
+                  <A aria-label='contact'>Kontakt</A>
                </Link>
             </Li>
             <Li>
                <Link to='#education'>
-                  <A aria-label='Our product' title='Our product'>
-                     Vzdelanie
-                  </A>
+                  <A aria-label='education'>Vzdelanie</A>
                </Link>
             </Li>
          </ul>
 
          <div className='flex justify-between w-full p-2 px-8 py-6 sm:hidden'>
-            <img
-               src='logo-black.png'
-               className='w-16'
-               alt='logo-oprava-a-ladenie-klavirov'
+            <StaticImage
+               src='../images/logo-black.png'
+               alt='logo'
+               className='w-20'
             />
             <button
                aria-label='Open Menu'

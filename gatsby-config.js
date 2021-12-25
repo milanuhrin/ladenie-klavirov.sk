@@ -6,11 +6,10 @@ module.exports = {
    plugins: [
       'gatsby-plugin-postcss',
       'gatsby-plugin-zopfli',
-      'gatsby-plugin-webpack-bundle-analyser-v2',
       {
          resolve: `gatsby-plugin-s3`,
          options: {
-            bucketName: 'tatiho-stranka',
+            bucketName: 'ladenie-klavirov.sk',
          },
       },
       { resolve: `gatsby-plugin-emotion` },

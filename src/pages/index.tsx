@@ -63,6 +63,32 @@ const IndexPage = () => {
    console.log('HAHAH', data);
    return (
       <div>
+         <head>
+            <title>Ladenie a oprava klavírov</title>
+            <link rel='icon' href='/favicon.ico' />
+            <meta
+               name='viewport'
+               content='width=device-width, initial-scale=1'
+            />
+            <meta name='main-page' content='Ladenie a oprava klavírov' />
+            <meta property='og:title' content='Ladenie a oprava klavírov' />
+            <meta property='og:url' content='https://ladenie-klavirov.sk' />
+            <meta property='og:image' content='insidePiano.jpg' />
+            <meta property='og:type' content='video.movie' />
+
+            <meta
+               property='og:description'
+               content='Máte rozladený alepo pokazený klavír? Nech ide o čokolvek, môžete sa na mna obrátiť - Milan Uhrin'
+            />
+            <meta
+               name='description'
+               content='Profesionálne ladenie a oprava klavírov'
+            />
+            <meta
+               name='google-site-verification'
+               content='a39ogh6sCTfk6cfkJUNR3UnTayoo_3k5q2Jzt8J7DYA'
+            />
+         </head>
          <main>
             <Landing />
             <div className='flex flex-col '>
@@ -80,6 +106,7 @@ const IndexPage = () => {
                            title='Pár slov o mne'
                            text='Mojim najväčším hobby sa za posledných 5 rokov stalo neprofesionálne fotenie. Podarilo sa mi dosiahnuť prvenstvá či už v slovenských ale aj medzinárodných súťažiach. Najlepšie fotky sú prezentované na dočasných voľne dostupných výstavách či múzeách.'
                            img={hero1freeTime}
+                           alt='Vo voľnom čase'
                         />
                      </AnimOnScroll>
                   )}
@@ -91,6 +118,7 @@ const IndexPage = () => {
                            title='Vzdelanie'
                            text='Vyštudoval som odbornú školu v Hradci Králové, Česká rep. Stal som sa tam mechanikom hudobných nástrojov, naučil sa opraviť klavír správne tak, aby fungoval najbližšie roky.'
                            img={hero1insidePiano}
+                           alt='Vnútro klavíru'
                         />
                      </AnimOnScroll>
                   )}

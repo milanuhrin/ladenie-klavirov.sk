@@ -22,7 +22,8 @@ export const Footer = () => {
                target='_blank'
                rel='noreferrer'
                href='https://www.facebook.com/milan.uhrin.5'
-               className='text-blue-400 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white'>
+               className='text-blue-400 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white'
+               aria-label='Facebook'>
                <svg
                   width='20'
                   height='20'
