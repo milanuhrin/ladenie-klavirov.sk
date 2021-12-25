@@ -8,7 +8,7 @@ module.exports = {
    },
    plugins: [
       'gatsby-plugin-postcss',
-      'gatsby-plugin-zopfli',
+      `gatsby-plugin-preact`,
       {
          resolve: `gatsby-plugin-s3`,
          options: {
@@ -22,16 +22,20 @@ module.exports = {
             trackingId: 'G-QLGH6XXEYR',
          },
       },
-      {
-         resolve: 'gatsby-plugin-brotli',
-         options: {
-            extensions: ['css', 'html', 'js', 'svg', 'ttf'],
-         },
-      },
       'gatsby-plugin-image',
       'gatsby-plugin-react-helmet',
       'gatsby-plugin-sitemap',
-      'gatsby-plugin-sharp',
+      {
+         resolve: `gatsby-plugin-sharp`,
+         options: {
+            defaults: {
+               formats: [`auto`, `avif`],
+               placeholder: `dominantColor`,
+               quality: 50,
+               backgroundColor: `transparent`,
+            },
+         },
+      },
       'gatsby-transformer-sharp',
       {
          resolve: 'gatsby-source-filesystem',
