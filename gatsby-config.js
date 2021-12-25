@@ -30,9 +30,7 @@ module.exports = {
          options: {
             defaults: {
                formats: [`auto`, `avif`],
-               placeholder: `dominantColor`,
-               quality: 50,
-               backgroundColor: `transparent`,
+               breakpoints: [500, 750, 1080, 1366, 1920],
             },
          },
       },

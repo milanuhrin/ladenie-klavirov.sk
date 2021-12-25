@@ -48,7 +48,7 @@ export const Landing = () => {
             className='z-20 '
             initial='hidden'
             animate='visible'
-            variants={appear}>
+            variants={appear()}>
             {hero1Image && (
                <Hero1
                   id='landing'
@@ -67,7 +67,7 @@ export const Landing = () => {
    );
 };
 
-export const appear = {
+export const appear = (delay: number = 0) => ({
    hidden: {
       scale: 0.8,
       opacity: 0,
@@ -76,7 +76,7 @@ export const appear = {
       scale: 1,
       opacity: 1,
       transition: {
-         delay: 0.1,
+         delay: delay,
       },
    },
-};
+});

@@ -5,7 +5,7 @@ import { useOnClickOutside } from 'usehooks-ts';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { StaticImage } from 'gatsby-plugin-image';
-
+import { appear } from './Landing';
 export const Nav = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
    const ref = useRef(null);
@@ -15,7 +15,7 @@ export const Nav = () => {
    useOnClickOutside(ref, handleClickOutside);
 
    return (
-      <DivContainer>
+      <DivContainer initial='hidden' animate='visible' variants={appear()}>
          <ul className='z-20 items-center hidden space-x-8 sm:flex'>
             <Li>
                <Link to='#experience' aria-label='Skúsenosti'>
@@ -33,6 +33,7 @@ export const Nav = () => {
                      src='../images/logo-black.png'
                      alt='logo'
                      className='w-20'
+                     placeholder='none'
                   />
                </Link>
             </Li>
