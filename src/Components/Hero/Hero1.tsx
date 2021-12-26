@@ -21,28 +21,20 @@ export const Hero1 = (props: Props) => {
       const { innerWidth } = window;
       width = innerWidth;
    }
-
+   let dynamicStyle;
+   if (width)
+      dynamicStyle =
+         width > 500 && reversed ? { gridColumn: '1', gridRow: '1' } : {};
    return (
       <Section id={id}>
-         {!reversed || width < 500 ? (
-            <>
-               <HeroText text={text} title={title} textColor={textColor} />
-               <GatsbyImage
-                  imgClassName={`${borderRadius}  `}
-                  image={img}
-                  alt={alt}
-               />
-            </>
-         ) : (
-            <>
-               <GatsbyImage
-                  // imgClassName={`${borderRadius} ${imgWidth} flex object-cover object-center  justify-self-center  `}
-                  imgClassName={`${borderRadius}  `}
-                  image={img}
-                  alt={alt}
-               />
-               <HeroText text={text} title={title} textColor={textColor} />
-            </>
+         <HeroText text={text} title={title} textColor={textColor} />
+         {dynamicStyle && (
+            <GatsbyImage
+               style={dynamicStyle}
+               imgClassName={`${borderRadius}`}
+               image={img}
+               alt={alt}
+            />
          )}
       </Section>
    );

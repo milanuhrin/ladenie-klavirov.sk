@@ -26,7 +26,7 @@ export const Landing = () => {
       {
          file(relativePath: { eq: "milan-fb.jpg" }) {
             childImageSharp {
-               gatsbyImageData
+               gatsbyImageData(placeholder: BLURRED)
             }
          }
       }

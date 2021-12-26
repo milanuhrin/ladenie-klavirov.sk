@@ -26,32 +26,32 @@ const IndexPage = () => {
       {
          a: file(relativePath: { eq: "freeTime.jpg" }) {
             childImageSharp {
-               gatsbyImageData(layout: FULL_WIDTH, width: 189)
+               gatsbyImageData(placeholder: BLURRED)
             }
          }
          b: file(relativePath: { eq: "insidePiano.jpg" }) {
             childImageSharp {
-               gatsbyImageData
+               gatsbyImageData(placeholder: BLURRED)
             }
          }
          c: file(relativePath: { eq: "pianoCloseLook.jpg" }) {
             childImageSharp {
-               gatsbyImageData
+               gatsbyImageData(placeholder: BLURRED)
             }
          }
          d: file(relativePath: { eq: "luxuryPiano.jpg" }) {
             childImageSharp {
-               gatsbyImageData
+               gatsbyImageData(placeholder: BLURRED)
             }
          }
          e: file(relativePath: { eq: "pianoOutSide.jpg" }) {
             childImageSharp {
-               gatsbyImageData
+               gatsbyImageData(placeholder: BLURRED)
             }
          }
          f: file(relativePath: { eq: "pianoMotherWithChild.jpg" }) {
             childImageSharp {
-               gatsbyImageData
+               gatsbyImageData(placeholder: BLURRED)
             }
          }
       }
@@ -62,7 +62,6 @@ const IndexPage = () => {
    const hero2img2 = getImage(data.d);
    const hero2img3 = getImage(data.e);
    const hero2img4 = getImage(data.f);
-   console.log('HAHAH', data);
    return (
       <div>
          <SEO />

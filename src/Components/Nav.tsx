@@ -54,6 +54,7 @@ export const Nav = () => {
                src='../images/logo-black.png'
                alt='logo'
                className='w-20'
+               placeholder='none'
             />
             <button
                aria-label='Open Menu'
