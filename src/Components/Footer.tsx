@@ -4,7 +4,7 @@ import { cardVariants } from './export';
 export const Footer = () => {
    return (
       <motion.footer
-         id='contact '
+         id='contact'
          className='flex flex-col items-center justify-center w-full pt-12 pb-10 sm:pt-16 bg-gradient-to-b from-white to-indigo-100 gap-7 md:gap-10 lg:pt-24 dark:bg-gray-800'
          initial='offscreen'
          whileInView='onscreen'
