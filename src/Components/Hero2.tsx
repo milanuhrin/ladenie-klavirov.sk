@@ -1,7 +1,6 @@
 import { SectionDivider } from './export';
 import { cardVariants } from './AnimOnScroll';
 import { motion } from 'framer-motion';
-import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
@@ -92,12 +91,10 @@ export const Hero2 = ({ img1, img2, img3, img4 }: any) => {
                      y: 150,
                   },
                }}
-               className='z-20 object-contain col-span-6 w-[100%]  self-end h-auto rounded-lg shadow-lg'
-               // src='/pianoCloseLook.jpg'
-               // alt='Vnútro klavíra'
-            >
+               className='z-20 object-contain col-span-6 w-[100%]  rounded-lg  self-end h-auto  '>
                <GatsbyImage
-                  // imgClassName={`${borderRadius}  `}
+                  imgClassName={`rounded-lg `}
+                  className={`rounded-lg shadow-xl`}
                   image={img1}
                   alt='as'
                />
@@ -113,12 +110,10 @@ export const Hero2 = ({ img1, img2, img3, img4 }: any) => {
                      y: 150,
                   },
                }}
-               className='z-20 w-[80%] h-auto rounded-lg self-end col-span-6 shadow-lg'
-               // src='/luxuryPiano.jpg'
-               // alt='Luxusné krídlo'
-            >
+               className='z-20 w-[80%] h-auto  rounded-lg self-end col-span-6 '>
                <GatsbyImage
-                  // imgClassName={`${borderRadius}  `}
+                  imgClassName={`rounded-lg `}
+                  className={`rounded-lg shadow-xl`}
                   image={img2}
                   alt='as'
                />
@@ -134,12 +129,10 @@ export const Hero2 = ({ img1, img2, img3, img4 }: any) => {
                      y: 150,
                   },
                }}
-               className=' w-[75%] justify-self-end  h-auto  col-span-5  rounded-lg shadow-lg '
-               // src='/pianoOutSide.jpg'
-               // alt='Muž hrá vonku na klavíri'
-            >
+               className=' w-[75%] justify-self-end  col-span-5  rounded-lg  '>
                <GatsbyImage
-                  // imgClassName={`${borderRadius}  `}
+                  imgClassName={`rounded-lg  `}
+                  className={`rounded-lg shadow-xl`}
                   image={img3}
                   alt='as'
                />
@@ -155,12 +148,10 @@ export const Hero2 = ({ img1, img2, img3, img4 }: any) => {
                      y: 150,
                   },
                }}
-               className=' w-[90%]  h-auto rounded-lg shadow-lg  col-span-6'
-               // src='/pianoMotherWithChild.jpg'
-               // alt='Matka s dieťaťom hrajú na klavíri'
-            >
+               className=' w-[90%]  h-auto rounded-lg   col-span-6'>
                <GatsbyImage
-                  // imgClassName={`${borderRadius}  `}
+                  imgClassName={`rounded-lg `}
+                  className={`rounded-lg shadow-xl`}
                   image={img4}
                   alt='as'
                />

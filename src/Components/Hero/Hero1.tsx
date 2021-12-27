@@ -32,8 +32,8 @@ export const Hero1 = (props: Props) => {
             <GatsbyImage
                style={{ ...dynamicStyle }}
                imgStyle={{}}
-               className={`${imgMaxWidth} flex object-cover object-center  justify-self-center`}
-               imgClassName={`${borderRadius}  `}
+               className={`${imgMaxWidth} ${borderRadius} shadow-2xl  flex object-cover object-center justify-self-center`}
+               imgClassName={`shadow-2xl  ${borderRadius} `}
                image={img}
                alt={alt}
             />
