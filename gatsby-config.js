@@ -15,12 +15,6 @@ module.exports = {
             bucketName: 'tatiho-stranka',
          },
       },
-      {
-         resolve: `gatsby-plugin-typography`,
-         options: {
-            pathToConfigModule: `src/utils/typography`,
-         },
-      },
       { resolve: `gatsby-plugin-emotion` },
       {
          resolve: 'gatsby-plugin-google-analytics',

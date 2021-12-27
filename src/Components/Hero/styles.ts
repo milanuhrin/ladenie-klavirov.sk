@@ -4,7 +4,7 @@ import tw from 'twin.macro';
 
 export const P = styled(motion.p)(({ textColor }: { textColor?: string }) => [
    `color: ${textColor};`,
-   tw`text-lg leading-6`,
+   tw`text-lg`,
 ]);
 export const H3 = tw(motion.h3)`self-center text-3xl font-extrabold`;
 export const Div = tw(motion.div)` z-10 flex flex-col w-full gap-9`;

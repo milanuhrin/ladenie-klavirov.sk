@@ -171,7 +171,7 @@ sm:px-6 md:px-8 md:pt-20`;
 const H4 = tw(
    motion.h4
 )`text-2xl font-extrabold leading-8 text-gray-900 sm:text-3xl sm:leading-9`;
-const P = tw(motion.p)`text-lg leading-6 text-gray-500`;
+const P = tw(motion.p)`text-lg text-gray-500`;
 const Ul = tw(motion.ul)`flex flex-col gap-6 mt-8 md:grid md:grid-cols-2`;
 const Li = tw(motion.li)`lg:mt-0 flex`;
 const SpanText = tw(
