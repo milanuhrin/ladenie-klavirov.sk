@@ -11,7 +11,7 @@ export const Hero1 = (props: Props) => {
       alt,
       reversed,
       borderRadius = 'rounded-2xl',
-      imgWidth = 'w-[20rem]',
+      imgMaxWidth = 'max-w-[20rem]',
       textColor = '#6b7280',
       id,
    } = props;
@@ -24,14 +24,16 @@ export const Hero1 = (props: Props) => {
    let dynamicStyle;
    if (width)
       dynamicStyle =
-         width > 500 && reversed ? { gridColumn: '1', gridRow: '1' } : {};
+         width > 640 && reversed ? { gridColumn: '1', gridRow: '1' } : {};
    return (
       <Section id={id}>
          <HeroText text={text} title={title} textColor={textColor} />
          {dynamicStyle && (
             <GatsbyImage
-               style={dynamicStyle}
-               imgClassName={`${borderRadius}`}
+               style={{ ...dynamicStyle }}
+               imgStyle={{}}
+               className={`${imgMaxWidth} flex object-cover object-center  justify-self-center`}
+               imgClassName={`${borderRadius}  `}
                image={img}
                alt={alt}
             />
@@ -47,7 +49,7 @@ interface Props {
    alt: string;
    reversed?: boolean;
    borderRadius?: string;
-   imgWidth?: string;
+   imgMaxWidth?: string;
    textColor?: string;
    id?: string;
 }

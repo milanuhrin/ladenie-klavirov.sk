@@ -83,6 +83,7 @@ const IndexPage = () => {
                            text='Mojim najväčším hobby sa za posledných 5 rokov stalo neprofesionálne fotenie. Podarilo sa mi dosiahnuť prvenstvá či už v slovenských ale aj medzinárodných súťažiach. Najlepšie fotky sú prezentované na dočasných voľne dostupných výstavách či múzeách.'
                            img={hero1freeTime}
                            alt='Vo voľnom čase'
+                           imgMaxWidth='max-w-[25rem]'
                         />
                      </AnimOnScroll>
                   )}
@@ -95,6 +96,7 @@ const IndexPage = () => {
                            text='Vyštudoval som odbornú školu v Hradci Králové, Česká rep. Stal som sa tam mechanikom hudobných nástrojov, naučil sa opraviť klavír správne tak, aby fungoval najbližšie roky.'
                            img={hero1insidePiano}
                            alt='Vnútro klavíru'
+                           imgMaxWidth='max-w-[25rem]'
                         />
                      </AnimOnScroll>
                   )}

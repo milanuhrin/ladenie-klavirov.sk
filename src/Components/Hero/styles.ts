@@ -10,5 +10,5 @@ export const H3 = tw(motion.h3)`self-center text-3xl font-extrabold`;
 export const Div = tw(motion.div)` z-10 flex flex-col w-full gap-9`;
 export const Section = tw(
    motion.section
-)`grid px-8 pb-10 gap-14 md:grid-cols-2 md:grid-rows-1 md:justify-center
-  md:gap-24 md:flex-row md:items-center`;
+)`grid px-8 pb-10 gap-14 sm:grid-cols-2 sm:grid-rows-1 sm:justify-center
+  sm:gap-24 sm:flex-row sm:items-center`;
