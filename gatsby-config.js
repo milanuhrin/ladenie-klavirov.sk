@@ -4,11 +4,10 @@ module.exports = {
       siteUrl: 'https://ladenie-klavirov.sk',
       titleTemplate: '%s · Ladenie a oprava klavírov',
       description: 'Profesionálne ladenie a oprava klavírov',
-      image: '/insidePiano.jpg',
+      image: '/milan-fb.jpg',
    },
    plugins: [
       'gatsby-plugin-postcss',
-      `gatsby-plugin-preact`,
       {
          resolve: `gatsby-plugin-s3`,
          options: {

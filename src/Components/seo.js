@@ -22,8 +22,6 @@ const SEO = ({ title, description, image, article }) => {
       image: `${siteUrl}${image || defaultImage}`,
       url: `${siteUrl}${pathname}`,
    };
-   console.log('SEO', seo);
-   console.log('site.siteMetadata;', site.siteMetadata);
 
    return (
       <Helmet title={seo.title} titleTemplate={titleTemplate}>
