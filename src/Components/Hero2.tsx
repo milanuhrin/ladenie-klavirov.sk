@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import tw from 'twin.macro';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
-export const Hero2 = ({ img1, img2, img3, img4 }: any) => {
+export const Hero2 = (props: Props) => {
+   const { img1, img2, img3, img4 } = props;
    return (
       <Section id='experience'>
          <DivTextWrapper
@@ -184,3 +185,10 @@ const DivTextWrapper = tw(
 const DivImgsWrapper = tw(
    motion.div
 )`z-10 grid grid-cols-12 grid-rows-2 gap-4 transform md:col-start-1 md:row-start-1 `;
+
+interface Props {
+   img1: IGatsbyImageData;
+   img2: IGatsbyImageData;
+   img3: IGatsbyImageData;
+   img4: IGatsbyImageData;
+}

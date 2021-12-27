@@ -68,12 +68,14 @@ const IndexPage = () => {
          <main>
             <Landing />
             <div className='flex flex-col '>
-               <Hero2
-                  img1={hero2img1}
-                  img2={hero2img2}
-                  img3={hero2img3}
-                  img4={hero2img4}
-               />
+               {/* {hero2img1 && hero2img2 && hero2img3 && hero2img4 && (
+                  <Hero2
+                     img1={hero2img1}
+                     img2={hero2img2}
+                     img3={hero2img3}
+                     img4={hero2img4}
+                  />
+               )} */}
                <div className='relative z-10 flex flex-col items-center gap-10 pt-16 bg-gradient-to-b from-white via-indigo-50 to-white md:gap-20 lg:px-20'>
                   {hero1freeTime && (
                      <AnimOnScroll>

@@ -35,14 +35,17 @@ export const Landing = () => {
 
    return (
       <section className='relative flex flex-col items-center w-full min-h-screen lg:px-20 '>
-         <div
+         <motion.div
+            initial='hidden'
+            animate='visible'
+            variants={appear()}
             className='absolute w-full h-screen transition-all bg-center bg-no-repeat bg-cover '
             style={{
                animation: ` ${header === 'orange' ? '' : 'mymove 0.5s'} `,
                backgroundColor: `${header === 'orange' ? '#ffb387' : 'white'} `,
             }}>
             <SectionDivider fill='white' />
-         </div>
+         </motion.div>
          <Nav />
          <motion.div
             className='z-20 '
@@ -57,17 +60,20 @@ export const Landing = () => {
                   img={hero1Image}
                   textColor='#4b4b4b'
                   alt='Milan Uhrin, ladič klavírov'
+                  loading='eager'
                />
             )}
          </motion.div>
 
-         {header === 'orange' && <BlobeSvg height={250} right={250} />}
-         {header === 'orange' && <BlobeSvg height={50} left={-20} />}
+         <motion.div initial='hidden' animate='visible' variants={appear()}>
+            {header === 'orange' && <BlobeSvg height={250} right={250} />}
+            {header === 'orange' && <BlobeSvg height={50} left={-20} />}
+         </motion.div>
       </section>
    );
 };
 
-export const appear = (delay: number = 0) => ({
+export const appear = (delay: number = 0, duration: number = 0.1) => ({
    hidden: {
       scale: 0.8,
       opacity: 0,
@@ -77,6 +83,7 @@ export const appear = (delay: number = 0) => ({
       opacity: 1,
       transition: {
          delay: delay,
+         duration: duration,
       },
    },
 });

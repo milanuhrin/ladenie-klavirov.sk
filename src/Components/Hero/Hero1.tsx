@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { Section } from './styles';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
-import { HeroText } from './HeroText';
+import { HeroText as MotionHeroText } from './HeroText';
+import { appear } from '../Landing';
+import { motion } from 'framer-motion';
 
 export const Hero1 = (props: Props) => {
    const {
@@ -14,7 +16,9 @@ export const Hero1 = (props: Props) => {
       imgMaxWidth = 'max-w-[20rem]',
       textColor = '#6b7280',
       id,
+      loading = 'lazy',
    } = props;
+   const HeroText = motion(MotionHeroText);
 
    let width = 0;
    if (typeof window !== 'undefined') {
@@ -27,7 +31,14 @@ export const Hero1 = (props: Props) => {
          width > 640 && reversed ? { gridColumn: '1', gridRow: '1' } : {};
    return (
       <Section id={id}>
-         <HeroText text={text} title={title} textColor={textColor} />
+         <HeroText
+            initial='hidden'
+            animate='visible'
+            variants={appear()}
+            text={text}
+            title={title}
+            textColor={textColor}
+         />
          {dynamicStyle && (
             <GatsbyImage
                style={{ ...dynamicStyle }}
@@ -36,6 +47,7 @@ export const Hero1 = (props: Props) => {
                imgClassName={`shadow-2xl  ${borderRadius} `}
                image={img}
                alt={alt}
+               loading={loading}
             />
          )}
       </Section>
@@ -52,4 +64,5 @@ interface Props {
    imgMaxWidth?: string;
    textColor?: string;
    id?: string;
+   loading?: 'lazy' | 'eager';
 }

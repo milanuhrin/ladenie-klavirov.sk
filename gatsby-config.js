@@ -8,10 +8,17 @@ module.exports = {
    },
    plugins: [
       'gatsby-plugin-postcss',
+      `gatsby-plugin-preact`,
       {
          resolve: `gatsby-plugin-s3`,
          options: {
-            bucketName: 'ladenie-klavirov.sk',
+            bucketName: 'tatiho-stranka',
+         },
+      },
+      {
+         resolve: `gatsby-plugin-typography`,
+         options: {
+            pathToConfigModule: `src/utils/typography`,
          },
       },
       { resolve: `gatsby-plugin-emotion` },
