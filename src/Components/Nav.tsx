@@ -38,7 +38,7 @@ export const Nav = () => {
                </Link>
             </Li>
             <Li>
-               <Link to='#contact' aria-label='Kontakt'>
+               <Link to='/contact' aria-label='Kontakt'>
                   Kontakt
                </Link>
             </Li>
@@ -140,10 +140,10 @@ export const Nav = () => {
 };
 
 const DivContainer = tw(
-   motion.div
-)`relative z-30 flex items-center w-full mt-4 mb-6 
-md:mt-10 md:mb-24 first-letter:px-4 lg:py-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl
- md:px-24 lg:px-8 md:justify-center lg:space-x-16`;
+   motion.nav
+)`relative z-30 flex items-center w-full mt-4 mb-6 md:mt-10 md:mb-24
+ first-letter:px-4 lg:py-8  sm:max-w-full md:px-24 lg:px-8
+  sm:justify-center sm:justify-self-center lg:space-x-16 `;
 
 const A = tw(
    motion.a
