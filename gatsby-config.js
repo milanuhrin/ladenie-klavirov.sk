@@ -30,7 +30,6 @@ module.exports = {
          options: {
             defaults: {
                formats: [`auto`, `avif`],
-               breakpoints: [500, 750, 1080, 1366, 1920],
             },
          },
       },
