@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Section } from './styles';
+import { SectionGrid } from './styles';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
-import { HeroText as MotionHeroText } from './HeroText';
+import { Text as MotionText } from './Text';
 import { appear } from '../Landing';
 import { motion } from 'framer-motion';
 
-export const Hero1 = (props: Props) => {
+export const TextImg = (props: Props) => {
    const {
       text,
       title,
@@ -18,7 +18,7 @@ export const Hero1 = (props: Props) => {
       id,
       loading = 'lazy',
    } = props;
-   const HeroText = motion(MotionHeroText);
+   const Text = motion(MotionText);
 
    let width = 0;
    if (typeof window !== 'undefined') {
@@ -30,8 +30,9 @@ export const Hero1 = (props: Props) => {
       dynamicStyle =
          width > 640 && reversed ? { gridColumn: '1', gridRow: '1' } : {};
    return (
-      <Section id={id}>
-         <HeroText
+      <SectionGrid id={id}>
+         {/* Firtst element */}
+         <Text
             initial='hidden'
             animate='visible'
             variants={appear()}
@@ -39,25 +40,35 @@ export const Hero1 = (props: Props) => {
             title={title}
             textColor={textColor}
          />
-         {dynamicStyle && (
-            <GatsbyImage
+
+         {/* Second element */}
+         {typeof img === 'string' ? (
+            <img
+               className={`${imgMaxWidth}  flex object-cover object-center justify-self-center`}
                style={{ ...dynamicStyle }}
-               imgStyle={{}}
-               className={`${imgMaxWidth} ${borderRadius} shadow-2xl  flex object-cover object-center justify-self-center`}
-               imgClassName={`shadow-2xl  ${borderRadius} `}
-               image={img}
-               alt={alt}
-               loading={loading}
+               src={img}
             />
+         ) : (
+            dynamicStyle && (
+               <GatsbyImage
+                  style={{ ...dynamicStyle }}
+                  imgStyle={{}}
+                  className={`${imgMaxWidth} ${borderRadius} shadow-2xl  flex object-cover object-center justify-self-center`}
+                  imgClassName={`shadow-2xl  ${borderRadius} `}
+                  image={img}
+                  alt={alt}
+                  loading={loading}
+               />
+            )
          )}
-      </Section>
+      </SectionGrid>
    );
 };
 
 interface Props {
-   text: string;
+   text: string | React.ReactElement;
    title: string;
-   img: IGatsbyImageData;
+   img: IGatsbyImageData | string;
    alt: string;
    reversed?: boolean;
    borderRadius?: string;

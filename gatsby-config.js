@@ -8,7 +8,6 @@ module.exports = {
    },
    plugins: [
       'gatsby-plugin-postcss',
-      `gatsby-plugin-preact`,
       {
          resolve: `gatsby-plugin-s3`,
          options: {

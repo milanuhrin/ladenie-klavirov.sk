@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { SectionDivider } from './export';
-import { Hero1 } from './Hero/Hero1';
+import { TextImg } from './TextImg/TextImg';
 import { motion } from 'framer-motion';
 import { Nav, BlobeSvg } from './export';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
@@ -34,7 +34,7 @@ export const Landing = () => {
    const hero1Image = getImage(data.file);
 
    return (
-      <section className='relative flex flex-col items-center w-full min-h-screen lg:px-20 '>
+      <section className='relative flex flex-col items-center w-full min-h-screen '>
          <motion.div
             initial='hidden'
             animate='visible'
@@ -46,14 +46,14 @@ export const Landing = () => {
             }}>
             <SectionDivider fill='white' />
          </motion.div>
-         <Nav />
+         <Nav itemsCount={5} />
          <motion.div
-            className='z-20 '
+            className='z-20 lg:px-20'
             initial='hidden'
             animate='visible'
             variants={appear()}>
             {hero1Image && (
-               <Hero1
+               <TextImg
                   id='landing'
                   title='Profesionál s 35 ročnými skusenosťami'
                   text='Či už potrebujete naladiť, opraviť, ohodnotiť alebo pomôcť predať či kúpiť klavír, môžete sa na obrátiť mňa. Klavírom a hudobným nástrojom sa venujem prakticky celý život.'

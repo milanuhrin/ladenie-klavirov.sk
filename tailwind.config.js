@@ -7,6 +7,9 @@ module.exports = {
          backgroundImage: {
             landing: "url('/InsidePiano.jpg')",
          },
+         colors: {
+            'orange-landing': '#ffb387',
+         },
       },
    },
    variants: {

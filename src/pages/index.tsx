@@ -7,7 +7,7 @@ import {
    AnimOnScroll,
    Footer,
    Hero2,
-   Hero1,
+   TextImg,
    Landing,
 } from '../Components/export';
 import { useEffect } from 'react';
@@ -63,7 +63,7 @@ const IndexPage = () => {
    const hero2img3 = getImage(data.e);
    const hero2img4 = getImage(data.f);
    return (
-      <div>
+      <>
          <SEO />
          <main>
             <Landing />
@@ -76,10 +76,10 @@ const IndexPage = () => {
                      img4={hero2img4}
                   />
                )}
-               <div className='relative z-10 flex flex-col items-center gap-10 pt-16 bg-gradient-to-b from-white via-indigo-50 to-white md:gap-20 lg:px-20'>
+               <TextImgWrapper>
                   {hero1freeTime && (
                      <AnimOnScroll>
-                        <Hero1
+                        <TextImg
                            id='aboutMe'
                            title='Pár slov o mne'
                            text='Mojim najväčším hobby sa za posledných 5 rokov stalo neprofesionálne fotenie. Podarilo sa mi dosiahnuť prvenstvá či už v slovenských ale aj medzinárodných súťažiach. Najlepšie fotky sú prezentované na dočasných voľne dostupných výstavách či múzeách.'
@@ -91,7 +91,7 @@ const IndexPage = () => {
                   )}
                   {hero1insidePiano && (
                      <AnimOnScroll>
-                        <Hero1
+                        <TextImg
                            reversed
                            id='education'
                            title='Vzdelanie'
@@ -102,12 +102,16 @@ const IndexPage = () => {
                         />
                      </AnimOnScroll>
                   )}
-               </div>
+               </TextImgWrapper>
                <Footer />
             </div>
          </main>
-      </div>
+      </>
    );
 };
+
+export const TextImgWrapper = tw(
+   motion.section
+)`relative z-10 flex flex-col items-center gap-10 pt-16 bg-gradient-to-b from-white via-indigo-50 to-white md:gap-20 lg:px-20`;
 
 export default IndexPage;

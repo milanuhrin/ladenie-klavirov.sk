@@ -1,7 +1,7 @@
 import { P, H3, Div } from './styles';
 import React from 'react';
 
-export const HeroText = React.forwardRef((props: Props, ref: any) => {
+export const Text = React.forwardRef((props: Props, ref: any) => {
    const { text, title, textColor } = props;
    return (
       <Div ref={ref}>
@@ -11,7 +11,7 @@ export const HeroText = React.forwardRef((props: Props, ref: any) => {
    );
 });
 interface Props {
-   text: string;
+   text: string | React.ReactElement;
    title: string;
    textColor?: string;
 }

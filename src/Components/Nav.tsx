@@ -2,17 +2,38 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'gatsby';
 import { useRef, useState } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { StaticImage } from 'gatsby-plugin-image';
 import { appear } from './Landing';
-export const Nav = () => {
+
+export const Nav = (props: Props) => {
+   const { logo, itemsCount, items } = props;
+
    const [isMenuOpen, setIsMenuOpen] = useState(false);
    const ref = useRef(null);
    const handleClickOutside = () => {
       setIsMenuOpen(!isMenuOpen);
    };
    useOnClickOutside(ref, handleClickOutside);
+
+   // ako dat html text do toho ak by to bolo v poli resp v mape
+   const ha = { a: 'haluz', b: 'este vacie' };
+   // Object.entries(ha).map((a, b) => (
+   //    <Li>
+   //       <Link to={b} aria-label='Skúsenosti'>
+   //          {a}
+   //       </Link>
+   //    </Li>
+   // ));
+   const a = (
+      <Li>
+         <Link to='#experience' aria-label='Skúsenosti'>
+            Skúsenosti
+         </Link>
+      </Li>
+   );
 
    return (
       <DivContainer initial='hidden' animate='visible' variants={appear()}>
@@ -141,9 +162,9 @@ export const Nav = () => {
 
 const DivContainer = tw(
    motion.nav
-)`relative z-30 flex items-center w-full mt-4 mb-6 md:mt-10 md:mb-24
- first-letter:px-4 lg:py-8  sm:max-w-full md:px-24 lg:px-8
-  sm:justify-center sm:justify-self-center lg:space-x-16 `;
+)` relative z-30 flex items-center w-full pt-4 mb-6 sm:py-10 sm:mb-14 md:mb-24
+ first-letter:px-4 lg:py-16 sm:max-w-full md:px-24 lg:px-8
+  sm:justify-center sm:justify-self-center lg:space-x-16 bg-gradient-to-b to-[#ffb387] from-indigo-100`;
 
 const A = tw(
    motion.a
@@ -152,3 +173,9 @@ const A = tw(
 const Li = tw(
    motion.li
 )` transition-all duration-300 hover:transform hover:scale-110`;
+
+interface Props {
+   logo?: IGatsbyImageData;
+   itemsCount?: number;
+   items?: { [key: string]: string };
+}

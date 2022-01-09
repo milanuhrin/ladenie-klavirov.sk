@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import { cardVariants } from './export';
+import tw from 'twin.macro';
 
 export const Footer = () => {
    return (
-      <motion.footer
+      <Wrapper
          id='contact'
-         className='flex flex-col items-center justify-center w-full pt-12 pb-10 sm:pt-16 bg-gradient-to-b from-white to-indigo-100 gap-7 md:gap-10 lg:pt-24 dark:bg-gray-800'
          initial='offscreen'
          whileInView='onscreen'
          viewport={{ margin: `60px`, once: true }}
@@ -38,6 +38,12 @@ export const Footer = () => {
          <div className='flex items-center justify-center font-light text-center text-gray-500 '>
             <span>Milan Uhrin, 0905 405 802, uhrinmilan@gmail.com</span>
          </div>
-      </motion.footer>
+      </Wrapper>
    );
 };
+
+const Wrapper = tw(
+   motion.footer
+)`flex flex-col items-center justify-center w-full pt-12 
+ pb-10 sm:pt-16 bg-gradient-to-b from-white to-indigo-100
+ gap-7 md:gap-10 lg:pt-24 `;
