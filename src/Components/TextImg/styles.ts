@@ -10,12 +10,12 @@ export const P = styled(motion.p)(
          `background: ${gradient};
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;`,
-      tw`text-lg`,
+      tw`text-xl`,
    ]
 );
 
 export const H3 = styled(motion.h3)(({ gradient }: { gradient?: string }) => [
-   tw`self-center text-3xl font-extrabold`,
+   tw`self-center text-4xl font-extrabold`,
    gradient &&
       `background: ${gradient};
       -webkit-background-clip: text;
