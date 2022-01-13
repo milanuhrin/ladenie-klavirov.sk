@@ -35,7 +35,7 @@ export const Nav = (props: Props) => {
             <Li>
                <Link aria-label='logo' to='/'>
                   <StaticImage
-                     src='../images/logo-black.png'
+                     src='../images/logo-white.png'
                      alt='logo'
                      className='w-20'
                      placeholder='none'
@@ -56,7 +56,7 @@ export const Nav = (props: Props) => {
 
          <div className='flex justify-between w-full px-8 py-3 sm:hidden'>
             <StaticImage
-               src='../images/logo-black.png'
+               src='../images/logo-white.png'
                alt='logo'
                className='relative w-20 top-1'
                placeholder='none'

@@ -14,7 +14,7 @@ export const TextImg = (props: Props) => {
       reversed,
       borderRadius = 'rounded-2xl',
       imgMaxWidth = 'max-w-[20rem]',
-      textColor = '#6b7280',
+      textColor,
       id,
       loading = 'lazy',
       gradient,

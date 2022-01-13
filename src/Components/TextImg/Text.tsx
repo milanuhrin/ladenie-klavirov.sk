@@ -2,7 +2,7 @@ import { P, H3, Div } from './styles';
 import React from 'react';
 
 export const Text = React.forwardRef((props: Props, ref: any) => {
-   const { text, title, textColor, gradient, width } = props;
+   const { text, title, textColor = 'black', gradient, width } = props;
    return (
       <Div width={width} ref={ref}>
          <H3 gradient={gradient}>{title}</H3>

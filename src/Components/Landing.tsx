@@ -64,7 +64,6 @@ export const Landing = () => {
                   title='Profesionál s 35 ročnými skusenosťami'
                   text='Či už potrebujete naladiť, opraviť, ohodnotiť alebo pomôcť predať či kúpiť klavír, môžete sa na obrátiť mňa. Klavírom a hudobným nástrojom sa venujem prakticky celý život.'
                   img={hero1Image}
-                  textColor='#242424'
                   alt='Milan Uhrin, ladič klavírov'
                   loading='eager'
                   gradient='-webkit-linear-gradient(360deg, #0F2027, #203A43, #2C5364)'

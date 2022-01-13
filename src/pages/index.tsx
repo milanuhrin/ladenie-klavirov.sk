@@ -98,7 +98,7 @@ const IndexPage = () => {
                            reversed
                            id='education'
                            title='Vzdelanie'
-                           text='Vyštudoval som odbornú školu v Hradci Králové, Česká rep. Stal som sa tam mechanikom hudobných nástrojov, naučil sa opraviť klavír správne tak, aby fungoval najbližšie roky.'
+                           text='Vyštudoval som odbornú školu v Hradci Králové v Českej republike. Stal som sa tam mechanikom hudobných nástrojov, naučil sa opraviť klavír správne tak, aby fungoval najbližšie roky.'
                            img={hero1insidePiano}
                            alt='Vnútro klavíru'
                            imgMaxWidth='max-w-[25rem]'
