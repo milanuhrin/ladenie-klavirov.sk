@@ -10,7 +10,11 @@ export const BlobeSvg = ({
    return (
       <svg
          className='absolute  right-10  transform scale-[250%] z-0'
-         style={{ top: `${height}px`, left: `${left}px`, right: `${right}px` }}
+         style={{
+            top: `${height}px`,
+            left: `${left}px`,
+            right: `${right}px`,
+         }}
          viewBox='0 0 100 100'
          preserveAspectRatio='none'
          width='100'

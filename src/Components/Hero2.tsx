@@ -3,9 +3,14 @@ import { cardVariants } from './AnimOnScroll';
 import { motion } from 'framer-motion';
 import tw from 'twin.macro';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { Text as MotionText } from './TextImg/Text';
+import { appear } from './Landing';
+import styled from '@emotion/styled';
+
+const Text = motion(MotionText);
 
 export const Hero2 = (props: Props) => {
-   const { img1, img2, img3, img4 } = props;
+   const { img1, img2, img3, img4, textWidth = '100%', gradient } = props;
    return (
       <Section id='experience'>
          <DivTextWrapper
@@ -13,14 +18,19 @@ export const Hero2 = (props: Props) => {
             whileInView='onscreen'
             viewport={{ margin: '400px', once: true }}
             variants={cardVariants}>
-            <H4>Skúsenosti</H4>
-            <P>
-               Oblasť môjho pôsobenia je najmä západné a stredné slovensko kde
+            <Text
+               initial='hidden'
+               animate='visible'
+               variants={appear()}
+               title='Skúsenosti'
+               text='Oblasť môjho pôsobenia je najmä západné a stredné slovensko kde
                ladím a zastrešujem vačšinu hudobných škôl a domácností, ktoré sa
-               rozhodli zavolať odborníka.
-            </P>
-
-            <Ul>
+               rozhodli zavolať odborníka.'
+               width={textWidth}
+               gradient={gradient}
+            />
+            <div className='my-4' />
+            <Ul textWidth={textWidth}>
                <Li>
                   <SpanSvg>
                      <svg
@@ -165,14 +175,17 @@ export const Hero2 = (props: Props) => {
 
 const Section = tw(
    motion.section
-)`lg:px-20 pb-16 relative flex flex-col gap-10 px-8 max-w-full  bg-gradient-to-b from-white 
+)`lg:px-20 pb-16 relative flex flex-col  gap-10 px-8 max-w-full  bg-gradient-to-b from-white 
 to-[#f7f7f7] md:grid  md:grid-cols-2 md:grid-rows-1 md:gap-8 md:items-center 
 sm:px-6 md:px-8 md:pt-20`;
 const H4 = tw(
    motion.h4
 )`text-2xl font-extrabold leading-8 text-gray-900 sm:text-3xl sm:leading-9`;
 const P = tw(motion.p)`text-lg text-gray-500`;
-const Ul = tw(motion.ul)`flex flex-col gap-6 mt-8 md:grid md:grid-cols-2`;
+const Ul = styled(motion.ul)(({ textWidth }: { textWidth?: string }) => [
+   `width:${textWidth}`,
+   tw`flex flex-col self-center gap-6 md:grid md:grid-cols-2 justify-self-center`,
+]);
 const Li = tw(motion.li)`lg:mt-0 flex`;
 const SpanText = tw(
    motion.span
@@ -191,4 +204,6 @@ interface Props {
    img2: IGatsbyImageData;
    img3: IGatsbyImageData;
    img4: IGatsbyImageData;
+   textWidth?: string;
+   gradient?: string;
 }

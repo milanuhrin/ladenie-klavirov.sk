@@ -17,6 +17,7 @@ export const TextImg = (props: Props) => {
       textColor = '#6b7280',
       id,
       loading = 'lazy',
+      gradient,
    } = props;
    const Text = motion(MotionText);
 
@@ -39,6 +40,7 @@ export const TextImg = (props: Props) => {
             text={text}
             title={title}
             textColor={textColor}
+            gradient={gradient}
          />
 
          {/* Second element */}
@@ -76,4 +78,5 @@ interface Props {
    textColor?: string;
    id?: string;
    loading?: 'lazy' | 'eager';
+   gradient?: string;
 }

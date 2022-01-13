@@ -18,26 +18,10 @@ export const Nav = (props: Props) => {
    };
    useOnClickOutside(ref, handleClickOutside);
 
-   // ako dat html text do toho ak by to bolo v poli resp v mape
-   const ha = { a: 'haluz', b: 'este vacie' };
-   // Object.entries(ha).map((a, b) => (
-   //    <Li>
-   //       <Link to={b} aria-label='Skúsenosti'>
-   //          {a}
-   //       </Link>
-   //    </Li>
-   // ));
-   const a = (
-      <Li>
-         <Link to='#experience' aria-label='Skúsenosti'>
-            Skúsenosti
-         </Link>
-      </Li>
-   );
-
    return (
-      <DivContainer initial='hidden' animate='visible' variants={appear()}>
-         <ul className='z-20 items-center hidden space-x-8 sm:flex'>
+      // <div className='flex flex-col items-center w-full h-full sm:justify-center sm:justify-self-center '>
+      <DivContainer>
+         <ul className='z-20 items-center hidden sm:space-x-8 sm:flex'>
             <Li>
                <Link to='#experience' aria-label='Skúsenosti'>
                   Skúsenosti
@@ -70,11 +54,11 @@ export const Nav = (props: Props) => {
             </Li>
          </ul>
 
-         <div className='flex justify-between w-full p-2 px-8 py-6 sm:hidden'>
+         <div className='flex justify-between w-full px-8 py-3 sm:hidden'>
             <StaticImage
                src='../images/logo-black.png'
                alt='logo'
-               className='w-20'
+               className='relative w-20 top-1'
                placeholder='none'
             />
             <button
@@ -118,38 +102,38 @@ export const Nav = (props: Props) => {
                      </button>
                      <nav>
                         <ul className='space-y-4'>
-                           <li>
+                           <Li>
                               <Link
                                  to='#experience'
                                  onClick={() => setIsMenuOpen(false)}
                                  aria-label='Skúsenosti'>
                                  Skúsenosti
                               </Link>
-                           </li>
-                           <li>
+                           </Li>
+                           <Li>
                               <Link
                                  to='#aboutMe'
                                  onClick={() => setIsMenuOpen(false)}
                                  aria-label='O mne'>
                                  O mne
                               </Link>
-                           </li>
-                           <li>
+                           </Li>
+                           <Li>
                               <Link
                                  to='#contact'
                                  onClick={() => setIsMenuOpen(false)}
                                  aria-label='Kontakt'>
                                  Kontakt
                               </Link>
-                           </li>
-                           <li>
+                           </Li>
+                           <Li>
                               <Link
                                  to='#education'
                                  onClick={() => setIsMenuOpen(false)}
                                  aria-label='Vzdelanie'>
                                  Vzdelanie
                               </Link>
-                           </li>
+                           </Li>
                         </ul>
                      </nav>
                   </motion.div>
@@ -159,12 +143,16 @@ export const Nav = (props: Props) => {
       </DivContainer>
    );
 };
+// </div>
+{
+   /* <div className='z-50 w-full h-2 bg-white bg-gradient-to-b to-[#ffb387] from-[#3e3e3e]'></div> */
+}
 
 const DivContainer = tw(
    motion.nav
-)` relative z-30 flex items-center w-full pt-4 mb-6 sm:py-10 sm:mb-14 md:mb-24
- first-letter:px-4 lg:py-16 sm:max-w-full md:px-24 lg:px-8
-  sm:justify-center sm:justify-self-center lg:space-x-16 bg-gradient-to-b to-[#ffb387] from-indigo-100`;
+)` relative z-30 flex items-center w-full sm:py-8  bg-[#1c1c1c] 
+ first-letter:px-4 sm:max-w-full md:px-24 lg:px-8
+  sm:justify-center sm:justify-self-center lg:space-x-16 `;
 
 const A = tw(
    motion.a
@@ -172,7 +160,7 @@ const A = tw(
 
 const Li = tw(
    motion.li
-)` transition-all duration-300 hover:transform hover:scale-110`;
+)` transition-all duration-300 hover:transform hover:scale-110 text-[#ffffffea] `;
 
 interface Props {
    logo?: IGatsbyImageData;

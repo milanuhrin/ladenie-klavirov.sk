@@ -2,7 +2,13 @@ import { motion } from 'framer-motion';
 import { cardVariants } from './export';
 import tw from 'twin.macro';
 
-export const Footer = () => {
+interface Props {
+   colorFrom?: string;
+   colorTo?: string;
+}
+export const Footer = (props: Props) => {
+   const { colorFrom, colorTo } = props;
+
    return (
       <Wrapper
          id='contact'
@@ -45,5 +51,5 @@ export const Footer = () => {
 const Wrapper = tw(
    motion.footer
 )`flex flex-col items-center justify-center w-full pt-12 
- pb-10 sm:pt-16 bg-gradient-to-b from-white to-indigo-100
+ pb-10 sm:pt-16 bg-gradient-to-b from-[#fafbff] to-indigo-200
  gap-7 md:gap-10 lg:pt-24 `;

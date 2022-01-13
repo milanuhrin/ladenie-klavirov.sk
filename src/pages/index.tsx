@@ -74,6 +74,8 @@ const IndexPage = () => {
                      img2={hero2img2}
                      img3={hero2img3}
                      img4={hero2img4}
+                     textWidth='70%'
+                     gradient='-webkit-linear-gradient(360deg, #0F2027, #203A43, #2C5364)'
                   />
                )}
                <TextImgWrapper>
@@ -86,6 +88,7 @@ const IndexPage = () => {
                            img={hero1freeTime}
                            alt='Vo voľnom čase'
                            imgMaxWidth='max-w-[25rem]'
+                           gradient='-webkit-linear-gradient(360deg, #0F2027, #203A43, #2C5364)'
                         />
                      </AnimOnScroll>
                   )}
@@ -99,6 +102,7 @@ const IndexPage = () => {
                            img={hero1insidePiano}
                            alt='Vnútro klavíru'
                            imgMaxWidth='max-w-[25rem]'
+                           gradient='-webkit-linear-gradient(180deg, #0F2027, #203A43, #2C5364)'
                         />
                      </AnimOnScroll>
                   )}
