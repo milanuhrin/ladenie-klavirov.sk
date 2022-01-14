@@ -25,7 +25,7 @@ export const H3 = styled(motion.h3)(({ gradient }: { gradient?: string }) => [
 
 export const Div = styled(motion.div)(
    ({ width = '100%' }: { width?: string }) => [
-      `width: ${width}`,
+      `@media (min-width: 768px) { width: ${width};}`,
       tw`z-10 flex flex-col self-center justify-self-center gap-9`,
    ]
 );

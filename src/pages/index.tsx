@@ -1,8 +1,13 @@
 import * as React from 'react';
 import 'tailwindcss/dist/base.min.css';
 import '../../global.css';
-import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet';
+import {
+   motion,
+   useMotionValue,
+   useTransform,
+   useReducedMotion,
+   useViewportScroll,
+} from 'framer-motion';
 import {
    AnimOnScroll,
    Footer,
@@ -10,7 +15,7 @@ import {
    TextImg,
    Landing,
 } from '../Components/export';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -18,8 +23,9 @@ import { getImage } from 'gatsby-plugin-image';
 import SEO from '../Components/seo.js';
 
 const IndexPage = () => {
-   useEffect(() => {
-      document.documentElement.lang = 'sk';
+   const { scrollY } = useViewportScroll();
+   const y = useTransform(scrollY, [0, 1], [0, -0.2], {
+      clamp: false,
    });
 
    const data = useStaticQuery(graphql`
@@ -67,7 +73,12 @@ const IndexPage = () => {
          <SEO />
          <main>
             <Landing />
-            <div className='flex flex-col '>
+            <motion.div
+               id='ahoj'
+               style={{ y: y }}
+               className='z-0 w-40 h-40 bg-black'
+            />
+            <div id='ahoj' className='flex flex-col '>
                {hero2img1 && hero2img2 && hero2img3 && hero2img4 && (
                   <Hero2
                      img1={hero2img1}
@@ -78,6 +89,7 @@ const IndexPage = () => {
                      gradient='-webkit-linear-gradient(360deg, #0F2027, #203A43, #2C5364)'
                   />
                )}
+
                <TextImgWrapper>
                   {hero1freeTime && (
                      <AnimOnScroll>

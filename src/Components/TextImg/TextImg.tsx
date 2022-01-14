@@ -30,6 +30,7 @@ export const TextImg = (props: Props) => {
    if (width)
       dynamicStyle =
          width > 640 && reversed ? { gridColumn: '1', gridRow: '1' } : {};
+
    return (
       <SectionGrid id={id}>
          {/* Firtst element */}

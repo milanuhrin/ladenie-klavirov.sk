@@ -58,7 +58,7 @@ export const Nav = (props: Props) => {
             <StaticImage
                src='../images/logo-white.png'
                alt='logo'
-               className='relative w-20 top-1'
+               className='relative w-20 '
                placeholder='none'
             />
             <button
@@ -91,7 +91,7 @@ export const Nav = (props: Props) => {
                      className=' p-5 flex flex-col rounded-bl-xl rounded shadow-sm absolute top-0 right-0 z-40 w-1/2 bg-gradient-to-r via-[#ffd2b8] from-[#ffeac2] to-[#feac7c] '>
                      <button
                         title='Close Menu'
-                        className=' self-end  p-2 mt-1.5 mr-2.5 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline'
+                        className=' self-end p-2 mt-1.5 mr-2.5 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline'
                         onClick={() => setIsMenuOpen(false)}>
                         <svg className='w-5 text-gray-600' viewBox='0 0 24 24'>
                            <path
