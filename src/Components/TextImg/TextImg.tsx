@@ -37,7 +37,6 @@ export const TextImg = (props: Props) => {
          <Text
             initial='hidden'
             animate='visible'
-            variants={appear()}
             text={text}
             title={title}
             textColor={textColor}
@@ -46,22 +45,25 @@ export const TextImg = (props: Props) => {
 
          {/* Second element */}
          {typeof img === 'string' ? (
-            <img
+            <motion.img
                className={`${imgMaxWidth}  flex object-cover object-center justify-self-center`}
                style={{ ...dynamicStyle }}
                src={img}
+               whileTap={{ scale: 0.55 }}
             />
          ) : (
             dynamicStyle && (
-               <GatsbyImage
-                  style={{ ...dynamicStyle }}
-                  imgStyle={{}}
-                  className={`${imgMaxWidth} ${borderRadius} shadow-2xl  flex object-cover object-center justify-self-center`}
-                  imgClassName={`shadow-2xl  ${borderRadius} `}
-                  image={img}
-                  alt={alt}
-                  loading={loading}
-               />
+               <motion.div whileTap={{ scale: 0.95 }}>
+                  <GatsbyImage
+                     style={{ ...dynamicStyle }}
+                     imgStyle={{}}
+                     className={`${imgMaxWidth} ${borderRadius} shadow-2xl  flex object-cover object-center justify-self-center`}
+                     imgClassName={`shadow-2xl  ${borderRadius} `}
+                     image={img}
+                     alt={alt}
+                     loading={loading}
+                  />
+               </motion.div>
             )
          )}
       </SectionGrid>
