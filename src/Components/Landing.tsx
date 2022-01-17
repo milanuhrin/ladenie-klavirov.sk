@@ -50,7 +50,6 @@ export const Landing = () => {
             }>
             <SectionDivider fill='white' />
          </motion.div>
-
          <Nav itemsCount={5} />
          <div className='my-10 sm:my-24' />
          <motion.div

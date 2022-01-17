@@ -53,7 +53,7 @@ export const TextImg = (props: Props) => {
             />
          ) : (
             dynamicStyle && (
-               <motion.div whileTap={{ scale: 0.95 }}>
+               <motion.div whileTap={{ scale: 0.95 }} drag>
                   <GatsbyImage
                      style={{ ...dynamicStyle }}
                      imgStyle={{}}

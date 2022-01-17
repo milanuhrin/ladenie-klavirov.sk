@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useCycle } from 'framer-motion';
 import { Link } from 'gatsby';
 import { useRef, useState } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
@@ -7,7 +7,29 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { StaticImage } from 'gatsby-plugin-image';
 import { appear } from './Landing';
+import { MenuToggle } from '../Components/Menu/MenuToggle';
 
+const sidebar = {
+   open: (height = 1000) => ({
+      clipPath: `circle(${height * 2 + 200}px at 254px 35px)`,
+      background: '#1c1c1c',
+      transition: {
+         type: 'spring',
+         stiffness: 20,
+         restDelta: 2,
+      },
+   }),
+   closed: {
+      clipPath: 'circle(1px at 254px 35px)',
+      background: '#1c1c1c',
+      transition: {
+         delay: 0.5,
+         type: 'spring',
+         stiffness: 400,
+         damping: 40,
+      },
+   },
+};
 export const Nav = (props: Props) => {
    const { logo, itemsCount, items } = props;
 
@@ -17,7 +39,7 @@ export const Nav = (props: Props) => {
       setIsMenuOpen(!isMenuOpen);
    };
    useOnClickOutside(ref, handleClickOutside);
-
+   const [isOpen, toggleOpen] = useCycle(false, true);
    return (
       // <div className='flex flex-col items-center w-full h-full sm:justify-center sm:justify-self-center '>
       <DivContainer>
@@ -54,13 +76,23 @@ export const Nav = (props: Props) => {
             </Li>
          </ul>
 
-         <div className='flex justify-between w-full px-8 py-3 sm:hidden'>
+         <motion.div
+            className='flex items-center justify-between w-full px-6 py-3 sm:hidden'
+            initial={false}
+            animate={isOpen ? 'open' : 'closed'}>
+            <motion.div
+               className='absolute w-[300px] h-[1000px] top-0 bottom-0 right-0 '
+               variants={sidebar}
+            />
             <StaticImage
-               src='../images/logo-white.png'
+               src='../images/logo-darkGrey.png'
                alt='logo'
-               className='relative w-20 '
+               className='relative w-20'
                placeholder='none'
             />
+            <MenuToggle toggle={() => toggleOpen()} />
+
+            {/* 
             <button
                aria-label='Open Menu'
                title='Open Menu'
@@ -81,6 +113,7 @@ export const Nav = (props: Props) => {
                   />
                </svg>
             </button>
+
             <AnimatePresence>
                {isMenuOpen && (
                   <motion.div
@@ -138,8 +171,8 @@ export const Nav = (props: Props) => {
                      </nav>
                   </motion.div>
                )}
-            </AnimatePresence>
-         </div>
+            </AnimatePresence> */}
+         </motion.div>
       </DivContainer>
    );
 };

@@ -22,7 +22,7 @@ import tw from 'twin.macro';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import SEO from '../Components/seo.js';
-import { MenuToggle } from '../Components/MenuToggle';
+
 const IndexPage = () => {
    const { scrollY } = useViewportScroll();
    const y = useTransform(scrollY, [0, 1], [0, -0.2], {
@@ -69,17 +69,18 @@ const IndexPage = () => {
    const hero2img2 = getImage(data.d);
    const hero2img3 = getImage(data.e);
    const hero2img4 = getImage(data.f);
-   const [isOpen, toggleOpen] = useCycle(false, true);
+
+   // const [isOpen, toggleOpen] = useCycle(false, true);
    // const containerRef = useRef(null);
    // const { height } = useDimensions(containerRef);
    return (
       <>
          <SEO />
          <main>
-            <motion.nav initial={false} animate={isOpen ? 'open' : 'closed'}>
+            {/* <motion.nav initial={false} animate={isOpen ? 'open' : 'closed'}>
                <MenuToggle toggle={() => toggleOpen()} />
-            </motion.nav>
-
+            </motion.nav> */}
+            {/* <MenuMain /> */}
             <Landing />
             {/* <motion.div
                id='ahoj'
