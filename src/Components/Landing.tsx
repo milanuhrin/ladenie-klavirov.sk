@@ -61,7 +61,21 @@ export const Landing = () => {
                <TextImg
                   id='landing'
                   title='Profesionál s 35 ročnými skusenosťami'
-                  text='Či už potrebujete naladiť, opraviť, ohodnotiť alebo pomôcť predať či kúpiť klavír, môžete sa na obrátiť mňa. Klavírom a hudobným nástrojom sa venujem prakticky celý život.'
+                  text='
+                     Hľadáte licencovaného mechanika klavírov na juhozápadnom slovensku?
+                     Preferujete spoľahlivosť, odbornosť a ľudský prístup?
+                     Zdarma poradenstvo či ohodnotenie.
+                     Na spokojných zákazníkoch záleží!
+                     Som tu pre Vás, či už potrebujete naladiť, predať, kúpiť či ohodnotiť Váš klavír, môžete sa na mňa obrátiť.
+                     Som pedant, preto ku každému klavíru pristupujem tak, ako ku svojmu vlastnému.
+
+                     Koľko stojí ladenie klavíra?
+                     Samozrejme, že Vám cenu nedokážem povedať bez toho, aby som videl, v akom stave je klavír.
+                     Preto keď budem mať najbližšie cestu okolo Vášho regiónu, prídem si ho pozrieť a poviem Vám prípadnú cenu ladenia.
+
+                     Nezvyknem mať pri sebe veľkú hotovosť, koľko maximálne si mám pripraviť?
+                     Cena nebude presahovať 220€ ani v prípade, že by si klavír vyžadoval generálku, 
+                     kedy si musím zobrať mechaniku k sebe domov aby som ju opravil.'
                   img={hero1Image}
                   alt='Milan Uhrin, ladič klavírov'
                   loading='eager'
@@ -69,7 +83,6 @@ export const Landing = () => {
                />
             )}
          </motion.div>
-
          {/* <motion.div initial='hidden' animate='visible' variants={appear()}>
             {header === 'orange' && <BlobeSvg height={250} right={250} />}
             {header === 'orange' && <BlobeSvg height={450} left={-20} />}

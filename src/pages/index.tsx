@@ -158,7 +158,7 @@ const IndexPage = () => {
                         <TextImg
                            id='aboutMe'
                            title='Pár slov o mne'
-                           text='Mojim najväčším hobby sa za posledných 5 rokov stalo neprofesionálne fotenie. Podarilo sa mi dosiahnuť prvenstvá či už v slovenských ale aj medzinárodných súťažiach. Najlepšie fotky sú prezentované na dočasných voľne dostupných výstavách či múzeách.'
+                           text='Mojim najväčším hobby sa za posledných 5 rokov stalo fotenie. Podarilo sa mi dosiahnuť prvenstvá či už v slovenských ale aj medzinárodných súťažiach. Najlepšie fotky sú prezentované na dočasných voľne dostupných výstavách či múzeách.'
                            img={hero1freeTime}
                            alt='Vo voľnom čase'
                            imgMaxWidth='max-w-[25rem]'
@@ -172,7 +172,7 @@ const IndexPage = () => {
                            reversed
                            id='education'
                            title='Vzdelanie'
-                           text='Vyštudoval som odbornú školu v Hradci Králové v Českej republike. Stal som sa tam mechanikom hudobných nástrojov, naučil sa opraviť klavír správne tak, aby fungoval najbližšie roky.'
+                           text='Vyštudoval som odbornú školu SUPŠ HNN v Hradci Králove.'
                            img={hero1insidePiano}
                            alt='Vnútro klavíru'
                            imgMaxWidth='max-w-[25rem]'
