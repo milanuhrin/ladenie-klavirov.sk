@@ -41,7 +41,6 @@ export const Nav = (props: Props) => {
    useOnClickOutside(ref, handleClickOutside);
    const [isOpen, toggleOpen] = useCycle(false, true);
    return (
-      // <div className='flex flex-col items-center w-full h-full sm:justify-center sm:justify-self-center '>
       <DivContainer>
          <ul className='z-20 items-center hidden sm:space-x-8 sm:flex'>
             <Li>
@@ -176,10 +175,6 @@ export const Nav = (props: Props) => {
       </DivContainer>
    );
 };
-// </div>
-{
-   /* <div className='z-50 w-full h-2 bg-white bg-gradient-to-b to-[#ffb387] from-[#3e3e3e]'></div> */
-}
 
 const DivContainer = tw(
    motion.nav
