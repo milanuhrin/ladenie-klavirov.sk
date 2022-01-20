@@ -178,7 +178,7 @@ export const Nav = (props: Props) => {
 
 const DivContainer = tw(
    motion.nav
-)` relative z-30 flex items-center w-full sm:py-8  bg-[#1c1c1c] 
+)` relative z-30 flex items-center w-full sm:py-8  bg-[#1f1f1f] 
  first-letter:px-4 sm:max-w-full md:px-24 lg:px-8
   sm:justify-center sm:justify-self-center lg:space-x-16 `;
 

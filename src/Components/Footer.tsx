@@ -50,6 +50,6 @@ export const Footer = (props: Props) => {
 
 const Wrapper = tw(
    motion.footer
-)`flex flex-col items-center justify-center w-full pt-12 
- pb-10 sm:pt-16 bg-gradient-to-b from-[#fafbff] to-indigo-200
- gap-7 md:gap-10 lg:pt-24 `;
+)`flex flex-col items-center justify-center w-full
+ py-10 bg-gradient-to-b from-[#f8f8f8] to-[#f8f8f8ef]
+ gap-7 md:gap-6 sm:py-12 `;

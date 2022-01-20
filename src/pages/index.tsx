@@ -181,6 +181,8 @@ const IndexPage = () => {
                      </AnimOnScroll>
                   )}
                </TextImgWrapper>
+               <div id='divider' className='my-10 sm:my-12' />
+
                <Footer />
             </div>
          </main>
