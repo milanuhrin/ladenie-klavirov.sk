@@ -38,25 +38,26 @@ export const Landing = () => {
    return (
       <section className='relative flex flex-col items-center w-full min-h-screen '>
          <motion.div
+            id='background'
             initial='hidden'
             animate='visible'
-            variants={appear()}
-            className='absolute w-full h-screen transition-all bg-center bg-no-repeat bg-cover aha'
+            variants={appear('backOut')}
+            className='absolute w-full h-screen bg-center bg-no-repeat bg-cover aha'
             style={
                {
                   // animation: ` ${header === 'orange' ? '' : 'mymove 0.5s'} `,
                   // backgroundColor: `${header === 'orange' ? '#ffb387' : 'white'} `,
                }
-            }>
-            <SectionDivider fill='white' />
-         </motion.div>
+            }></motion.div>
+         {/* <SectionDivider fill='white' /> */}
+
          <Nav itemsCount={5} />
          <div className='my-10 sm:my-24' />
          <motion.div
             className='z-20 lg:px-20'
             initial='hidden'
             animate='visible'
-            variants={appear()}>
+            variants={appear('backOut')}>
             {hero1Image && (
                <TextImg
                   id='landing'
@@ -93,16 +94,16 @@ export const Landing = () => {
 
 <div className='my-10 sm:my-24' />;
 
-export const appear = (delay = 0, duration = 0.1) => ({
+export const appear = (ease = 'easeOut', delay = 0, duration = 1) => ({
    hidden: {
-      scale: 0.1,
+      scale: 0,
       opacity: 0,
    },
    visible: {
       scale: 1,
       opacity: 1,
       transition: {
-         ease: 'easeIn',
+         ease: ease,
          delay: delay,
          duration: duration,
       },
