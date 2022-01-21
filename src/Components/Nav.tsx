@@ -30,6 +30,20 @@ const sidebar = {
       },
    },
 };
+const container = {
+   hidden: {},
+   show: {
+      transition: {
+         delayChildren: 0.3,
+         staggerChildren: 0.1,
+      },
+   },
+};
+
+const item = {
+   hidden: { y: -70 },
+   show: { y: 0 },
+};
 export const Nav = (props: Props) => {
    const { logo, itemsCount, items } = props;
 
@@ -42,18 +56,22 @@ export const Nav = (props: Props) => {
    const [isOpen, toggleOpen] = useCycle(false, true);
    return (
       <DivContainer>
-         <ul className='z-20 items-center hidden sm:space-x-8 sm:flex'>
-            <Li>
+         <motion.ul
+            initial={'hidden'}
+            animate={'show'}
+            variants={container}
+            className='z-20 items-center hidden sm:space-x-8 sm:flex'>
+            <Li variants={item}>
                <Link to='#experience' aria-label='Skúsenosti'>
                   Skúsenosti
                </Link>
             </Li>
-            <Li>
+            <Li variants={item}>
                <Link to='#aboutMe' aria-label='O mne'>
                   O mne
                </Link>
             </Li>
-            <Li>
+            <Li variants={item}>
                <Link aria-label='logo' to='/'>
                   <StaticImage
                      src='../images/logo-white.png'
@@ -63,17 +81,17 @@ export const Nav = (props: Props) => {
                   />
                </Link>
             </Li>
-            <Li>
+            <Li variants={item}>
                <Link to='/contact' aria-label='Kontakt'>
                   Kontakt
                </Link>
             </Li>
-            <Li>
+            <Li variants={item}>
                <Link aria-label='Vzdelanie' to='#education'>
                   Vzdelanie
                </Link>
             </Li>
-         </ul>
+         </motion.ul>
 
          <motion.div
             className='flex items-center justify-between w-full px-6 py-3 sm:hidden'
@@ -186,9 +204,7 @@ const A = tw(
    motion.a
 )`z-20 font-medium tracking-wide text-black transition-all duration-200 hover:text-gray-800`;
 
-const Li = tw(
-   motion.li
-)` transition-all duration-300 hover:transform hover:scale-110 text-[#ffffffea] `;
+const Li = tw(motion.li)`text-[#ffffffea] `;
 
 interface Props {
    logo?: IGatsbyImageData;

@@ -42,14 +42,9 @@ export const Landing = () => {
             initial='hidden'
             animate='visible'
             variants={appear('backOut')}
-            className='absolute w-full h-screen bg-center bg-no-repeat bg-cover aha'
-            style={
-               {
-                  // animation: ` ${header === 'orange' ? '' : 'mymove 0.5s'} `,
-                  // backgroundColor: `${header === 'orange' ? '#ffb387' : 'white'} `,
-               }
-            }></motion.div>
-         {/* <SectionDivider fill='white' /> */}
+            className='absolute w-full h-screen bg-center bg-no-repeat bg-cover aha'>
+            <SectionDivider fill='white' />
+         </motion.div>
 
          <Nav itemsCount={5} />
          <div className='my-10 sm:my-24' />
