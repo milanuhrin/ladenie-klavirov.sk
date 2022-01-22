@@ -1,14 +1,7 @@
 import * as React from 'react';
 import 'tailwindcss/dist/base.min.css';
 import '../../global.css';
-import {
-   motion,
-   useMotionValue,
-   useTransform,
-   useReducedMotion,
-   useViewportScroll,
-   useCycle,
-} from 'framer-motion';
+import { motion, useTransform, useViewportScroll } from 'framer-motion';
 import {
    AnimOnScroll,
    Footer,
@@ -16,9 +9,6 @@ import {
    TextImg,
    Landing,
 } from '../Components/export';
-import { useEffect, useState } from 'react';
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import SEO from '../Components/seo.js';
@@ -70,40 +60,11 @@ const IndexPage = () => {
    const hero2img3 = getImage(data.e);
    const hero2img4 = getImage(data.f);
 
-   // const [isOpen, toggleOpen] = useCycle(false, true);
-   // const containerRef = useRef(null);
-   // const { height } = useDimensions(containerRef);
    return (
       <>
          <SEO />
          <main>
-            {/* <motion.nav initial={false} animate={isOpen ? 'open' : 'closed'}>
-               <MenuToggle toggle={() => toggleOpen()} />
-            </motion.nav> */}
-            {/* <MenuMain /> */}
             <Landing />
-            {/* <motion.div
-               id='ahoj'
-               style={{ y: y }}
-               className='z-0 w-40 h-40 bg-gradient-to-br from-[#C9D6FF] to-[#E2E2E2]'
-            /> */}
-            {/* <motion.svg
-               viewBox='0 0 200 200'
-               xmlns='http://www.w3.org/2000/svg'
-               style={{ y: y }}
-               width='50px'>
-               <defs>
-                  <linearGradient id='MyGradient' x2='50%' y2='100%'>
-                     <stop offset='5%' stop-color='#e6ebff' />
-                     <stop offset='95%' stop-color='#faf9f9' />
-                  </linearGradient>
-               </defs>
-               <path
-                  fill='url(#MyGradient)'
-                  d='M67.9,-28.6C73.2,-5.7,52.6,19.2,28.5,36C4.3,52.7,-23.3,61.4,-43.4,49.3C-63.6,37.1,-76.2,4.2,-67.7,-23.1C-59.2,-50.4,-29.6,-71.9,0.9,-72.2C31.3,-72.5,62.6,-51.5,67.9,-28.6Z'
-                  transform='translate(70% 70%)'
-               />
-            </motion.svg> */}
             <svg
                id='sw-js-blob-svg'
                viewBox='0 0 200 200'
@@ -120,27 +81,15 @@ const IndexPage = () => {
                         offset='100%'></stop>{' '}
                   </linearGradient>{' '}
                </defs>
-               <g
-               // x='5'
-               // y='5'
-               // width='40'
-               // height='40'
-               // transform='translate(30 50)'
-               >
+               <g>
                   <rect x='5' y='5' width='40' height='40' fill='green' />
                   <path
                      fill='url(#sw-gradient)'
-                     d='M24.3,-29.4C31.3,-23,36.8,-15.2,35.8,-8.2C34.8,-1.1,27.4,5.2,23.1,14.1C18.8,22.9,17.7,34.3,12.6,37.3C7.5,40.3,-1.6,34.9,-8,29.4C-14.5,23.9,-18.3,18.3,-21.3,12.5C-24.4,6.8,-26.8,0.8,-26.7,-5.5C-26.5,-11.9,-23.9,-18.6,-19,-25.3C-14.1,-32.1,-7.1,-38.8,0.8,-39.8C8.6,-40.7,17.3,-35.8,24.3,-29.4Z'
-                     // width='100%'
-                     // height='100%'
-
-                     // stroke-width='0'
-                     // style='transition: all 0.3s ease 0s;'
-                  ></path>{' '}
+                     d='M24.3,-29.4C31.3,-23,36.8,-15.2,35.8,-8.2C34.8,-1.1,27.4,5.2,23.1,14.1C18.8,22.9,17.7,34.3,12.6,37.3C7.5,40.3,-1.6,34.9,-8,29.4C-14.5,23.9,-18.3,18.3,-21.3,12.5C-24.4,6.8,-26.8,0.8,-26.7,-5.5C-26.5,-11.9,-23.9,-18.6,-19,-25.3C-14.1,-32.1,-7.1,-38.8,0.8,-39.8C8.6,-40.7,17.3,-35.8,24.3,-29.4Z'></path>
                </g>
             </svg>
 
-            <div id='ahoj' className='flex flex-col '>
+            <div id='ahoj' className='flex flex-col'>
                {hero2img1 && hero2img2 && hero2img3 && hero2img4 && (
                   <Hero2
                      img1={hero2img1}
@@ -152,7 +101,7 @@ const IndexPage = () => {
                   />
                )}
 
-               <TextImgWrapper>
+               <motion.section className='relative z-10 flex flex-col items-center gap-10 pt-16 bg-gradient-to-b from-white via-indigo-50 to-white md:gap-20 lg:px-20'>
                   {hero1freeTime && (
                      <AnimOnScroll>
                         <TextImg
@@ -180,18 +129,13 @@ const IndexPage = () => {
                         />
                      </AnimOnScroll>
                   )}
-               </TextImgWrapper>
+               </motion.section>
                <div id='divider' className='my-10 sm:my-12' />
-
                <Footer />
             </div>
          </main>
       </>
    );
 };
-
-export const TextImgWrapper = tw(
-   motion.section
-)`relative z-10 flex flex-col items-center gap-10 pt-16 bg-gradient-to-b from-white via-indigo-50 to-white md:gap-20 lg:px-20`;
 
 export default IndexPage;

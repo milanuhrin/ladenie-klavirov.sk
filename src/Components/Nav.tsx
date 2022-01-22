@@ -8,6 +8,7 @@ import tw from 'twin.macro';
 import { StaticImage } from 'gatsby-plugin-image';
 import { appear } from './Landing';
 import { MenuToggle } from '../Components/Menu/MenuToggle';
+import { MenuItem } from './MenuItem';
 
 const sidebar = {
    open: (height = 1000) => ({
@@ -44,6 +45,17 @@ const item = {
    hidden: { y: -70 },
    show: { y: 0 },
 };
+
+const variants = {
+   open: {
+      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+   },
+   closed: {
+      transition: { staggerChildren: 0.05, staggerDirection: -1 },
+   },
+};
+
+const itemIds = [0, 1, 2, 3, 4];
 export const Nav = (props: Props) => {
    const { logo, itemsCount, items } = props;
 
@@ -108,6 +120,12 @@ export const Nav = (props: Props) => {
                placeholder='none'
             />
             <MenuToggle toggle={() => toggleOpen()} />
+
+            <motion.ul variants={variants}>
+               {itemIds.map((i) => (
+                  <MenuItem i={i} key={i} />
+               ))}
+            </motion.ul>
 
             {/* 
             <button
