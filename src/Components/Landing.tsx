@@ -1,12 +1,9 @@
-import { useEffect, useState } from 'react';
-import { SectionDivider } from './export';
-import { TextImg } from './TextImg/TextImg';
 import { motion } from 'framer-motion';
-import { Nav, BlobeSvg } from './export';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { useStaticQuery, graphql } from 'gatsby';
-import tw from 'twin.macro';
-import styled from '@emotion/styled';
+import { graphql, useStaticQuery } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
+import { useEffect, useState } from 'react';
+import { Nav, SectionDivider } from './export';
+import { TextImg } from './TextImg/TextImg';
 
 export const Landing = () => {
    const [header, setHeader] = useState('orange');

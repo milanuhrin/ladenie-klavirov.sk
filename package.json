@@ -44,7 +44,7 @@
     "gatsby-plugin-emotion": "^7.4.0",
     "postcss": "^8.3.11",
     "tailwindcss": "^2.2.19",
-    "twin.macro": "^2.8.2",
+    "tailwindcss-debug-screens": "^2.2.1",
     "typescript": "4.5.2"
   }
 }

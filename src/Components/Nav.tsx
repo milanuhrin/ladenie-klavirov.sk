@@ -1,12 +1,8 @@
-import { AnimatePresence, motion, useCycle } from 'framer-motion';
+import { motion, useCycle } from 'framer-motion';
 import { Link } from 'gatsby';
+import { IGatsbyImageData, StaticImage } from 'gatsby-plugin-image';
 import { useRef, useState } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
-import { StaticImage } from 'gatsby-plugin-image';
-import { appear } from './Landing';
 import { MenuToggle } from '../Components/Menu/MenuToggle';
 import { MenuItem } from './MenuItem';
 
@@ -67,23 +63,26 @@ export const Nav = (props: Props) => {
    useOnClickOutside(ref, handleClickOutside);
    const [isOpen, toggleOpen] = useCycle(false, true);
    return (
-      <DivContainer>
+      <motion.div
+         className='relative z-30 flex items-center w-full sm:py-8  bg-[#1f1f1f] 
+      first-letter:px-4 sm:max-w-full md:px-24 lg:px-8
+       sm:justify-center sm:justify-self-center lg:space-x-16'>
          <motion.ul
             initial={'hidden'}
             animate={'show'}
             variants={container}
             className='z-20 items-center hidden sm:space-x-8 sm:flex'>
-            <Li variants={item}>
+            <motion.li className='text-[#ffffffea]' variants={item}>
                <Link to='#experience' aria-label='Skúsenosti'>
                   Skúsenosti
                </Link>
-            </Li>
-            <Li variants={item}>
+            </motion.li>
+            <motion.li className='text-[#ffffffea]' variants={item}>
                <Link to='#aboutMe' aria-label='O mne'>
                   O mne
                </Link>
-            </Li>
-            <Li variants={item}>
+            </motion.li>
+            <motion.li className='text-[#ffffffea]' variants={item}>
                <Link aria-label='logo' to='/'>
                   <StaticImage
                      src='../images/logo-white.png'
@@ -92,17 +91,17 @@ export const Nav = (props: Props) => {
                      placeholder='none'
                   />
                </Link>
-            </Li>
-            <Li variants={item}>
+            </motion.li>
+            <motion.li className='text-[#ffffffea]' variants={item}>
                <Link to='/contact' aria-label='Kontakt'>
                   Kontakt
                </Link>
-            </Li>
-            <Li variants={item}>
+            </motion.li>
+            <motion.li className='text-[#ffffffea]' variants={item}>
                <Link aria-label='Vzdelanie' to='#education'>
                   Vzdelanie
                </Link>
-            </Li>
+            </motion.li>
          </motion.ul>
 
          <motion.div
@@ -208,21 +207,9 @@ export const Nav = (props: Props) => {
                )}
             </AnimatePresence> */}
          </motion.div>
-      </DivContainer>
+      </motion.div>
    );
 };
-
-const DivContainer = tw(
-   motion.nav
-)` relative z-30 flex items-center w-full sm:py-8  bg-[#1f1f1f] 
- first-letter:px-4 sm:max-w-full md:px-24 lg:px-8
-  sm:justify-center sm:justify-self-center lg:space-x-16 `;
-
-const A = tw(
-   motion.a
-)`z-20 font-medium tracking-wide text-black transition-all duration-200 hover:text-gray-800`;
-
-const Li = tw(motion.li)`text-[#ffffffea] `;
 
 interface Props {
    logo?: IGatsbyImageData;

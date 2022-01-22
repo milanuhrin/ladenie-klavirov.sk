@@ -1,9 +1,7 @@
-import * as React from 'react';
-import { SectionGrid } from './styles';
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
-import { Text as MotionText } from './Text';
-import { appear } from '../Landing';
 import { motion } from 'framer-motion';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import * as React from 'react';
+import { Text as MotionText } from './Text';
 
 export const TextImg = (props: Props) => {
    const {
@@ -32,7 +30,9 @@ export const TextImg = (props: Props) => {
          width > 640 && reversed ? { gridColumn: '1', gridRow: '1' } : {};
 
    return (
-      <SectionGrid id={id}>
+      <motion.section
+         className='z-20 grid px-8 pb-10 gap-14 sm:grid-cols-2 sm:grid-rows-1 sm:justify-center sm:gap-24 sm:flex-row sm:items-center'
+         id={id}>
          {/* Firtst element */}
          <Text
             initial='hidden'
@@ -68,7 +68,7 @@ export const TextImg = (props: Props) => {
                </motion.div>
             )
          )}
-      </SectionGrid>
+      </motion.section>
    );
 };
 

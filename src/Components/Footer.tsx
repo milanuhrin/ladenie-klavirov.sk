@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { cardVariants } from './export';
-import tw from 'twin.macro';
 
 interface Props {
    colorFrom?: string;
@@ -10,8 +9,11 @@ export const Footer = (props: Props) => {
    const { colorFrom, colorTo } = props;
 
    return (
-      <Wrapper
+      <motion.footer
          id='contact'
+         className='flex flex-col items-center justify-center w-full
+         py-10 bg-gradient-to-b from-[#f8f8f8] to-[#f8f8f8ef]
+         gap-7 md:gap-6 sm:py-12'
          initial='offscreen'
          whileInView='onscreen'
          viewport={{ margin: `60px`, once: true }}
@@ -44,12 +46,6 @@ export const Footer = (props: Props) => {
          <div className='flex items-center justify-center font-light text-center text-gray-500 '>
             <span>Milan Uhrin, 0905 405 802, uhrinmilan@gmail.com</span>
          </div>
-      </Wrapper>
+      </motion.footer>
    );
 };
-
-const Wrapper = tw(
-   motion.footer
-)`flex flex-col items-center justify-center w-full
- py-10 bg-gradient-to-b from-[#f8f8f8] to-[#f8f8f8ef]
- gap-7 md:gap-6 sm:py-12 `;
