@@ -42,7 +42,7 @@ export const TextImg = (props: Props) => {
    return (
       <motion.section
          id='Container'
-         className={`${containerStyle} gap-14 sm:grid-cols-2 sm:grid-rows-1 sm:justify-center sm:gap-24 sm:flex-row sm:items-center z-20 grid px-8 pb-10`}>
+         className={`${containerStyle}  gap-14 sm:grid-cols-2 sm:grid-rows-1 sm:justify-center sm:gap-24 sm:flex-row sm:items-center z-20 grid px-8 pb-10`}>
          {/* Firtst element Text */}
          <Text
             initial='hidden'
@@ -58,7 +58,7 @@ export const TextImg = (props: Props) => {
          {/* Second element Img */}
          {typeof img === 'string' ? (
             <motion.img
-               className={`${imgStyle}  max-w-[25rem] flex object-cover object-center justify-self-center`}
+               className={`${imgStyle}  max-w-[30rem] flex object-cover object-center justify-self-center`}
                style={{ ...dynamicStyle }}
                src={img}
                whileTap={{ scale: 0.55 }}
@@ -68,7 +68,7 @@ export const TextImg = (props: Props) => {
                <GatsbyImage
                   style={{ ...dynamicStyle }}
                   imgStyle={{}}
-                  className={`${imgStyle} max-w-[30rem] justify-self-center rounded-2xl shadow-2xl  flex object-cover object-center `}
+                  className={`${imgStyle} max-w-[30rem] justify-self-center  rounded-2xl shadow-2xl  flex object-cover object-center `}
                   imgClassName={`${imgStyleGatsbyImgTag} shadow-2xl`}
                   image={img}
                   alt={alt}
