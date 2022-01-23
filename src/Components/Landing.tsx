@@ -62,7 +62,6 @@ export const Landing = () => {
                   imgStyle='!max-w-[25rem]'
                   alt='Milan Uhrin, ladič klavírov'
                   loading='eager'
-                  gradient={`360deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]}`}
                />
             )}
          </motion.div>

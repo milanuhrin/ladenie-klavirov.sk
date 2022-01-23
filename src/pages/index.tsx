@@ -104,7 +104,6 @@ const IndexPage = () => {
                   img3={hero2img3}
                   img4={hero2img4}
                   textWidth='70%'
-                  gradient={`360deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]}`}
                />
             )}
             <Divider />
@@ -117,7 +116,6 @@ const IndexPage = () => {
                      img={hero1freeTime}
                      alt='Vo voľnom čase'
                      imgStyle='max-w-[25rem]'
-                     gradient={`360deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]}`}
                   />
                </AnimOnScroll>
             )}
@@ -132,7 +130,6 @@ const IndexPage = () => {
                      img={hero1insidePiano}
                      alt='Vnútro klavíru'
                      imgStyle='max-w-[25rem]'
-                     gradient={`360deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]}`}
                   />
                </AnimOnScroll>
             )}

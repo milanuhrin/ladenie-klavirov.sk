@@ -10,17 +10,16 @@ import { v4 as uuidv4 } from 'uuid';
 const Text = motion(MotionText);
 
 export const Hero2 = (props: Props) => {
-   const { img1, img2, img3, img4, textWidth = '100%', gradient } = props;
+   const { img1, img2, img3, img4, textWidth = '100%' } = props;
    const images = [img1, img2, img3, img4];
 
-   // FFFBF1
    return (
       <motion.section
          id='container'
-         className=' md:grid bg-gradient-to-b from-white to-silver lg:px-20 md:grid-cols-2 md:grid-rows-1 md:gap-8 md:items-center sm:px-6 md:px-8 md:pt-20 relative flex flex-col max-w-full gap-10 px-8 pb-16'>
+         className=' sm:grid bg-gradient-to-b from-white to-silver lg:px-20 sm:grid-cols-2 sm:grid-rows-1 sm:gap-8 sm:items-center sm:px-6 sm:px-8 sm:pt-20 relative flex flex-col max-w-full gap-10 px-8 pb-16'>
          <motion.div
             id='textWrapper'
-            className='md:col-start-2rustywind md:row-start-1 md:self-center justify-self-center md:max-w-2xl flex flex-col gap-6 ml-auto'
+            className='sm:col-start-2rustywind sm:row-start-1 sm:self-center justify-self-center sm:max-w-2xl flex flex-col gap-6 ml-auto'
             initial='offscreen'
             whileInView='onscreen'
             viewport={{ margin: '400px', once: true }}
@@ -33,11 +32,10 @@ export const Hero2 = (props: Props) => {
                paragraphText='Oblasť môjho pôsobenia je najmä západné a stredné slovensko kde
                ladím a zastrešujem vačšinu hudobných škôl a domácností, ktoré sa
                rozhodli zavolať odborníka.'
-               gradient={gradient}
             />
             <div className='my-4' />
             <ul
-               className={`${textWidth}  flex-col self-center gap-6 md:grid md:grid-cols-2 flex justify-self-center`}>
+               className={`${textWidth}  flex-col self-center gap-6 sm:grid sm:grid-cols-2 flex justify-self-center`}>
                {pole.map((name) => (
                   <motion.li className='lg:mt-0 flex' key={uuidv4()}>
                      <motion.span className='flex items-center justify-center flex-shrink-0 w-6 h-6 text-green-800 bg-green-100 rounded-full'>
@@ -61,7 +59,7 @@ export const Hero2 = (props: Props) => {
 
          <motion.div
             id='imageWrapper'
-            className='md:col-start-1 md:row-start-1 z-10 grid grid-cols-12 grid-rows-2 gap-4'>
+            className='sm:col-start-1 sm:row-start-1 z-10 grid grid-cols-12 grid-rows-2 gap-4'>
             {ha.map((item, index) => (
                <motion.div
                   key={uuidv4()}
@@ -96,7 +94,6 @@ interface Props {
    img3: IGatsbyImageData;
    img4: IGatsbyImageData;
    textWidth?: string;
-   gradient?: string;
 }
 const ha = [
    {

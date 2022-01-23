@@ -8,7 +8,6 @@ export const Text = React.forwardRef((props: Props, ref: any) => {
       headerText,
       headerStyle,
       textWrapperStyle,
-      gradient,
    } = props;
 
    return (
@@ -19,7 +18,7 @@ export const Text = React.forwardRef((props: Props, ref: any) => {
          {headerText && (
             <motion.h3 className={`${headerStyle} `}>
                <span
-                  className={` text-center bg-gradient-to-r from-snakeGr1 to-snakeGr2 text-4xl font-extrabold text-transparent bg-clip-text `}>
+                  className={`text-center bg-gradient-to-r from-snakeGr1 to-snakeGr2 text-4xl font-extrabold text-transparent bg-clip-text `}>
                   {headerText}
                </span>
             </motion.h3>
@@ -38,5 +37,4 @@ interface Props {
    headerText?: string | React.ReactElement;
    headerStyle?: string;
    textWrapperStyle?: string;
-   gradient?: string;
 }

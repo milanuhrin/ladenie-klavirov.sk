@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @layer components {
-   .pageBasePadding {
-      @apply px-[8rem];
+   .horizontalPadding {
+      @apply px-[2rem] lg:px-[8rem];
    }
 }
 .landingBackground {

@@ -67,7 +67,7 @@ export const Nav = (props: Props) => {
       <>
          <motion.div
             className='relative z-30 flex items-center w-full sm:py-8  bg-[#1f1f1f] 
-       sm:max-w-full md:px-24 lg:px-8
+       sm:max-w-full 
        sm:justify-center  lg:space-x-16'>
             <motion.ul
                initial={'hidden'}

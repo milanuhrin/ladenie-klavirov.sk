@@ -17,7 +17,6 @@ export const TextImg = (props: Props) => {
       imgStyleGatsbyImgTag,
       imgStyle,
       loading = 'lazy',
-      gradient,
    } = props;
    const Text = motion(MotionText);
 
@@ -27,22 +26,15 @@ export const TextImg = (props: Props) => {
       width = innerWidth;
    }
    let dynamicStyle;
-   console.log('ww', width);
-   console.log('res', reversed);
    if (width) {
-      console.log('s', dynamicStyle);
-
       dynamicStyle =
          width > 640 && reversed ? { gridColumn: '1', gridRow: '1' } : {};
    }
 
-   // width > 640 && reversed ? { gridColumn: '1', gridRow: '1' } : {};
-   // col-span-1 row-span-2
-
    return (
       <motion.section
          id='Container'
-         className={`${containerStyle} pageBasePadding  w-full gap-14 sm:grid-cols-2 sm:grid-rows-1 sm:justify-center sm:gap-24 sm:flex-row sm:items-center z-20 grid `}>
+         className={`${containerStyle} horizontalPadding  w-full gap-14 sm:grid-cols-2 sm:grid-rows-1 sm:justify-center sm:gap-24 sm:flex-row sm:items-center z-20 grid `}>
          {/* Firtst element Text */}
          <Text
             initial='hidden'
@@ -52,7 +44,6 @@ export const TextImg = (props: Props) => {
             headerText={headerText}
             headerStyle={headerStyle}
             textWrapperStyle={textWrapperStyle}
-            gradient={gradient}
          />
 
          {/* Second element Img */}
@@ -87,7 +78,6 @@ interface Props {
    containerStyle?: string;
    reversed?: boolean;
    loading?: 'lazy' | 'eager';
-   gradient?: string;
    // Text Comp
    headerText?: string | React.ReactElement;
    headerStyle?: string;
