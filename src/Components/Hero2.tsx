@@ -12,12 +12,12 @@ export const Hero2 = (props: Props) => {
    const images = [img1, img2, img3, img4];
 
    return (
-      <motion.div
+      <motion.section
          id='container'
          className='  flex-col md:grid max-w-full gap-10 px-8 pb-16 relative flex bg-gradient-to-b from-white to-[#f7f7f7] lg:px-20  md:grid-cols-2 md:grid-rows-1 md:gap-8 md:items-center sm:px-6 md:px-8 md:pt-20'>
          <motion.div
             id='textWrapper'
-            className='flex flex-col gap-6 ml-auto md:col-start-2rustywind md:row-start-1 md:self-center justify-self-center md:max-w-2xl'
+            className='md:col-start-2rustywind md:row-start-1 md:self-center justify-self-center md:max-w-2xl flex flex-col gap-6 ml-auto'
             initial='offscreen'
             whileInView='onscreen'
             viewport={{ margin: '400px', once: true }}
@@ -26,18 +26,17 @@ export const Hero2 = (props: Props) => {
                initial='hidden'
                animate='visible'
                variants={appear()}
-               title='Skúsenosti'
-               text='Oblasť môjho pôsobenia je najmä západné a stredné slovensko kde
+               headerText='Skúsenosti'
+               paragraphText='Oblasť môjho pôsobenia je najmä západné a stredné slovensko kde
                ladím a zastrešujem vačšinu hudobných škôl a domácností, ktoré sa
                rozhodli zavolať odborníka.'
-               width={textWidth}
                gradient={gradient}
             />
             <div className='my-4' />
             <ul
                className={`${textWidth}  flex-col self-center gap-6 md:grid md:grid-cols-2 flex justify-self-center`}>
                {pole.map((name) => (
-                  <motion.li className='flex lg:mt-0'>
+                  <motion.li className='lg:mt-0 flex'>
                      <motion.span className='flex items-center justify-center flex-shrink-0 w-6 h-6 text-green-800 bg-green-100 rounded-full'>
                         <svg
                            className='w-4 h-4'
@@ -59,7 +58,7 @@ export const Hero2 = (props: Props) => {
 
          <motion.div
             id='imageWrapper'
-            className='z-10 grid grid-cols-12 grid-rows-2 gap-4 transform md:col-start-1 md:row-start-1'>
+            className='md:col-start-1 md:row-start-1 z-10 grid grid-cols-12 grid-rows-2 gap-4 transform'>
             {ha.map((item, index) => (
                <motion.div
                   initial='offscreen'
@@ -83,7 +82,7 @@ export const Hero2 = (props: Props) => {
             ))}
          </motion.div>
          <SectionDivider />
-      </motion.div>
+      </motion.section>
    );
 };
 

@@ -33,28 +33,27 @@ export const Landing = () => {
    const hero1Image = getImage(data.file);
 
    return (
-      <section className='relative flex flex-col items-center w-full min-h-screen '>
+      <section className=' relative flex flex-col items-center w-full min-h-screen'>
          <motion.div
             id='background'
             initial='hidden'
             animate='visible'
             variants={appear('backOut')}
-            className='absolute w-full h-screen bg-center bg-no-repeat bg-cover aha'>
+            className='aha absolute w-full h-screen bg-center bg-no-repeat bg-cover'>
             <SectionDivider fill='white' />
          </motion.div>
 
          <Nav itemsCount={5} />
-         <div className='my-10 sm:my-24' />
+         <div id='gap' className='sm:my-24 my-10' />
          <motion.div
-            className='z-20 lg:px-20'
+            className='lg:px-20 z-20'
             initial='hidden'
             animate='visible'
             variants={appear('backOut')}>
             {hero1Image && (
                <TextImg
-                  id='landing'
-                  title='Profesionál s 35 ročnými skusenosťami'
-                  text='
+                  headerText='Profesionál s 35 ročnými skusenosťami'
+                  paragraphText='
                      Hľadáte licencovaného mechanika klavírov na juhozápadnom Slovensku?
                      Preferujete spoľahlivosť, odbornosť a ľudský prístup?
                      Zdarma poradenstvo či ohodnotenie.
@@ -84,7 +83,7 @@ export const Landing = () => {
    );
 };
 
-<div className='my-10 sm:my-24' />;
+<div className='sm:my-24 my-10' />;
 
 export const appear = (ease = 'easeOut', delay = 0, duration = 1) => ({
    hidden: {

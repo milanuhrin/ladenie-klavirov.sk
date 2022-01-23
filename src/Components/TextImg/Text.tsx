@@ -2,27 +2,40 @@ import { motion } from 'framer-motion';
 import React from 'react';
 
 export const Text = React.forwardRef((props: Props, ref: any) => {
-   const { text, title, textColor = 'black', gradient } = props;
+   const {
+      paragraphText,
+      paragraphStyle,
+      headerText,
+      headerStyle,
+      textWrapperStyle,
+      gradient,
+   } = props;
    return (
-      <motion.div className='z-10 flex flex-col self-center justify-self-center gap-9 sm:w-[100%]'>
+      <motion.div
+         id='textWrapper'
+         className={` ${textWrapperStyle} z-10 flex flex-col self-center justify-self-center gap-9 sm:w-[100%]`}
+         ref={ref}>
          <motion.h3
             style={{
                background: gradient,
                WebkitBackgroundClip: 'text',
                WebkitTextFillColor: 'transparent',
             }}
-            className='self-center text-4xl font-extrabold '>
-            {title}
+            className={`${headerStyle} self-center text-4xl font-extrabold`}>
+            {headerText}
          </motion.h3>
 
-         <motion.p className={`${textColor}  text-xl  `}>{text}</motion.p>
+         <motion.p className={`${paragraphStyle} black text-xl  `}>
+            {paragraphText}
+         </motion.p>
       </motion.div>
    );
 });
 interface Props {
-   text: string | React.ReactElement;
-   title: string;
-   textColor?: string;
+   paragraphText: string | React.ReactElement;
+   paragraphStyle?: string;
+   headerText: string | React.ReactElement;
+   headerStyle?: string;
+   textWrapperStyle?: string;
    gradient?: string;
-   width?: string;
 }

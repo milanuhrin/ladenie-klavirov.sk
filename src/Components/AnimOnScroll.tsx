@@ -28,15 +28,14 @@ export const AnimOnScroll = ({
       div: motion.div,
       img: motion.img,
    };
-   const Container = components[el];
+   const AnimOnScroll = components[el];
    return (
-      <Container
-         className='card-container'
+      <AnimOnScroll
          initial='offscreen'
          whileInView='onscreen'
          viewport={{ margin: `${margin}`, once: true }}
          variants={cardVariants}>
          {children}
-      </Container>
+      </AnimOnScroll>
    );
 };

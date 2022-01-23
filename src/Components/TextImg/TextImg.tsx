@@ -5,15 +5,17 @@ import { Text as MotionText } from './Text';
 
 export const TextImg = (props: Props) => {
    const {
-      text,
-      title,
+      containerStyle,
+      paragraphText,
+      paragraphStyle,
+      headerText,
+      headerStyle,
+      textWrapperStyle,
       img,
       alt,
       reversed,
-      borderRadius = 'rounded-2xl',
-      imgMaxWidth = 'max-w-[20rem]',
-      textColor,
-      id,
+      imgStyleGatsbyImgTag,
+      imgStyle = 'max-w-[20rem]',
       loading = 'lazy',
       gradient,
    } = props;
@@ -31,41 +33,39 @@ export const TextImg = (props: Props) => {
 
    return (
       <motion.section
-         className='z-20 grid px-8 pb-10 gap-14 sm:grid-cols-2 sm:grid-rows-1 sm:justify-center sm:gap-24 sm:flex-row sm:items-center'
-         id={id}>
-         {/* Firtst element */}
+         id='Container'
+         className={`${containerStyle} gap-14 sm:grid-cols-2 sm:grid-rows-1 sm:justify-center sm:gap-24 sm:flex-row sm:items-center z-20 grid px-8 pb-10`}>
+         {/* Firtst element Text */}
          <Text
             initial='hidden'
             animate='visible'
-            text={text}
-            title={title}
-            textColor={textColor}
+            paragraphText={paragraphText}
+            paragraphStyle={paragraphStyle}
+            headerText={headerText}
+            headerStyle={headerStyle}
+            textWrapperStyle={textWrapperStyle}
             gradient={gradient}
          />
 
-         {/* Second element */}
+         {/* Second element Img */}
          {typeof img === 'string' ? (
             <motion.img
-               className={`${imgMaxWidth}  flex object-cover object-center justify-self-center`}
+               className={`${imgStyle}  flex object-cover object-center justify-self-center`}
                style={{ ...dynamicStyle }}
                src={img}
                whileTap={{ scale: 0.55 }}
             />
          ) : (
             dynamicStyle && (
-               <motion.div
-                  whileTap={{ scale: 0.95 }}
-                  className='justify-self-center'>
-                  <GatsbyImage
-                     style={{ ...dynamicStyle }}
-                     imgStyle={{}}
-                     className={`${imgMaxWidth} ${borderRadius} shadow-2xl  flex object-cover object-center `}
-                     imgClassName={`shadow-2xl  ${borderRadius} `}
-                     image={img}
-                     alt={alt}
-                     loading={loading}
-                  />
-               </motion.div>
+               <GatsbyImage
+                  style={{ ...dynamicStyle }}
+                  imgStyle={{}}
+                  className={`${imgStyle} justify-self-center rounded-2xl shadow-2xl  flex object-cover object-center `}
+                  imgClassName={`${imgStyleGatsbyImgTag} shadow-2xl`}
+                  image={img}
+                  alt={alt}
+                  loading={loading}
+               />
             )
          )}
       </motion.section>
@@ -73,15 +73,20 @@ export const TextImg = (props: Props) => {
 };
 
 interface Props {
-   text: string | React.ReactElement;
-   title: string;
-   img: IGatsbyImageData | string;
-   alt: string;
+   // Native
+   containerStyle?: string;
    reversed?: boolean;
-   borderRadius?: string;
-   imgMaxWidth?: string;
-   textColor?: string;
-   id?: string;
    loading?: 'lazy' | 'eager';
    gradient?: string;
+   // Text Comp
+   paragraphText: string | React.ReactElement;
+   paragraphStyle?: string;
+   headerText: string | React.ReactElement;
+   headerStyle?: string;
+   textWrapperStyle?: string;
+   // Image Comp
+   img: IGatsbyImageData | string;
+   alt: string;
+   imgStyle?: string;
+   imgStyleGatsbyImgTag?: string;
 }
