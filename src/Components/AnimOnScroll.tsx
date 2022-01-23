@@ -32,6 +32,7 @@ export const AnimOnScroll = ({
    const AnimOnScroll = components[el];
    return (
       <AnimOnScroll
+         className='w-full'
          initial='offscreen'
          whileInView='onscreen'
          viewport={{ margin: `${margin}`, once: true }}

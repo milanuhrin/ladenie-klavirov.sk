@@ -42,7 +42,7 @@ export const TextImg = (props: Props) => {
    return (
       <motion.section
          id='Container'
-         className={`${containerStyle}  gap-14 sm:grid-cols-2 sm:grid-rows-1 sm:justify-center sm:gap-24 sm:flex-row sm:items-center z-20 grid px-8 pb-10`}>
+         className={`${containerStyle} w-full gap-14 sm:grid-cols-2 sm:grid-rows-1 sm:justify-center sm:gap-24 sm:flex-row sm:items-center z-20 grid px-8 pb-10`}>
          {/* Firtst element Text */}
          <Text
             initial='hidden'

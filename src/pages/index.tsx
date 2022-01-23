@@ -127,7 +127,7 @@ const IndexPage = () => {
                            img={hero1insidePiano}
                            alt='Vnútro klavíru'
                            imgStyle='max-w-[25rem]'
-                           gradient={`180deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]}`}
+                           gradient={`360deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]}`}
                         />
                      </AnimOnScroll>
                   )}
