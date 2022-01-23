@@ -56,26 +56,28 @@ export const TextImg = (props: Props) => {
          />
 
          {/* Second element Img */}
-         {typeof img === 'string' ? (
-            <motion.img
-               className={`${imgStyle}  max-w-[30rem] flex object-cover object-center justify-self-center`}
-               style={{ ...dynamicStyle }}
-               src={img}
-               whileTap={{ scale: 0.55 }}
-            />
-         ) : (
-            dynamicStyle && (
-               <GatsbyImage
+         {img &&
+            alt &&
+            (typeof img === 'string' ? (
+               <motion.img
+                  className={`${imgStyle}  max-w-[30rem] flex object-cover object-center justify-self-center`}
                   style={{ ...dynamicStyle }}
-                  imgStyle={{}}
-                  className={`${imgStyle} max-w-[30rem] justify-self-center  rounded-2xl shadow-2xl  flex object-cover object-center `}
-                  imgClassName={`${imgStyleGatsbyImgTag} shadow-2xl`}
-                  image={img}
-                  alt={alt}
-                  loading={loading}
+                  src={img}
+                  whileTap={{ scale: 0.55 }}
                />
-            )
-         )}
+            ) : (
+               dynamicStyle && (
+                  <GatsbyImage
+                     style={{ ...dynamicStyle }}
+                     imgStyle={{}}
+                     className={`${imgStyle} max-w-[30rem] justify-self-center  rounded-2xl shadow-2xl  flex object-cover object-center `}
+                     imgClassName={`${imgStyleGatsbyImgTag} shadow-2xl`}
+                     image={img}
+                     alt={alt}
+                     loading={loading}
+                  />
+               )
+            ))}
       </motion.section>
    );
 };
@@ -87,14 +89,14 @@ interface Props {
    loading?: 'lazy' | 'eager';
    gradient?: string;
    // Text Comp
-   headerText: string | React.ReactElement;
+   headerText?: string | React.ReactElement;
    headerStyle?: string;
-   paragraphText: string | React.ReactElement;
+   paragraphText?: string | React.ReactElement;
    paragraphStyle?: string;
    textWrapperStyle?: string;
    // Image Comp
-   img: IGatsbyImageData | string;
-   alt: string;
+   img?: IGatsbyImageData | string;
+   alt?: string;
    imgStyle?: string;
    imgStyleGatsbyImgTag?: string;
 }
