@@ -63,7 +63,6 @@ export const Landing = () => {
                   alt='Milan Uhrin, ladič klavírov'
                   loading='eager'
                   gradient={`360deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]}`}
-                  // gradient={`-webkit-linear-gradient(360deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]})`}
                />
             )}
          </motion.div>

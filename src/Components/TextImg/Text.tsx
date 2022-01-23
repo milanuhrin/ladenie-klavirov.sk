@@ -10,7 +10,6 @@ export const Text = React.forwardRef((props: Props, ref: any) => {
       textWrapperStyle,
       gradient,
    } = props;
-   console.log(gradient);
 
    return (
       <motion.div
@@ -18,18 +17,16 @@ export const Text = React.forwardRef((props: Props, ref: any) => {
          className={` ${textWrapperStyle} text-center w-full z-10 flex flex-col self-center justify-self-center gap-9 sm:w-[100%]`}
          ref={ref}>
          {headerText && (
-            <motion.h3
-               style={{
-                  background: `-webkit-linear-gradient( ${gradient} )`,
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-               }}
-               className={`${headerStyle}  text-center text-4xl font-extrabold`}>
-               {headerText}
+            <motion.h3 className={`${headerStyle} `}>
+               <span
+                  className={` text-center bg-gradient-to-r from-snakeGr1 via-snakeGr2 to-snakeGr3 text-4xl font-extrabold text-transparent bg-clip-text `}>
+                  {headerText}
+               </span>
             </motion.h3>
          )}
          {paragraphText && (
-            <motion.p className={`${paragraphStyle} black text-xl  `}>
+            <motion.p
+               className={`${paragraphStyle} black inline bg-slate-200 text-xl  `}>
                {paragraphText}
             </motion.p>
          )}

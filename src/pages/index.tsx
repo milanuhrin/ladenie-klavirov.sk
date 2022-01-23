@@ -66,6 +66,7 @@ const IndexPage = () => {
       <>
          <SEO />
          <Landing />
+
          {/* <div className='top-20 left-20 absolute w-10 h-10'></div>
             <motion.svg
                id='sw-js-blob-svg'
@@ -108,7 +109,6 @@ const IndexPage = () => {
             )}
             <Divider />
 
-            {/* <motion.section className='bg-gradient-to-b from-white via-indigo-50 to-white md:gap-36 lg:px-20 relative z-10 flex flex-col items-center gap-10 pt-16'> */}
             {hero1freeTime && (
                <AnimOnScroll>
                   <TextImg
@@ -136,7 +136,6 @@ const IndexPage = () => {
                   />
                </AnimOnScroll>
             )}
-            {/* </motion.section> */}
             <Divider />
             <Footer />
          </motion.main>
