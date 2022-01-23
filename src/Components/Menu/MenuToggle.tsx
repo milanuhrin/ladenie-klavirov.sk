@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import { COLORS } from '../../Utilities/colors';
+import { appear } from '../Landing';
 const Path = (props: any) => (
    <motion.path
       fill='transparent'
@@ -12,7 +13,10 @@ const Path = (props: any) => (
 );
 
 export const MenuToggle = ({ toggle }: any) => (
-   <button onClick={toggle} className='w-[35px] h-[35px] z-50'>
+   <motion.button
+      variants={appear()}
+      onClick={toggle}
+      className='w-[35px] h-[35px]  z-50'>
       <svg width='100%' viewBox='0 0 23 19'>
          <Path
             variants={{
@@ -35,5 +39,5 @@ export const MenuToggle = ({ toggle }: any) => (
             }}
          />
       </svg>
-   </button>
+   </motion.button>
 );

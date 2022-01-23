@@ -7,6 +7,7 @@ import { MenuToggle } from '../Components/Menu/MenuToggle';
 import { MenuItem } from './MenuItem';
 import React from 'react';
 import { COLORS } from '../Utilities/colors';
+import { appear } from './Landing';
 const sidebar = {
    open: (height = 1000) => ({
       clipPath: `circle(${height * 2 + 200}px at 254px 35px)`,
@@ -107,9 +108,10 @@ export const Nav = (props: Props) => {
             </motion.ul>
 
             <motion.div
-               className='sm:hidden flex items-center justify-between w-full px-6 py-3'
+               className='sm:hidden flex  justify-between  items-center w-full px-6 py-3'
                initial={false}
-               animate={isOpen ? 'open' : 'closed'}>
+               animate={isOpen ? 'open' : 'closed'}
+               variants={appear()}>
                <motion.div
                   className={`absolute bg-[${COLORS.almostBlack}] z-[20] w-[300px] h-[1000px] top-0 bottom-0 right-0`}
                   variants={sidebar}
@@ -120,9 +122,10 @@ export const Nav = (props: Props) => {
                   className='relative w-20'
                   placeholder='none'
                />
+
                <MenuToggle toggle={() => toggleOpen()} />
 
-               <motion.ul className='z-50' variants={variants}>
+               <motion.ul className='z-50 absolute' variants={variants}>
                   {itemIds.map((i) => (
                      <MenuItem i={i} key={i} />
                   ))}

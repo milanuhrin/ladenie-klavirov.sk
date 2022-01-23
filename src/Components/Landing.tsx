@@ -1,4 +1,5 @@
 import React from 'react';
+import { Divider } from '../Components/Divider';
 import { motion } from 'framer-motion';
 import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
@@ -46,9 +47,7 @@ export const Landing = () => {
          </motion.div>
 
          <Nav itemsCount={5} />
-         <div id='gap' className='bg-transparent  w-full sm:h-[12rem] h-[5rem]'>
-            asdas
-         </div>
+         <Divider />
          <motion.div
             className=' z-20'
             initial='hidden'
