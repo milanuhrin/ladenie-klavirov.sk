@@ -15,7 +15,7 @@ export const Text = React.forwardRef((props: Props, ref: any) => {
    return (
       <motion.div
          id='textWrapper'
-         className={` ${textWrapperStyle} w-full z-10 flex flex-col self-center justify-self-center gap-9 sm:w-[100%]`}
+         className={` ${textWrapperStyle} text-center w-full z-10 flex flex-col self-center justify-self-center gap-9 sm:w-[100%]`}
          ref={ref}>
          {headerText && (
             <motion.h3
@@ -24,7 +24,7 @@ export const Text = React.forwardRef((props: Props, ref: any) => {
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                }}
-               className={`${headerStyle} self-center text-4xl font-extrabold`}>
+               className={`${headerStyle}  text-center text-4xl font-extrabold`}>
                {headerText}
             </motion.h3>
          )}

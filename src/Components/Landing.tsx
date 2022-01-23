@@ -46,9 +46,11 @@ export const Landing = () => {
          </motion.div>
 
          <Nav itemsCount={5} />
-         <div id='gap' className='sm:my-24 my-10' />
+         <div id='gap' className='bg-transparent  w-full sm:h-[12rem] h-[5rem]'>
+            asdas
+         </div>
          <motion.div
-            className='lg:px-20 z-20'
+            className=' z-20'
             initial='hidden'
             animate='visible'
             variants={appear('backOut')}>

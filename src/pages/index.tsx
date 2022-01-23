@@ -1,5 +1,6 @@
 import * as React from 'react';
 // import 'tailwindcss/dist/base.min.css';
+import { Divider } from '../Components/Divider';
 import '../../global.css';
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
 import {
@@ -64,9 +65,8 @@ const IndexPage = () => {
    return (
       <>
          <SEO />
-         <main>
-            <Landing />
-            <div className='top-20 left-20 absolute w-10 h-10'></div>
+         <Landing />
+         {/* <div className='top-20 left-20 absolute w-10 h-10'></div>
             <motion.svg
                id='sw-js-blob-svg'
                style={{ y: y }}
@@ -91,54 +91,55 @@ const IndexPage = () => {
                      fill='url(#sw-gradient)'
                      d='M24.3,-29.4C31.3,-23,36.8,-15.2,35.8,-8.2C34.8,-1.1,27.4,5.2,23.1,14.1C18.8,22.9,17.7,34.3,12.6,37.3C7.5,40.3,-1.6,34.9,-8,29.4C-14.5,23.9,-18.3,18.3,-21.3,12.5C-24.4,6.8,-26.8,0.8,-26.7,-5.5C-26.5,-11.9,-23.9,-18.6,-19,-25.3C-14.1,-32.1,-7.1,-38.8,0.8,-39.8C8.6,-40.7,17.3,-35.8,24.3,-29.4Z'></path>
                </g>
-            </motion.svg>
+            </motion.svg> */}
 
-            <div id='mainContent' className='flex flex-col'>
-               {hero2img1 && hero2img2 && hero2img3 && hero2img4 && (
-                  <Hero2
-                     img1={hero2img1}
-                     img2={hero2img2}
-                     img3={hero2img3}
-                     img4={hero2img4}
-                     textWidth='70%'
+         <motion.main id='mainContent' className='flex flex-col'>
+            <Divider />
+
+            {hero2img1 && hero2img2 && hero2img3 && hero2img4 && (
+               <Hero2
+                  img1={hero2img1}
+                  img2={hero2img2}
+                  img3={hero2img3}
+                  img4={hero2img4}
+                  textWidth='70%'
+                  gradient={`360deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]}`}
+               />
+            )}
+            <Divider />
+
+            {/* <motion.section className='bg-gradient-to-b from-white via-indigo-50 to-white md:gap-36 lg:px-20 relative z-10 flex flex-col items-center gap-10 pt-16'> */}
+            {hero1freeTime && (
+               <AnimOnScroll>
+                  <TextImg
+                     headerText='Pár slov o mne'
+                     paragraphText='Mojim najväčším hobby sa za posledných 5 rokov stalo fotenie. Podarilo sa mi dosiahnuť prvenstvá či už v slovenských, ale aj medzinárodných súťažiach. Najlepšie fotky sú prezentované na dočasných voľne dostupných výstavách či múzeách.'
+                     img={hero1freeTime}
+                     alt='Vo voľnom čase'
+                     imgStyle='max-w-[25rem]'
                      gradient={`360deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]}`}
                   />
-               )}
+               </AnimOnScroll>
+            )}
+            <Divider />
 
-               <motion.section className='bg-gradient-to-b from-white via-indigo-50 to-white md:gap-36 lg:px-20 relative z-10 flex flex-col items-center gap-10 pt-16'>
-                  {hero1freeTime && (
-                     <AnimOnScroll>
-                        <TextImg
-                           headerText='Pár slov o mne'
-                           paragraphText='Mojim najväčším hobby sa za posledných 5 rokov stalo fotenie. Podarilo sa mi dosiahnuť prvenstvá či už v slovenských, ale aj medzinárodných súťažiach. Najlepšie fotky sú prezentované na dočasných voľne dostupných výstavách či múzeách.'
-                           img={hero1freeTime}
-                           alt='Vo voľnom čase'
-                           imgStyle='max-w-[25rem]'
-                           gradient={`360deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]}`}
-                        />
-                     </AnimOnScroll>
-                  )}
-                  {hero1insidePiano && (
-                     <AnimOnScroll>
-                        <TextImg
-                           reversed
-                           headerText='Vzdelanie'
-                           paragraphText='Vyštudoval som odbornú školu SUPŠ HNN v Hradci Králové.'
-                           img={hero1insidePiano}
-                           alt='Vnútro klavíru'
-                           imgStyle='max-w-[25rem]'
-                           gradient={`360deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]}`}
-                        />
-                     </AnimOnScroll>
-                  )}
-               </motion.section>
-               <div
-                  id='divider'
-                  className='sm:pb-[3rem] md:pb-[9rem] pb-[2.58re]'
-               />
-               <Footer />
-            </div>
-         </main>
+            {hero1insidePiano && (
+               <AnimOnScroll>
+                  <TextImg
+                     reversed
+                     headerText='Vzdelanie'
+                     paragraphText='Vyštudoval som odbornú školu SUPŠ HNN v Hradci Králové.'
+                     img={hero1insidePiano}
+                     alt='Vnútro klavíru'
+                     imgStyle='max-w-[25rem]'
+                     gradient={`360deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]}`}
+                  />
+               </AnimOnScroll>
+            )}
+            {/* </motion.section> */}
+            <Divider />
+            <Footer />
+         </motion.main>
       </>
    );
 };
