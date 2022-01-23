@@ -12,6 +12,7 @@ import {
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import SEO from '../Components/seo.js';
+import { snakeGradient } from '../Utilities/colors';
 
 const IndexPage = () => {
    const { scrollY } = useViewportScroll();
@@ -65,6 +66,7 @@ const IndexPage = () => {
          <SEO />
          <main>
             <Landing />
+            <div className='top-20 left-20 absolute w-10 h-10'></div>
             <motion.svg
                id='sw-js-blob-svg'
                style={{ y: y }}
@@ -75,12 +77,12 @@ const IndexPage = () => {
                   <linearGradient id='sw-gradient' x1='0' x2='1' y1='1' y2='0'>
                      <stop
                         id='stop1'
-                        stop-color='rgba(201, 214, 255, 1)'
-                        offset='0%'></stop>{' '}
+                        stopColor='rgba(201, 214, 255, 1)'
+                        offset='0%'></stop>
                      <stop
                         id='stop2'
-                        stop-color='rgba(226, 226, 226, 1)'
-                        offset='100%'></stop>{' '}
+                        stopColor='rgba(226, 226, 226, 1)'
+                        offset='100%'></stop>
                   </linearGradient>
                </defs>
                <g>
@@ -99,7 +101,7 @@ const IndexPage = () => {
                      img3={hero2img3}
                      img4={hero2img4}
                      textWidth='70%'
-                     gradient='-webkit-linear-gradient(360deg, #0F2027, #203A43, #2C5364)'
+                     gradient={`360deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]}`}
                   />
                )}
 
@@ -112,7 +114,7 @@ const IndexPage = () => {
                            img={hero1freeTime}
                            alt='Vo voľnom čase'
                            imgStyle='max-w-[25rem]'
-                           gradient='-webkit-linear-gradient(360deg, #0F2027, #203A43, #2C5364)'
+                           gradient={`360deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]}`}
                         />
                      </AnimOnScroll>
                   )}
@@ -125,7 +127,7 @@ const IndexPage = () => {
                            img={hero1insidePiano}
                            alt='Vnútro klavíru'
                            imgStyle='max-w-[25rem]'
-                           gradient='-webkit-linear-gradient(180deg, #0F2027, #203A43, #2C5364)'
+                           gradient={`180deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]}`}
                         />
                      </AnimOnScroll>
                   )}

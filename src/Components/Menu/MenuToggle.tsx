@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-
+import { COLORS } from '../../Utilities/colors';
 const Path = (props: any) => (
    <motion.path
       fill='transparent'
       strokeWidth='3'
-      stroke='#7d7b7c'
+      stroke={COLORS.darkSilver}
       strokeLinecap='round'
       {...props}
    />

@@ -27,9 +27,17 @@ export const TextImg = (props: Props) => {
       width = innerWidth;
    }
    let dynamicStyle;
-   if (width)
+   console.log('ww', width);
+   console.log('res', reversed);
+   if (width) {
+      console.log('s', dynamicStyle);
+
       dynamicStyle =
          width > 640 && reversed ? { gridColumn: '1', gridRow: '1' } : {};
+   }
+
+   // width > 640 && reversed ? { gridColumn: '1', gridRow: '1' } : {};
+   // col-span-1 row-span-2
 
    return (
       <motion.section

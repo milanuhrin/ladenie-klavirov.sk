@@ -12,9 +12,7 @@ export const Footer = (props: Props) => {
    return (
       <motion.footer
          id='contact'
-         className='flex flex-col items-center justify-center w-full
-         py-10 bg-gradient-to-b from-[#f8f8f8] to-[#f8f8f8ef]
-         gap-7 md:gap-6 sm:py-12'
+         className='bg-silver gap-7 md:gap-6 sm:py-12 flex flex-col items-center justify-center w-full py-10'
          initial='offscreen'
          whileInView='onscreen'
          viewport={{ margin: `60px`, once: true }}

@@ -6,11 +6,11 @@ import { useOnClickOutside } from 'usehooks-ts';
 import { MenuToggle } from '../Components/Menu/MenuToggle';
 import { MenuItem } from './MenuItem';
 import React from 'react';
-
+import { COLORS } from '../Utilities/colors';
 const sidebar = {
    open: (height = 1000) => ({
       clipPath: `circle(${height * 2 + 200}px at 254px 35px)`,
-      background: '#1c1c1c',
+      // background: COLORS.almostBlack,
       transition: {
          type: 'spring',
          stiffness: 20,
@@ -19,7 +19,7 @@ const sidebar = {
    }),
    closed: {
       clipPath: 'circle(1px at 254px 35px)',
-      background: '#1c1c1c',
+      // background: COLORS.almostBlack,
       transition: {
          delay: 0.5,
          type: 'spring',
@@ -54,6 +54,7 @@ const variants = {
 
 const itemIds = [0, 1, 2, 3, 4];
 export const Nav = (props: Props) => {
+   console.log(COLORS.almostBlack);
    const { logo, itemsCount, items } = props;
 
    const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -73,17 +74,17 @@ export const Nav = (props: Props) => {
             animate={'show'}
             variants={container}
             className='sm:space-x-8 sm:flex z-20 items-center hidden'>
-            <motion.li className='text-[#ffffffea]' variants={item}>
+            <motion.li className='text-silver' variants={item}>
                <Link to='#experience' aria-label='Skúsenosti'>
                   Skúsenosti
                </Link>
             </motion.li>
-            <motion.li className='text-[#ffffffea]' variants={item}>
+            <motion.li className='text-silver' variants={item}>
                <Link to='#aboutMe' aria-label='O mne'>
                   O mne
                </Link>
             </motion.li>
-            <motion.li className='text-[#ffffffea]' variants={item}>
+            <motion.li className='text-silver' variants={item}>
                <Link aria-label='logo' to='/'>
                   <StaticImage
                      src='../images/logo-white.png'
@@ -93,12 +94,12 @@ export const Nav = (props: Props) => {
                   />
                </Link>
             </motion.li>
-            <motion.li className='text-[#ffffffea]' variants={item}>
+            <motion.li className='text-silver' variants={item}>
                <Link to='/contact' aria-label='Kontakt'>
                   Kontakt
                </Link>
             </motion.li>
-            <motion.li className='text-[#ffffffea]' variants={item}>
+            <motion.li className='text-silver' variants={item}>
                <Link aria-label='Vzdelanie' to='#education'>
                   Vzdelanie
                </Link>
@@ -110,7 +111,7 @@ export const Nav = (props: Props) => {
             initial={false}
             animate={isOpen ? 'open' : 'closed'}>
             <motion.div
-               className='absolute w-[300px] h-[1000px] top-0 bottom-0 right-0 '
+               className={`absolute bg-[${COLORS.almostBlack}] z-[20] w-[300px] h-[1000px] top-0 bottom-0 right-0`}
                variants={sidebar}
             />
             <StaticImage
@@ -121,7 +122,7 @@ export const Nav = (props: Props) => {
             />
             <MenuToggle toggle={() => toggleOpen()} />
 
-            <motion.ul variants={variants}>
+            <motion.ul className='z-50' variants={variants}>
                {itemIds.map((i) => (
                   <MenuItem i={i} key={i} />
                ))}

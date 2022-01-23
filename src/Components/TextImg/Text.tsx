@@ -10,6 +10,8 @@ export const Text = React.forwardRef((props: Props, ref: any) => {
       textWrapperStyle,
       gradient,
    } = props;
+   console.log(gradient);
+
    return (
       <motion.div
          id='textWrapper'
@@ -17,7 +19,7 @@ export const Text = React.forwardRef((props: Props, ref: any) => {
          ref={ref}>
          <motion.h3
             style={{
-               background: gradient,
+               background: `-webkit-linear-gradient( ${gradient} )`,
                WebkitBackgroundClip: 'text',
                WebkitTextFillColor: 'transparent',
             }}

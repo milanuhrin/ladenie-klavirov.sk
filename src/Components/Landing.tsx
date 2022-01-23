@@ -5,6 +5,7 @@ import { getImage } from 'gatsby-plugin-image';
 import { useEffect, useState } from 'react';
 import { Nav, SectionDivider } from './export';
 import { TextImg } from './TextImg/TextImg';
+import { snakeGradient } from '../Utilities/colors';
 
 export const Landing = () => {
    const [header, setHeader] = useState('orange');
@@ -73,7 +74,8 @@ export const Landing = () => {
                   imgStyle='!max-w-[25rem]'
                   alt='Milan Uhrin, ladič klavírov'
                   loading='eager'
-                  gradient='-webkit-linear-gradient(360deg, #0F2027, #203A43, #2C5364)'
+                  gradient={`360deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]}`}
+                  // gradient={`-webkit-linear-gradient(360deg, ${snakeGradient[1]}, ${snakeGradient[2]},${snakeGradient[3]})`}
                />
             )}
          </motion.div>
