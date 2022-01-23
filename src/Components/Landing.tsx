@@ -57,21 +57,7 @@ export const Landing = () => {
             {hero1Image && (
                <TextImg
                   headerText='Profesionál s 35 ročnými skusenosťami'
-                  paragraphText='
-                     Hľadáte licencovaného mechanika klavírov na juhozápadnom Slovensku?
-                     Preferujete spoľahlivosť, odbornosť a ľudský prístup?
-                     Zdarma poradenstvo či ohodnotenie.
-                     Na spokojných zákazníkoch záleží!
-                     Som tu pre Vás či už potrebujete naladiť, predať, kúpiť, či ohodnotiť Váš klavír, môžete sa na mňa obrátiť.
-                     Som pedant, preto ku každému klavíru pristupujem tak ako ku svojmu vlastnému.
-
-                     Koľko stojí ladenie klavíra?
-                     Samozrejme, že Vám cenu nedokážem povedať bez toho, aby som videl, v akom stave je klavír.
-                     Preto, keď budem mať najbližšie cestu okolo Vášho regiónu, prídem si ho pozrieť a poviem Vám prípadnú cenu ladenia.
-
-                     Nezvyknem mať pri sebe veľkú hotovosť, koľko maximálne si mám pripraviť?
-                     Cena nebude presahovať 220€ ani v prípade, že by si klavír vyžadoval generálku, 
-                     kedy si musím zobrať mechaniku k sebe domov, aby som ju opravil.'
+                  paragraphText='Či už potrebujete naladiť, opraviť, ohodnotiť alebo pomôcť predať či kúpiť klavír, môžete sa na obrátiť mňa. Klavírom a hudobným nástrojom sa venujem prakticky celý život.'
                   img={hero1Image}
                   imgStyle='!max-w-[25rem]'
                   alt='Milan Uhrin, ladič klavírov'

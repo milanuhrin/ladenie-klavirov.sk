@@ -128,7 +128,7 @@ const IndexPage = () => {
                   <TextImg
                      reversed
                      headerText='Vzdelanie'
-                     paragraphText='Vyštudoval som odbornú školu SUPŠ HNN v Hradci Králové.'
+                     paragraphText='Vyštudoval som odbornú školu v Hradci Králové, Česká rep. Stal som sa tam mechanikom hudobných nástrojov, naučil sa opraviť klavír správne tak, aby fungoval najbližšie roky.'
                      img={hero1insidePiano}
                      alt='Vnútro klavíru'
                      imgStyle='max-w-[25rem]'
