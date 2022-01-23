@@ -19,14 +19,13 @@ export const Text = React.forwardRef((props: Props, ref: any) => {
          {headerText && (
             <motion.h3 className={`${headerStyle} `}>
                <span
-                  className={` text-center bg-gradient-to-r from-snakeGr1 via-snakeGr2 to-snakeGr3 text-4xl font-extrabold text-transparent bg-clip-text `}>
+                  className={` text-center bg-gradient-to-r from-snakeGr1 to-snakeGr2 text-4xl font-extrabold text-transparent bg-clip-text `}>
                   {headerText}
                </span>
             </motion.h3>
          )}
          {paragraphText && (
-            <motion.p
-               className={`${paragraphStyle} black inline bg-slate-200 text-xl  `}>
+            <motion.p className={`${paragraphStyle} black  text-xl  `}>
                {paragraphText}
             </motion.p>
          )}

@@ -22,7 +22,9 @@ export const Footer = (props: Props) => {
                y: 150,
             },
          }}>
-         <h1 className='text-3xl font-extrabold'>Kontakt</h1>
+         <h1 className='text-3xl font-extrabold bg-gradient-to-r from-snakeGr1 to-snakeGr2 text-transparent bg-clip-text'>
+            Kontakt
+         </h1>
 
          <div className=' flex items-center justify-center max-w-xs'>
             <a
