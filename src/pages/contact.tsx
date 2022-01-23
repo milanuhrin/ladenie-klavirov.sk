@@ -21,7 +21,7 @@ const Contact = () => {
          <Nav logo={logo} />
          <motion.main>
             {/* <TextImgWrapper> */}
-            <TextImg
+            {/* <TextImg
                title='Neváhajte a zavolajte mi pre viac informácii'
                img={PianoIllustration}
                alt='animovaný obrázok s dvomi ľudmi pri klavíri'
@@ -31,7 +31,7 @@ const Contact = () => {
                      Telefónne číslo: <b>0905 405 802</b>
                   </>
                }
-            />
+            /> */}
             {/* </TextImgWrapper> */}
          </motion.main>
          <Footer />

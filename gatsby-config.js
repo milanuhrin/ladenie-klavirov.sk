@@ -14,7 +14,6 @@ module.exports = {
             bucketName: 'tatiho-stranka',
          },
       },
-      { resolve: `gatsby-plugin-emotion` },
       {
          resolve: 'gatsby-plugin-google-analytics',
          options: {

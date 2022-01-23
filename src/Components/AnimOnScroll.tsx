@@ -1,4 +1,5 @@
 import { motion, Variants } from 'framer-motion';
+import React from 'react';
 
 export const cardVariants: Variants = {
    offscreen: {

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { Text as MotionText } from './TextImg/Text';
 import { appear } from './Landing';
+import React from 'react';
 
 const Text = motion(MotionText);
 
@@ -58,7 +59,7 @@ export const Hero2 = (props: Props) => {
 
          <motion.div
             id='imageWrapper'
-            className='md:col-start-1 md:row-start-1 z-10 grid grid-cols-12 grid-rows-2 gap-4 transform'>
+            className='md:col-start-1 md:row-start-1 z-10 grid grid-cols-12 grid-rows-2 gap-4'>
             {ha.map((item, index) => (
                <motion.div
                   initial='offscreen'

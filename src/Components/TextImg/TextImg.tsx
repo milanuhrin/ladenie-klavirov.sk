@@ -6,16 +6,16 @@ import { Text as MotionText } from './Text';
 export const TextImg = (props: Props) => {
    const {
       containerStyle,
-      paragraphText,
-      paragraphStyle,
       headerText,
       headerStyle,
+      paragraphText,
+      paragraphStyle,
       textWrapperStyle,
       img,
       alt,
       reversed,
       imgStyleGatsbyImgTag,
-      imgStyle = 'max-w-[20rem]',
+      imgStyle,
       loading = 'lazy',
       gradient,
    } = props;
@@ -50,7 +50,7 @@ export const TextImg = (props: Props) => {
          {/* Second element Img */}
          {typeof img === 'string' ? (
             <motion.img
-               className={`${imgStyle}  flex object-cover object-center justify-self-center`}
+               className={`${imgStyle}  max-w-[25rem] flex object-cover object-center justify-self-center`}
                style={{ ...dynamicStyle }}
                src={img}
                whileTap={{ scale: 0.55 }}
@@ -60,7 +60,7 @@ export const TextImg = (props: Props) => {
                <GatsbyImage
                   style={{ ...dynamicStyle }}
                   imgStyle={{}}
-                  className={`${imgStyle} justify-self-center rounded-2xl shadow-2xl  flex object-cover object-center `}
+                  className={`${imgStyle} max-w-[30rem] justify-self-center rounded-2xl shadow-2xl  flex object-cover object-center `}
                   imgClassName={`${imgStyleGatsbyImgTag} shadow-2xl`}
                   image={img}
                   alt={alt}
@@ -79,10 +79,10 @@ interface Props {
    loading?: 'lazy' | 'eager';
    gradient?: string;
    // Text Comp
-   paragraphText: string | React.ReactElement;
-   paragraphStyle?: string;
    headerText: string | React.ReactElement;
    headerStyle?: string;
+   paragraphText: string | React.ReactElement;
+   paragraphStyle?: string;
    textWrapperStyle?: string;
    // Image Comp
    img: IGatsbyImageData | string;

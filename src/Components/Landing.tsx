@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
@@ -39,7 +40,7 @@ export const Landing = () => {
             initial='hidden'
             animate='visible'
             variants={appear('backOut')}
-            className='aha absolute w-full h-screen bg-center bg-no-repeat bg-cover'>
+            className='landingBackground absolute w-full h-screen bg-center bg-no-repeat bg-cover'>
             <SectionDivider fill='white' />
          </motion.div>
 
@@ -69,6 +70,7 @@ export const Landing = () => {
                      Cena nebude presahovať 220€ ani v prípade, že by si klavír vyžadoval generálku, 
                      kedy si musím zobrať mechaniku k sebe domov, aby som ju opravil.'
                   img={hero1Image}
+                  imgStyle='!max-w-[25rem]'
                   alt='Milan Uhrin, ladič klavírov'
                   loading='eager'
                   gradient='-webkit-linear-gradient(360deg, #0F2027, #203A43, #2C5364)'

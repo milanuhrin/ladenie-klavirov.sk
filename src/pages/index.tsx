@@ -1,5 +1,5 @@
 import * as React from 'react';
-import 'tailwindcss/dist/base.min.css';
+// import 'tailwindcss/dist/base.min.css';
 import '../../global.css';
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
 import {
@@ -81,7 +81,7 @@ const IndexPage = () => {
                         id='stop2'
                         stop-color='rgba(226, 226, 226, 1)'
                         offset='100%'></stop>{' '}
-                  </linearGradient>{' '}
+                  </linearGradient>
                </defs>
                <g>
                   <rect x='5' y='5' width='40' height='40' fill='green' />
@@ -91,7 +91,7 @@ const IndexPage = () => {
                </g>
             </motion.svg>
 
-            <div id='ahoj' className='flex flex-col'>
+            <div id='mainContent' className='flex flex-col'>
                {hero2img1 && hero2img2 && hero2img3 && hero2img4 && (
                   <Hero2
                      img1={hero2img1}
@@ -103,7 +103,7 @@ const IndexPage = () => {
                   />
                )}
 
-               <motion.section className='bg-gradient-to-b from-white via-indigo-50 to-white md:gap-20 lg:px-20 relative z-10 flex flex-col items-center gap-10 pt-16'>
+               <motion.section className='bg-gradient-to-b from-white via-indigo-50 to-white md:gap-36 lg:px-20 relative z-10 flex flex-col items-center gap-10 pt-16'>
                   {hero1freeTime && (
                      <AnimOnScroll>
                         <TextImg
@@ -130,7 +130,10 @@ const IndexPage = () => {
                      </AnimOnScroll>
                   )}
                </motion.section>
-               <div id='divider' className='sm:my-12 my-10' />
+               <div
+                  id='divider'
+                  className='sm:pb-[3rem] md:pb-[9rem] pb-[2.58re]'
+               />
                <Footer />
             </div>
          </main>

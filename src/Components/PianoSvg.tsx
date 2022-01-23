@@ -1,7 +1,9 @@
+import React from 'react';
+
 export const PianoSvg = () => {
    return (
       <svg
-         className='flex object-cover object-center rounded justify-self-center w-96 max-h-80'
+         className='justify-self-center w-96 max-h-80 flex object-cover object-center rounded'
          data-name='Layer 1'
          width='1083.87'
          height='826.84'

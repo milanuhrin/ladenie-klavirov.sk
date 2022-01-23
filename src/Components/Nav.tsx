@@ -5,6 +5,7 @@ import { useRef, useState } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 import { MenuToggle } from '../Components/Menu/MenuToggle';
 import { MenuItem } from './MenuItem';
+import React from 'react';
 
 const sidebar = {
    open: (height = 1000) => ({
@@ -71,7 +72,7 @@ export const Nav = (props: Props) => {
             initial={'hidden'}
             animate={'show'}
             variants={container}
-            className='z-20 items-center hidden sm:space-x-8 sm:flex'>
+            className='sm:space-x-8 sm:flex z-20 items-center hidden'>
             <motion.li className='text-[#ffffffea]' variants={item}>
                <Link to='#experience' aria-label='Skúsenosti'>
                   Skúsenosti
@@ -105,7 +106,7 @@ export const Nav = (props: Props) => {
          </motion.ul>
 
          <motion.div
-            className='flex items-center justify-between w-full px-6 py-3 sm:hidden'
+            className='sm:hidden flex items-center justify-between w-full px-6 py-3'
             initial={false}
             animate={isOpen ? 'open' : 'closed'}>
             <motion.div
@@ -130,7 +131,7 @@ export const Nav = (props: Props) => {
             <button
                aria-label='Open Menu'
                title='Open Menu'
-               className='p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50'
+               className='focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50 p-2 -mr-1 transition duration-200 rounded'
                onClick={() => setIsMenuOpen(true)}>
                <svg className='w-5 text-gray-600' viewBox='0 0 24 24'>
                   <path

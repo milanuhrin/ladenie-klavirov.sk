@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const BlobeSvg = ({
    height,
    left,
@@ -38,7 +40,7 @@ export const BlobeSvg = ({
          <polygon
             points='0 100, 50 70, 60 40, 20 0'
             fill='url(#grad1)'
-            className='transform scale-[250%]'
+            className=' scale-[250%]'
          />
       </svg>
    );
