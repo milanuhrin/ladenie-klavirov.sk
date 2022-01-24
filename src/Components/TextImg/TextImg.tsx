@@ -17,6 +17,7 @@ export const TextImg = (props: Props) => {
       imgStyleGatsbyImgTag,
       imgStyle,
       loading = 'lazy',
+      id,
    } = props;
    const Text = motion(MotionText);
 
@@ -33,7 +34,7 @@ export const TextImg = (props: Props) => {
 
    return (
       <motion.section
-         id='Container'
+         id={id}
          className={`${containerStyle} horizontalPadding  w-full gap-14 sm:grid-cols-2 sm:grid-rows-1 sm:justify-center sm:gap-24 sm:flex-row sm:items-center z-20 grid `}>
          {/* Firtst element Text */}
          <Text
@@ -78,6 +79,7 @@ interface Props {
    containerStyle?: string;
    reversed?: boolean;
    loading?: 'lazy' | 'eager';
+   id?: string;
    // Text Comp
    headerText?: string | React.ReactElement;
    headerStyle?: string;

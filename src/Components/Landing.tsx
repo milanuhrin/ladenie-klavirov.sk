@@ -6,7 +6,6 @@ import { getImage } from 'gatsby-plugin-image';
 import { useEffect, useState } from 'react';
 import { Nav, SectionDivider } from './export';
 import { TextImg } from './TextImg/TextImg';
-import { snakeGradient } from '../Utilities/colors';
 
 export const Landing = () => {
    const [header, setHeader] = useState('orange');
@@ -36,20 +35,20 @@ export const Landing = () => {
    const hero1Image = getImage(data.file);
 
    return (
-      <section className=' relative flex flex-col items-center w-full min-h-screen'>
+      <section className='relative flex flex-col items-center w-full min-h-screen '>
          <motion.div
             id='background'
             initial='hidden'
             animate='visible'
             variants={appear('backOut')}
-            className='landingBackground absolute w-full h-screen bg-center bg-no-repeat bg-cover'>
+            className='absolute w-full h-screen bg-center bg-no-repeat bg-cover landingBackground'>
             <SectionDivider fill='white' />
          </motion.div>
 
          <Nav itemsCount={5} />
          <Divider />
          <motion.div
-            className=' z-20'
+            className='z-20 '
             initial='hidden'
             animate='visible'
             variants={appear('backOut')}>
@@ -72,7 +71,7 @@ export const Landing = () => {
    );
 };
 
-<div className='sm:my-24 my-10' />;
+<div className='my-10 sm:my-24' />;
 
 export const appear = (ease = 'easeOut', delay = 0, duration = 1) => ({
    hidden: {

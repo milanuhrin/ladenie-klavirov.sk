@@ -15,11 +15,11 @@ export const Hero2 = (props: Props) => {
 
    return (
       <motion.section
-         id='container'
-         className=' sm:grid bg-gradient-to-b from-white to-silver lg:px-20 sm:grid-cols-2 sm:grid-rows-1 sm:gap-8 sm:items-center sm:px-6 sm:px-8 sm:pt-20 relative flex flex-col max-w-full gap-10 px-8 pb-16'>
+         id='experience'
+         className='relative flex flex-col max-w-full gap-10 px-8 pb-16 sm:grid bg-gradient-to-b from-white to-silver lg:px-20 sm:grid-cols-2 sm:grid-rows-1 sm:gap-8 sm:items-center sm:px-6 sm:pt-20'>
          <motion.div
             id='textWrapper'
-            className='sm:col-start-2rustywind sm:row-start-1 sm:self-center justify-self-center sm:max-w-2xl flex flex-col gap-6 ml-auto'
+            className='flex flex-col gap-6 ml-auto sm:col-start-2rustywind sm:row-start-1 sm:self-center justify-self-center sm:max-w-2xl'
             initial='offscreen'
             whileInView='onscreen'
             viewport={{ margin: '400px', once: true }}
@@ -37,7 +37,7 @@ export const Hero2 = (props: Props) => {
             <ul
                className={`${textWidth}  flex-col self-center gap-6 sm:grid sm:grid-cols-2 flex justify-self-center`}>
                {pole.map((name) => (
-                  <motion.li className='lg:mt-0 flex' key={uuidv4()}>
+                  <motion.li className='flex lg:mt-0' key={uuidv4()}>
                      <motion.span className='flex items-center justify-center flex-shrink-0 w-6 h-6 text-green-800 bg-green-100 rounded-full'>
                         <svg
                            className='w-4 h-4'
@@ -59,7 +59,7 @@ export const Hero2 = (props: Props) => {
 
          <motion.div
             id='imageWrapper'
-            className='sm:col-start-1 sm:row-start-1 z-10 grid grid-cols-12 grid-rows-2 gap-4'>
+            className='z-10 grid grid-cols-12 grid-rows-2 gap-4 sm:col-start-1 sm:row-start-1'>
             {ha.map((item, index) => (
                <motion.div
                   key={uuidv4()}

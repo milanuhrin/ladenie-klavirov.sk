@@ -6,12 +6,10 @@ import { useOnClickOutside } from 'usehooks-ts';
 import { MenuToggle } from '../Components/Menu/MenuToggle';
 import { MenuItem } from './MenuItem';
 import React from 'react';
-import { COLORS } from '../Utilities/colors';
 import { appear } from './Landing';
 const sidebar = {
    open: (height = 1000) => ({
       clipPath: `circle(${height * 2 + 200}px at 254px 35px)`,
-      // background: COLORS.almostBlack,
       transition: {
          type: 'spring',
          stiffness: 20,
@@ -20,7 +18,6 @@ const sidebar = {
    }),
    closed: {
       clipPath: 'circle(1px at 254px 35px)',
-      // background: COLORS.almostBlack,
       transition: {
          delay: 0.5,
          type: 'spring',
@@ -53,7 +50,24 @@ const variants = {
    },
 };
 
-const itemIds = [0, 1, 2, 3, 4];
+const itemIds = [
+   {
+      name: 'Skúsenosti',
+      link: '#experience',
+   },
+   {
+      name: 'O mne',
+      link: '#aboutMe',
+   },
+   {
+      name: 'Kontakt',
+      link: '#contact',
+   },
+   {
+      name: 'Vzdelanie',
+      link: '#education',
+   },
+];
 export const Nav = (props: Props) => {
    const { logo, itemsCount, items } = props;
 
@@ -74,7 +88,7 @@ export const Nav = (props: Props) => {
                initial={'hidden'}
                animate={'show'}
                variants={container}
-               className='sm:space-x-8 sm:flex z-20 items-center hidden'>
+               className='z-20 items-center hidden sm:space-x-8 sm:flex'>
                <motion.li className='text-silver' variants={item}>
                   <Link to='#experience' aria-label='Skúsenosti'>
                      Skúsenosti
@@ -96,7 +110,7 @@ export const Nav = (props: Props) => {
                   </Link>
                </motion.li>
                <motion.li className='text-silver' variants={item}>
-                  <Link to='/contact' aria-label='Kontakt'>
+                  <Link to='#contact' aria-label='Kontakt'>
                      Kontakt
                   </Link>
                </motion.li>
@@ -108,14 +122,27 @@ export const Nav = (props: Props) => {
             </motion.ul>
 
             <motion.div
-               className='sm:hidden flex  justify-between  items-center w-full px-6 py-3'
+               className='relative flex items-center justify-between w-full px-6 py-3 sm:hidden'
                initial={false}
                animate={isOpen ? 'open' : 'closed'}
                variants={appear()}>
                <motion.div
-                  className={`absolute bg-[${COLORS.almostBlack}] z-[20] w-[300px] h-[1000px] top-0 bottom-0 right-0`}
-                  variants={sidebar}
-               />
+                  className={`absolute justify-center flex bg-lightBlack z-[20] w-[300px] h-[1000px] top-0 bottom-0 right-0`}
+                  variants={sidebar}>
+                  <motion.ul
+                     className='absolute top-[7rem] ml-11 z-50 flex flex-col '
+                     variants={variants}>
+                     {itemIds.map((item, i) => (
+                        <MenuItem
+                           i={i}
+                           key={i}
+                           text={item.name}
+                           link={item.link}
+                           toggleOpen={toggleOpen}
+                        />
+                     ))}
+                  </motion.ul>
+               </motion.div>
                <StaticImage
                   src='../images/logo-darkGrey.png'
                   alt='logo'
@@ -125,16 +152,10 @@ export const Nav = (props: Props) => {
 
                <MenuToggle toggle={() => toggleOpen()} />
 
-               <motion.ul className='z-50 absolute' variants={variants}>
-                  {itemIds.map((i) => (
-                     <MenuItem i={i} key={i} />
-                  ))}
-               </motion.ul>
-
                {/* <button
                   aria-label='Open Menu'
                   title='Open Menu'
-                  className='focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50 p-2 -mr-1 transition duration-200 rounded'
+                  className='p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50'
                   onClick={() => setIsMenuOpen(true)}>
                   <svg className='w-5 text-gray-600' viewBox='0 0 24 24'>
                      <path

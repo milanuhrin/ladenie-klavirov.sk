@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import 'tailwindcss/dist/base.min.css';
 import { Divider } from '../Components/Divider';
 import '../../global.css';
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
@@ -13,7 +12,6 @@ import {
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import SEO from '../Components/seo.js';
-import { snakeGradient } from '../Utilities/colors';
 
 const IndexPage = () => {
    const { scrollY } = useViewportScroll();
@@ -67,7 +65,7 @@ const IndexPage = () => {
          <SEO />
          <Landing />
 
-         {/* <div className='top-20 left-20 absolute w-10 h-10'></div>
+         {/* <div className='absolute w-10 h-10 top-20 left-20'></div>
             <motion.svg
                id='sw-js-blob-svg'
                style={{ y: y }}
@@ -96,7 +94,6 @@ const IndexPage = () => {
 
          <motion.main id='mainContent' className='flex flex-col'>
             <Divider />
-
             {hero2img1 && hero2img2 && hero2img3 && hero2img4 && (
                <Hero2
                   img1={hero2img1}
@@ -116,6 +113,7 @@ const IndexPage = () => {
                      img={hero1freeTime}
                      alt='Vo voľnom čase'
                      imgStyle='max-w-[25rem]'
+                     id='aboutMe'
                   />
                </AnimOnScroll>
             )}
@@ -130,6 +128,7 @@ const IndexPage = () => {
                      img={hero1insidePiano}
                      alt='Vnútro klavíru'
                      imgStyle='max-w-[25rem]'
+                     id='education'
                   />
                </AnimOnScroll>
             )}
