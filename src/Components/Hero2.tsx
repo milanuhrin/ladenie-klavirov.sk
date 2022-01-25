@@ -8,12 +8,35 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 const Text = motion(MotionText);
-
+const pole = [
+  'Hudobné školy',
+  'Profesionálny hudobníci',
+  'Rekreační amatéri',
+  'Oprava mechaniky'
+];
+const ha = [
+  {
+    alt: '2',
+    class: ' object-contain col-span-6 w-[100%]   self-end '
+  },
+  {
+    alt: '2',
+    class: ' w-[80%]    self-end col-span-6 '
+  },
+  {
+    alt: '2',
+    class: ' w-[75%] justify-self-end  col-span-5'
+  },
+  {
+    alt: '2',
+    class: 'w-[90%]   col-span-6'
+  }
+];
 export const Hero2 = (props: Props) => {
-   const { img1, img2, img3, img4, textWidth = '100%' } = props;
-   const images = [img1, img2, img3, img4];
+  const { img1, img2, img3, img4, textWidth = '100%' } = props;
+  const images = [img1, img2, img3, img4];
 
-   return (
+  return (
       <motion.section
          id='experience'
          className='relative flex flex-col max-w-full gap-10 px-8 pb-16 sm:grid bg-gradient-to-b from-white to-silver lg:px-20 sm:grid-cols-2 sm:grid-rows-1 sm:gap-8 sm:items-center sm:px-6 sm:pt-20'>
@@ -65,18 +88,18 @@ export const Hero2 = (props: Props) => {
                   key={uuidv4()}
                   initial='offscreen'
                   whileInView='onscreen'
-                  viewport={{ margin: `60px`, once: true }}
+                  viewport={{ margin: '60px', once: true }}
                   whileHover={{ scale: 1.08 }}
                   variants={{
-                     ...cardVariants,
-                     offscreen: {
-                        y: 150,
-                     },
+                    ...cardVariants,
+                    offscreen: {
+                      y: 150
+                    }
                   }}
                   className={`z-20 rounded-lg h-auto ${item.class}`}>
                   <GatsbyImage
-                     imgClassName={`rounded-lg `}
-                     className={`rounded-lg shadow-xl`}
+                     imgClassName={'rounded-lg '}
+                     className={'rounded-lg shadow-xl'}
                      image={images[index]}
                      alt='as'
                   />
@@ -85,7 +108,7 @@ export const Hero2 = (props: Props) => {
          </motion.div>
          <SectionDivider />
       </motion.section>
-   );
+  );
 };
 
 interface Props {
@@ -95,28 +118,3 @@ interface Props {
    img4: IGatsbyImageData;
    textWidth?: string;
 }
-const ha = [
-   {
-      alt: '2',
-      class: ' object-contain col-span-6 w-[100%]   self-end ',
-   },
-   {
-      alt: '2',
-      class: ' w-[80%]    self-end col-span-6 ',
-   },
-   {
-      alt: '2',
-      class: ' w-[75%] justify-self-end  col-span-5',
-   },
-   {
-      alt: '2',
-      class: 'w-[90%]   col-span-6',
-   },
-];
-
-const pole = [
-   'Hudobné školy',
-   'Profesionálny hudobníci',
-   'Rekreační amatéri',
-   'Oprava mechaniky',
-];

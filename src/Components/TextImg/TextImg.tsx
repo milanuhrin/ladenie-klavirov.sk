@@ -4,35 +4,35 @@ import * as React from 'react';
 import { Text as MotionText } from './Text';
 
 export const TextImg = (props: Props) => {
-   const {
-      containerStyle,
-      headerText,
-      headerStyle,
-      paragraphText,
-      paragraphStyle,
-      textWrapperStyle,
-      img,
-      alt,
-      reversed,
-      imgStyleGatsbyImgTag,
-      imgStyle,
-      loading = 'lazy',
-      id,
-   } = props;
-   const Text = motion(MotionText);
+  const {
+    containerStyle,
+    headerText,
+    headerStyle,
+    paragraphText,
+    paragraphStyle,
+    textWrapperStyle,
+    img,
+    alt,
+    reversed,
+    imgStyleGatsbyImgTag,
+    imgStyle,
+    loading = 'lazy',
+    id
+  } = props;
+  const Text = motion(MotionText);
 
-   let width = 0;
-   if (typeof window !== 'undefined') {
-      const { innerWidth } = window;
-      width = innerWidth;
-   }
-   let dynamicStyle;
-   if (width) {
-      dynamicStyle =
+  let width = 0;
+  if (typeof window !== 'undefined') {
+    const { innerWidth } = window;
+    width = innerWidth;
+  }
+  let dynamicStyle;
+  if (width) {
+    dynamicStyle =
          width > 640 && reversed ? { gridColumn: '1', gridRow: '1' } : {};
-   }
+  }
 
-   return (
+  return (
       <motion.section
          id={id}
          className={`${containerStyle} horizontalPadding  w-full gap-14 sm:grid-cols-2 sm:grid-rows-1 sm:justify-center sm:gap-24 sm:flex-row sm:items-center z-20 grid `}>
@@ -50,15 +50,17 @@ export const TextImg = (props: Props) => {
          {/* Second element Img */}
          {img &&
             alt &&
-            (typeof img === 'string' ? (
+            (typeof img === 'string'
+              ? (
                <motion.img
                   className={`${imgStyle}  max-w-[30rem] flex object-cover object-center justify-self-center`}
                   style={{ ...dynamicStyle }}
                   src={img}
                   whileTap={{ scale: 0.55 }}
                />
-            ) : (
-               dynamicStyle && (
+                )
+              : (
+                  dynamicStyle && (
                   <GatsbyImage
                      style={{ ...dynamicStyle }}
                      imgStyle={{}}
@@ -68,10 +70,10 @@ export const TextImg = (props: Props) => {
                      alt={alt}
                      loading={loading}
                   />
-               )
-            ))}
+                  )
+                ))}
       </motion.section>
-   );
+  );
 };
 
 interface Props {

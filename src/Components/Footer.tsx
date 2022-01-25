@@ -7,20 +7,20 @@ interface Props {
    colorTo?: string;
 }
 export const Footer = (props: Props) => {
-   const { colorFrom, colorTo } = props;
+  const { colorFrom, colorTo } = props;
 
-   return (
+  return (
       <motion.footer
          id='contact'
          className='bg-silver gap-7 sm:gap-6 sm:py-12 flex flex-col items-center justify-center w-full py-10'
          initial='offscreen'
          whileInView='onscreen'
-         viewport={{ margin: `60px`, once: true }}
+         viewport={{ margin: '60px', once: true }}
          variants={{
-            ...cardVariants,
-            offscreen: {
-               y: 150,
-            },
+           ...cardVariants,
+           offscreen: {
+             y: 150
+           }
          }}>
          <h1 className='text-3xl font-extrabold bg-gradient-to-r from-snakeGr1 to-snakeGr2 text-transparent bg-clip-text'>
             Kontakt
@@ -48,5 +48,5 @@ export const Footer = (props: Props) => {
             <span>Milan Uhrin, 0905 405 802, uhrinmilan@gmail.com</span>
          </div>
       </motion.footer>
-   );
+  );
 };

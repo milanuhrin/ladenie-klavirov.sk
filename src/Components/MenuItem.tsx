@@ -2,26 +2,26 @@ import * as React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
 const variants = {
-   open: {
-      y: 0,
-      opacity: 1,
-      transition: {
-         y: { stiffness: 1000, velocity: -100 },
-      },
-   },
-   closed: {
-      y: 50,
-      opacity: 0,
-      transition: {
-         y: { stiffness: 1000 },
-      },
-   },
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 }
+    }
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000 }
+    }
+  }
 };
 
 export const MenuItem = (props: Props) => {
-   const { text, link, toggleOpen } = props;
+  const { text, link, toggleOpen } = props;
 
-   return (
+  return (
       <motion.li
          className='my-[1rem] text-mediumSilver font-bold'
          variants={variants}
@@ -35,7 +35,7 @@ export const MenuItem = (props: Props) => {
             {text}
          </Link>
       </motion.li>
-   );
+  );
 };
 
 interface Props {

@@ -1,88 +1,85 @@
 import { motion, useCycle } from 'framer-motion';
 import { Link } from 'gatsby';
 import { IGatsbyImageData, StaticImage } from 'gatsby-plugin-image';
-import { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useOnClickOutside } from 'usehooks-ts';
 import { MenuToggle } from '../Components/Menu/MenuToggle';
-import { MenuItem } from './MenuItem';
-import React from 'react';
 import { appear } from './Landing';
+import { MenuItem } from './MenuItem';
 const sidebar = {
-   open: (height = 1000) => ({
-      clipPath: `circle(${height * 2 + 200}px at 254px 35px)`,
-      transition: {
-         type: 'spring',
-         stiffness: 20,
-         restDelta: 2,
-      },
-   }),
-   closed: {
-      clipPath: 'circle(1px at 254px 35px)',
-      transition: {
-         delay: 0.5,
-         type: 'spring',
-         stiffness: 400,
-         damping: 40,
-      },
-   },
+  open: (height = 1000) => ({
+    clipPath: `circle(${height * 2 + 200}px at 254px 35px)`,
+    transition: {
+      type: 'spring',
+      stiffness: 20,
+      restDelta: 2
+    }
+  }),
+  closed: {
+    clipPath: 'circle(1px at 254px 35px)',
+    transition: {
+      delay: 0.5,
+      type: 'spring',
+      stiffness: 400,
+      damping: 40
+    }
+  }
 };
 const container = {
-   hidden: {},
-   show: {
-      transition: {
-         delayChildren: 0.3,
-         staggerChildren: 0.1,
-      },
-   },
+  hidden: {},
+  show: {
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.1
+    }
+  }
 };
 
 const item = {
-   hidden: { y: -70 },
-   show: { y: 0 },
+  hidden: { y: -70 },
+  show: { y: 0 }
 };
 
 const variants = {
-   open: {
-      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-   },
-   closed: {
-      transition: { staggerChildren: 0.05, staggerDirection: -1 },
-   },
+  open: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 }
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 }
+  }
 };
 
 const itemIds = [
-   {
-      name: 'Skúsenosti',
-      link: '#experience',
-   },
-   {
-      name: 'O mne',
-      link: '#aboutMe',
-   },
-   {
-      name: 'Kontakt',
-      link: '#contact',
-   },
-   {
-      name: 'Vzdelanie',
-      link: '#education',
-   },
+  {
+    name: 'Skúsenosti',
+    link: '#experience'
+  },
+  {
+    name: 'O mne',
+    link: '#aboutMe'
+  },
+  {
+    name: 'Kontakt',
+    link: '#contact'
+  },
+  {
+    name: 'Vzdelanie',
+    link: '#education'
+  }
 ];
 export const Nav = (props: Props) => {
-   const { logo, itemsCount, items } = props;
-
-   const [isMenuOpen, setIsMenuOpen] = useState(false);
-   const ref = useRef(null);
-   const handleClickOutside = () => {
-      setIsMenuOpen(!isMenuOpen);
-   };
-   useOnClickOutside(ref, handleClickOutside);
-   const [isOpen, toggleOpen] = useCycle(false, true);
-   return (
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const ref = useRef(null);
+  const handleClickOutside = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+  useOnClickOutside(ref, handleClickOutside);
+  const [isOpen, toggleOpen] = useCycle(false, true);
+  return (
       <>
          <motion.div
-            className='relative z-30 flex items-center w-full sm:py-8  bg-[#1f1f1f] 
-       sm:max-w-full 
+            className='relative z-30 flex items-center w-full sm:py-8  bg-[#1f1f1f]
+       sm:max-w-full
        sm:justify-center  lg:space-x-16'>
             <motion.ul
                initial={'hidden'}
@@ -127,7 +124,7 @@ export const Nav = (props: Props) => {
                animate={isOpen ? 'open' : 'closed'}
                variants={appear()}>
                <motion.div
-                  className={`absolute justify-center flex bg-lightBlack z-[20] w-[300px] h-[1000px] top-0 bottom-0 right-0`}
+                  className={'absolute justify-center flex bg-lightBlack z-[20] w-[300px] h-[1000px] top-0 bottom-0 right-0'}
                   variants={sidebar}>
                   <motion.ul
                      className='absolute top-[7rem] ml-11 z-50 flex flex-col '
@@ -236,7 +233,7 @@ export const Nav = (props: Props) => {
             </motion.div>
          </motion.div>
       </>
-   );
+  );
 };
 
 interface Props {

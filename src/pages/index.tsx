@@ -1,25 +1,23 @@
-import * as React from 'react';
-import { Divider } from '../Components/Divider';
-import '../../global.css';
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
-import {
-   AnimOnScroll,
-   Footer,
-   Hero2,
-   TextImg,
-   Landing,
-} from '../Components/export';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
+import * as React from 'react';
+import '../../global.css';
+import { Divider } from '../Components/Divider';
+import {
+  AnimOnScroll,
+  Footer,
+  Hero2, Landing, TextImg
+} from '../Components/export';
 import SEO from '../Components/seo.js';
 
 const IndexPage = () => {
-   const { scrollY } = useViewportScroll();
-   const y = useTransform(scrollY, [0, 1], [0, -0.2], {
-      clamp: false,
-   });
+  const { scrollY } = useViewportScroll();
+  const y = useTransform(scrollY, [0, 1], [0, -0.2], {
+    clamp: false
+  });
 
-   const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
       {
          a: file(relativePath: { eq: "freeTime.jpg" }) {
             childImageSharp {
@@ -53,14 +51,14 @@ const IndexPage = () => {
          }
       }
    `);
-   const hero1freeTime = getImage(data.a);
-   const hero1insidePiano = getImage(data.b);
-   const hero2img1 = getImage(data.c);
-   const hero2img2 = getImage(data.d);
-   const hero2img3 = getImage(data.e);
-   const hero2img4 = getImage(data.f);
+  const hero1freeTime = getImage(data.a);
+  const hero1insidePiano = getImage(data.b);
+  const hero2img1 = getImage(data.c);
+  const hero2img2 = getImage(data.d);
+  const hero2img3 = getImage(data.e);
+  const hero2img4 = getImage(data.f);
 
-   return (
+  return (
       <>
          <SEO />
          <Landing />
@@ -71,7 +69,7 @@ const IndexPage = () => {
                style={{ y: y }}
                className='absolute'
                viewBox='0 0 200 200'
-               xmlns='http://www.w3.org/2000/svg'>
+               xmlns='http:
                <defs>
                   <linearGradient id='sw-gradient' x1='0' x2='1' y1='1' y2='0'>
                      <stop
@@ -136,7 +134,7 @@ const IndexPage = () => {
             <Footer />
          </motion.main>
       </>
-   );
+  );
 };
 
 export default IndexPage;

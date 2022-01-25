@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import { Footer, Nav, TextImg } from '../Components/export';
+import { Footer, Nav } from '../Components/export';
 import PianoIllustration from '../images/svg/pianoIllustration.svg';
 
 const Contact = () => {
-   console.log(PianoIllustration);
+  console.log(PianoIllustration);
 
-   const logo = useStaticQuery(graphql`
+  const logo = useStaticQuery(graphql`
       {
          file(relativePath: { eq: "logo-black.png" }) {
             childImageSharp {
@@ -16,7 +16,7 @@ const Contact = () => {
          }
       }
    `);
-   return (
+  return (
       <>
          <Nav logo={logo} />
          <motion.main>
@@ -36,6 +36,6 @@ const Contact = () => {
          </motion.main>
          <Footer />
       </>
-   );
+  );
 };
 export default Contact;

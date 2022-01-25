@@ -1,29 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Divider } from '../Components/Divider';
 import { motion } from 'framer-motion';
 import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
-import { useEffect, useState } from 'react';
 import { Nav, SectionDivider } from './export';
 import { TextImg } from './TextImg/TextImg';
 
+export const appear = (ease = 'easeOut', delay = 0, duration = 1) => ({
+  hidden: {
+    scale: 0,
+    opacity: 0
+  },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      ease: ease,
+      delay: delay,
+      duration: duration
+    }
+  }
+});
 export const Landing = () => {
-   const [header, setHeader] = useState('orange');
+  const [header, setHeader] = useState('orange');
 
-   const listenScrollEvent = () => {
-      if (window.scrollY < 120) {
-         return setHeader('orange');
-      } else if (window.scrollY > 120) {
-         return setHeader('white');
-      }
-   };
+  const listenScrollEvent = () => {
+    if (window.scrollY < 120) {
+      return setHeader('orange');
+    } else if (window.scrollY > 120) {
+      return setHeader('white');
+    }
+  };
 
-   useEffect(() => {
-      window.addEventListener('scroll', listenScrollEvent);
-      return () => window.removeEventListener('scroll', listenScrollEvent);
-   }, []);
+  useEffect(() => {
+    window.addEventListener('scroll', listenScrollEvent);
+    return () => window.removeEventListener('scroll', listenScrollEvent);
+  }, []);
 
-   const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
       {
          file(relativePath: { eq: "milan-fb.jpg" }) {
             childImageSharp {
@@ -32,9 +46,9 @@ export const Landing = () => {
          }
       }
    `);
-   const hero1Image = getImage(data.file);
+  const hero1Image = getImage(data.file);
 
-   return (
+  return (
       <section className='relative flex flex-col items-center w-full min-h-screen '>
          <motion.div
             id='background'
@@ -68,23 +82,7 @@ export const Landing = () => {
             {header === 'orange' && <BlobeSvg height={450} left={-20} />}
          </motion.div> */}
       </section>
-   );
+  );
 };
 
 <div className='my-10 sm:my-24' />;
-
-export const appear = (ease = 'easeOut', delay = 0, duration = 1) => ({
-   hidden: {
-      scale: 0,
-      opacity: 0,
-   },
-   visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-         ease: ease,
-         delay: delay,
-         duration: duration,
-      },
-   },
-});
