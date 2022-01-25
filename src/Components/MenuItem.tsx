@@ -23,13 +23,13 @@ export const MenuItem = (props: Props) => {
 
   return (
       <motion.li
-         className='my-[1rem] text-mediumSilver font-bold'
+         className='my-[1rem] font-bold text-mediumSilver'
          variants={variants}
          whileHover={{ scale: 1.1 }}
          whileTap={{ scale: 0.8 }}>
          <Link
             onClick={() => toggleOpen()}
-            className='w-[12rem] h-[2rem] flex'
+            className='flex w-[12rem] h-[2rem]'
             to={link}
             aria-label={text}>
             {text}

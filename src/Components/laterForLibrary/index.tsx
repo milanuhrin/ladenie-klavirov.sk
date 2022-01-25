@@ -2,7 +2,7 @@ import React from 'react';
 
 const As = () => <div>as</div>;
 
-//nevymazat! priklad toho jak sa robi prepouzitelny styled comp s tw
+// nevymazat! priklad toho jak sa robi prepouzitelny styled comp s tw
 // export const P = styled(motion.p)(
 //    ({ textColor, gradient }: { textColor?: string; gradient?: string }) => [
 //       `color: ${textColor};`,

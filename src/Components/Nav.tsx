@@ -67,6 +67,7 @@ const itemIds = [
     link: '#education'
   }
 ];
+
 export const Nav = (props: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const ref = useRef(null);
@@ -78,14 +79,12 @@ export const Nav = (props: Props) => {
   return (
       <>
          <motion.div
-            className='relative z-30 flex items-center w-full sm:py-8  bg-[#1f1f1f]
-       sm:max-w-full
-       sm:justify-center  lg:space-x-16'>
+            className='flex relative z-30 items-center w-full bg-[#1f1f1f] sm:justify-center sm:py-8 sm:max-w-full lg:space-x-16'>
             <motion.ul
                initial={'hidden'}
                animate={'show'}
                variants={container}
-               className='z-20 items-center hidden sm:space-x-8 sm:flex'>
+               className='hidden z-20 items-center sm:flex sm:space-x-8'>
                <motion.li className='text-silver' variants={item}>
                   <Link to='#experience' aria-label='Skúsenosti'>
                      Skúsenosti
@@ -119,15 +118,15 @@ export const Nav = (props: Props) => {
             </motion.ul>
 
             <motion.div
-               className='relative flex items-center justify-between w-full px-6 py-3 sm:hidden'
+               className='flex relative justify-between items-center py-3 px-6 w-full sm:hidden'
                initial={false}
                animate={isOpen ? 'open' : 'closed'}
                variants={appear()}>
                <motion.div
-                  className={'absolute justify-center flex bg-lightBlack z-[20] w-[300px] h-[1000px] top-0 bottom-0 right-0'}
+                  className={'flex absolute inset-y-0 right-0 z-[20] justify-center w-[300px] h-[1000px] bg-lightBlack'}
                   variants={sidebar}>
                   <motion.ul
-                     className='absolute top-[7rem] ml-11 z-50 flex flex-col '
+                     className='flex absolute top-[7rem] z-50 flex-col ml-11'
                      variants={variants}>
                      {itemIds.map((item, i) => (
                         <MenuItem

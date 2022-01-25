@@ -49,7 +49,7 @@ export const Landing = () => {
   const hero1Image = getImage(data.file);
 
   return (
-      <section className='relative flex flex-col items-center w-full min-h-screen '>
+      <section className='flex relative flex-col items-center w-full min-h-screen'>
          <motion.div
             id='background'
             initial='hidden'

@@ -5,7 +5,8 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'standard'
+    'standard',
+    'plugin:tailwindcss/recommended'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -17,7 +18,8 @@ module.exports = {
   },
   plugins: [
     'react',
-    '@typescript-eslint'
+    '@typescript-eslint',
+    'tailwindcss'
   ],
   rules: {
     'no-use-before-define': 'off',
@@ -32,6 +34,7 @@ module.exports = {
         allowTemplateLiterals: true
       }
     ],
-    'react/display-name': 'off'
+    'react/display-name': 'off',
+    'no-console': 'warn'
   }
 };

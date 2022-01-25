@@ -15,7 +15,7 @@ export const MenuToggle = ({ toggle }: any) => (
    <motion.button
       variants={appear()}
       onClick={toggle}
-      className='w-[35px] h-[35px]  z-50'>
+      className='z-50 w-[35px] h-[35px]'>
       <svg width='100%' viewBox='0 0 23 19'>
          <Path
             variants={{
