@@ -4,7 +4,6 @@ import { getImage } from 'gatsby-plugin-image';
 import * as React from 'react';
 import '../../global.css';
 import { Divider } from '../Components/Divider';
-import { BubblesBg } from '../svg/daco';
 
 import {
   AnimOnScroll,
@@ -105,7 +104,6 @@ const IndexPage = () => {
                />
             )}
             <Divider />
-            <BubblesBg/>
 
             {hero1freeTime && (
                <AnimOnScroll>
