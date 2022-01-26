@@ -2,11 +2,8 @@ import { motion } from 'framer-motion';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { Footer, Nav } from '../Components/export';
-import PianoIllustration from '../images/svg/pianoIllustration.svg';
 
 const Contact = () => {
-  console.log(PianoIllustration);
-
   const logo = useStaticQuery(graphql`
       {
          file(relativePath: { eq: "logo-black.png" }) {

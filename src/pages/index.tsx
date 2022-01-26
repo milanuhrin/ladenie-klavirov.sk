@@ -4,12 +4,15 @@ import { getImage } from 'gatsby-plugin-image';
 import * as React from 'react';
 import '../../global.css';
 import { Divider } from '../Components/Divider';
+import { BubblesBg } from '../svg/daco';
+
 import {
   AnimOnScroll,
   Footer,
   Hero2, Landing, TextImg
 } from '../Components/export';
 import SEO from '../Components/seo.js';
+;
 
 const IndexPage = () => {
   const { scrollY } = useViewportScroll();
@@ -102,6 +105,7 @@ const IndexPage = () => {
                />
             )}
             <Divider />
+            <BubblesBg/>
 
             {hero1freeTime && (
                <AnimOnScroll>

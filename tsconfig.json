@@ -21,9 +21,10 @@
     "incremental": true
   },
   "include": [
+    "custom.d.ts",
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
   ],
   "exclude": [
     "node_modules"
