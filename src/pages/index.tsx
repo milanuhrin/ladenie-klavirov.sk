@@ -107,7 +107,7 @@ const IndexPage = () => {
                <AnimOnScroll>
                   <TextImg
                      headerText='Pár slov o mne'
-                     paragraphText='Mojim najväčším hobby sa za posledných 5 rokov stalo fotenie. Podarilo sa mi dosiahnuť prvenstvá či už v slovenských, ale aj medzinárodných súťažiach. Najlepšie fotky sú prezentované na dočasných voľne dostupných výstavách či múzeách.'
+                     paragraphText='Mojim najväčším hobby sa za posledných 5 rokov stalo fotenie. Podarilo sa mi dosiahnuť prvenstvá či už v slovenských, ale aj medzinárodných súťažiach. Najlepšie fotky sú prezentované na voľne dostupných dočasných výstavách či múzeách.'
                      img={hero1freeTime}
                      alt='Vo voľnom čase'
                      imgStyle='max-w-[25rem]'
@@ -122,7 +122,7 @@ const IndexPage = () => {
                   <TextImg
                      reversed
                      headerText='Vzdelanie'
-                     paragraphText='Vyštudoval som odbornú školu v Hradci Králové, Česká rep. Stal som sa tam mechanikom hudobných nástrojov, naučil sa opraviť klavír správne tak, aby fungoval najbližšie roky.'
+                     paragraphText='Vyštudoval som odbornú školu v Hradci Králové. Stal som sa tam mechanikom hudobných nástrojov, naučil sa opraviť klavír správne tak, aby fungoval najbližšie roky.'
                      img={hero1insidePiano}
                      alt='Vnútro klavíru'
                      imgStyle='max-w-[25rem]'

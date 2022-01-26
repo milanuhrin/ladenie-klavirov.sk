@@ -10,7 +10,7 @@ import { v4 as uuidv4 } from 'uuid';
 const Text = motion(MotionText);
 const pole = [
   'Hudobné školy',
-  'Profesionálny hudobníci',
+  'Profesionálni hudobníci',
   'Rekreační amatéri',
   'Oprava mechaniky'
 ];
@@ -52,8 +52,8 @@ export const Hero2 = (props: Props) => {
                animate='visible'
                variants={appear()}
                headerText='Skúsenosti'
-               paragraphText='Oblasť môjho pôsobenia je najmä západné a stredné slovensko kde
-               ladím a zastrešujem vačšinu hudobných škôl a domácností, ktoré sa
+               paragraphText='Oblasť môjho pôsobenia je najmä západné a stredné slovensko, kde
+               ladím a zastrešujem väčšinu hudobných škôl a domácností, ktoré sa
                rozhodli zavolať odborníka.'
             />
             <div className='my-4' />

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { Divider } from '../Components/Divider';
 import { motion } from 'framer-motion';
 import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
+import React from 'react';
+import { Divider } from '../Components/Divider';
 import { Nav, SectionDivider } from './export';
 import { TextImg } from './TextImg/TextImg';
 
@@ -22,21 +22,6 @@ export const appear = (ease = 'easeOut', delay = 0, duration = 1) => ({
   }
 });
 export const Landing = () => {
-  const [header, setHeader] = useState('orange');
-
-  const listenScrollEvent = () => {
-    if (window.scrollY < 120) {
-      return setHeader('orange');
-    } else if (window.scrollY > 120) {
-      return setHeader('white');
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', listenScrollEvent);
-    return () => window.removeEventListener('scroll', listenScrollEvent);
-  }, []);
-
   const data = useStaticQuery(graphql`
       {
          file(relativePath: { eq: "milan-fb.jpg" }) {
@@ -68,7 +53,7 @@ export const Landing = () => {
             variants={appear('backOut')}>
             {hero1Image && (
                <TextImg
-                  headerText='Profesionál s 35 ročnými skusenosťami'
+                  headerText='Profesionál s 35 ročnými skúsenosťami'
                   paragraphText='Či už potrebujete naladiť, opraviť, ohodnotiť alebo pomôcť predať či kúpiť klavír, môžete sa na obrátiť mňa. Klavírom a hudobným nástrojom sa venujem prakticky celý život.'
                   img={hero1Image}
                   imgStyle='!max-w-[25rem]'
@@ -77,10 +62,6 @@ export const Landing = () => {
                />
             )}
          </motion.div>
-         {/* <motion.div initial='hidden' animate='visible' variants={appear()}>
-            {header === 'orange' && <BlobeSvg height={250} right={250} />}
-            {header === 'orange' && <BlobeSvg height={450} left={-20} />}
-         </motion.div> */}
       </section>
   );
 };
