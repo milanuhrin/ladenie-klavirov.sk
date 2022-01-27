@@ -5,9 +5,6 @@ import React from 'react';
 import { Divider } from './Divider';
 import { Nav, SectionDivider } from './export';
 import { TextImg } from './TextImg/TextImg';
-import { BubblesBg } from '../svg/daco';
-
-// import Daco from '../svg/daco.svg';
 
 export const appear = (ease = 'easeOut', delay = 0, duration = 1) => ({
   hidden: {
@@ -43,11 +40,9 @@ export const Landing = () => {
             initial='hidden'
             animate='visible'
             variants={appear('backOut')}
-            className='absolute w-full h-screen bg-center bg-no-repeat bg-cover '
-            // style={{ backgroundImage: 'url(ha)' }}
+            className='absolute w-full h-screen bg-center bg-no-repeat bg-cover landingBackground'
 
             >
-<BubblesBg/>
             <SectionDivider fill='white' />
          </motion.div>
 
