@@ -1,7 +1,7 @@
-trailingComma: "all"
+trailingComma: all
 semi: false
-singleQuote: true 
+singleQuote: true
 jsxSingleQuote: true
 max-len: 80
 bracketSameLine: true
-parser: "typescript"
+parser: typescript
