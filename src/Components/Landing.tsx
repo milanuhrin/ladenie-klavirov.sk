@@ -71,4 +71,3 @@ export const Landing = (props: Props) => {
     </section>
   )
 }
-;<div className='my-10 sm:my-24' />

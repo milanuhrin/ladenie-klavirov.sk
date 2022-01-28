@@ -20,7 +20,7 @@
 html {
    scroll-behavior: smooth;
 }
-
+/* druhy obly */
 .custom-shape-divider-bottom-1643362097 {
    position: absolute;
    bottom: 0;
@@ -39,5 +39,27 @@ html {
 }
 
 .custom-shape-divider-bottom-1643362097 .shape-fill {
+   fill: #ffffff;
+}
+
+/* DALSI SIKMI */
+.custom-shape-divider-bottom-1643366277 {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   overflow: hidden;
+   line-height: 0;
+   transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1643366277 svg {
+   position: relative;
+   display: block;
+   width: calc(165% + 1.3px);
+   height: 78px;
+}
+
+.custom-shape-divider-bottom-1643366277 .shape-fill {
    fill: #FFFFFF;
 }

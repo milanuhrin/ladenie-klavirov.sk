@@ -8,6 +8,7 @@ import React from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import '../../global.css'
 import { SectionDividerWaveOneSide } from '../svg/SectionDividerWaveOneSide'
+import { SectionDividerSharp } from '../svg/SectionDividerSharp'
 
 const Text = motion(MotionText)
 const pole = [
@@ -43,6 +44,8 @@ export const Hero2 = (props: Props) => {
     <motion.section
       id='experience'
       className={`${containerStyles} horizontalPadding relative flex max-w-full flex-col gap-10 bg-gradient-to-b from-white to-silver px-8  sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:items-center sm:justify-center sm:gap-8 sm:px-6 lg:px-20`}>
+      {/* <SectionDivider /> */}
+
       <motion.div
         id='textWrapper'
         className='z-10 flex flex-col gap-6 sm:col-start-2 sm:row-start-1  sm:self-center sm:justify-self-center'
@@ -113,7 +116,8 @@ export const Hero2 = (props: Props) => {
         ))}
       </motion.div>
       {/* <SectionDivider /> */}
-      <SectionDividerWaveOneSide />
+      {/* <SectionDividerWaveOneSide /> */}
+      <SectionDividerSharp />
     </motion.section>
   )
 }

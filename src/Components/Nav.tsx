@@ -6,6 +6,9 @@ import { useOnClickOutside } from 'usehooks-ts'
 import { MenuToggle } from '../Components/Menu/MenuToggle'
 import { appear } from './Landing'
 import { MenuItem } from './MenuItem'
+import { SectionDivider } from '../svg/SectionDivider'
+import { SectionDividerWaveOneSide } from '../svg/SectionDividerWaveOneSide'
+import { SectionDividerSharp } from '../svg/SectionDividerSharp'
 const sidebar = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 254px 35px)`,
@@ -78,12 +81,12 @@ export const Nav = (props: Props) => {
   const [isOpen, toggleOpen] = useCycle(false, true)
   return (
     <>
-      <motion.div className='flex relative z-30 items-center w-full bg-[#1f1f1f] sm:justify-center sm:py-8 sm:max-w-full lg:space-x-16'>
+      <motion.div className='relative z-30 flex w-full items-center bg-[#1f1f1f] sm:max-w-full sm:justify-center sm:py-8 lg:space-x-16'>
         <motion.ul
           initial={'hidden'}
           animate={'show'}
           variants={container}
-          className='hidden z-20 items-center sm:flex sm:space-x-8'>
+          className='z-20 hidden items-center sm:flex sm:space-x-8'>
           <motion.li className='text-silver' variants={item}>
             <Link to='#experience' aria-label='Skúsenosti'>
               Skúsenosti
@@ -117,17 +120,17 @@ export const Nav = (props: Props) => {
         </motion.ul>
 
         <motion.div
-          className='flex relative justify-between items-center py-3 px-6 w-full sm:hidden'
+          className='relative flex w-full items-center justify-between py-3 px-6 sm:hidden'
           initial={false}
           animate={isOpen ? 'open' : 'closed'}
           variants={appear()}>
           <motion.div
             className={
-              'flex absolute inset-y-0 right-0 z-[20] justify-center w-[300px] h-[1000px] bg-lightBlack'
+              'absolute inset-y-0 right-0 z-[20] flex h-[1000px] w-[300px] justify-center bg-lightBlack'
             }
             variants={sidebar}>
             <motion.ul
-              className='flex absolute top-[7rem] z-50 flex-col ml-11'
+              className='absolute top-[7rem] z-50 ml-11 flex flex-col'
               variants={variants}>
               {itemIds.map((item, i) => (
                 <MenuItem

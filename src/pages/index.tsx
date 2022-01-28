@@ -3,7 +3,8 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import * as React from 'react'
 import '../../global.css'
-import { Divider } from '../Components/Divider'
+import { SectionDividerWaveOneSide } from '../svg/SectionDividerWaveOneSide'
+import { SectionDivider } from '../svg/SectionDivider'
 import {
   AnimOnScroll,
   Footer,
@@ -64,6 +65,7 @@ const IndexPage = () => {
   return (
     <>
       <SEO />
+
       <Landing containerStyles='marginBottomForSections' />
 
       {/* <div className='absolute w-10 h-10 top-20 left-20'></div>
@@ -94,7 +96,6 @@ const IndexPage = () => {
             </motion.svg> */}
 
       <motion.main id='mainContent' className=' flex flex-col'>
-        {/* <Divider /> */}
         {hero2img1 && hero2img2 && hero2img3 && hero2img4 && (
           <Hero2
             img1={hero2img1}
@@ -115,6 +116,7 @@ const IndexPage = () => {
               imgStyle='max-w-[25rem]'
               id='aboutMe'
               containerStyle='marginBottomForSections'
+              // sectionDivider={<SectionDividerWaveOneSide fill='black' />}
             />
           </AnimOnScroll>
         )}
@@ -130,11 +132,13 @@ const IndexPage = () => {
               imgStyle='max-w-[25rem]'
               id='education'
               containerStyle='marginBottomForSections'
+              // sectionDivider={<SectionDividerWaveOneSide fill='black' />}
             />
           </AnimOnScroll>
         )}
-        <Footer />
+        <SectionDivider />
       </motion.main>
+      <Footer />
     </>
   )
 }

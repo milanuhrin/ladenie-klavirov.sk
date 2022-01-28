@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import * as React from 'react'
 import { Text as MotionText } from './Text'
+import { SectionDividerWaveOneSide } from '../../svg/SectionDividerWaveOneSide'
 
 export const TextImg = (props: Props) => {
   const {
@@ -18,6 +19,7 @@ export const TextImg = (props: Props) => {
     imgStyle,
     loading = 'lazy',
     id,
+    sectionDivider,
   } = props
   const Text = motion(MotionText)
 
@@ -35,8 +37,9 @@ export const TextImg = (props: Props) => {
   return (
     <motion.section
       id={id}
-      className={`${containerStyle} horizontalPadding  z-20 grid w-full gap-14 sm:grid-cols-2 sm:grid-rows-1 sm:flex-row sm:items-center sm:justify-center sm:gap-24 `}>
+      className={`${containerStyle} horizontalPadding relative z-20 grid w-full gap-14 sm:grid-cols-2 sm:grid-rows-1 sm:flex-row sm:items-center sm:justify-center sm:gap-24 `}>
       {/* Firtst element Text */}
+
       <Text
         initial='hidden'
         animate='visible'
@@ -70,6 +73,7 @@ export const TextImg = (props: Props) => {
             />
           )
         ))}
+      {sectionDivider}
     </motion.section>
   )
 }
@@ -80,6 +84,7 @@ interface Props {
   reversed?: boolean
   loading?: 'lazy' | 'eager'
   id?: string
+  sectionDivider?: React.ReactElement
   // Text Comp
   headerText?: string | React.ReactElement
   headerStyle?: string
