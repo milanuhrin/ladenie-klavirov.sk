@@ -6,6 +6,8 @@ import { Text as MotionText } from './TextImg/Text'
 import { appear } from './Landing'
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import '../../global.css'
+import { SectionDividerWaveOneSide } from '../svg/SectionDividerWaveOneSide'
 
 const Text = motion(MotionText)
 const pole = [
@@ -33,16 +35,17 @@ const ha = [
   },
 ]
 export const Hero2 = (props: Props) => {
+  const { containerStyles } = props
   const { img1, img2, img3, img4, textWidth = '100%' } = props
   const images = [img1, img2, img3, img4]
 
   return (
     <motion.section
       id='experience'
-      className='relative flex max-w-full flex-col gap-10 bg-gradient-to-b from-white to-silver px-8 pb-16 sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:items-center sm:gap-8 sm:px-6 sm:pt-20 lg:px-20'>
+      className={`${containerStyles} horizontalPadding relative flex max-w-full flex-col gap-10 bg-gradient-to-b from-white to-silver px-8  sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:items-center sm:justify-center sm:gap-8 sm:px-6 lg:px-20`}>
       <motion.div
         id='textWrapper'
-        className='ml-auto flex flex-col gap-6 justify-self-center sm:col-start-2 sm:row-start-1 sm:max-w-2xl sm:self-center'
+        className='z-10 flex flex-col gap-6 sm:col-start-2 sm:row-start-1  sm:self-center sm:justify-self-center'
         initial='offscreen'
         whileInView='onscreen'
         viewport={{ margin: '400px', once: true }}
@@ -81,7 +84,7 @@ export const Hero2 = (props: Props) => {
 
       <motion.div
         id='imageWrapper'
-        className='z-10 grid grid-cols-12 grid-rows-2 gap-4 sm:col-start-1 sm:row-start-1'>
+        className='z-10 grid max-h-[35rem] max-w-[35rem] grid-cols-12 grid-rows-2 gap-4 justify-self-center sm:col-start-1 sm:row-start-1'>
         {ha.map((item, index) => (
           <motion.div
             key={uuidv4()}
@@ -95,17 +98,22 @@ export const Hero2 = (props: Props) => {
                 y: 150,
               },
             }}
-            className={`z-20 h-auto rounded-lg ${item.class}`}>
+            className={`z-20 h-auto w-auto rounded-lg object-cover ${item.class}`}>
             <GatsbyImage
-              imgClassName={'rounded-lg '}
-              className={'rounded-lg shadow-xl'}
+              imgClassName={
+                'rounded-lg w-auto max-w-[35rem] max-h-[35rem] object-cover '
+              }
+              className={
+                'max-h-[35rem] w-auto max-w-[35rem] rounded-lg shadow-xl'
+              }
               image={images[index]}
               alt='as'
             />
           </motion.div>
         ))}
       </motion.div>
-      <SectionDivider />
+      {/* <SectionDivider /> */}
+      <SectionDividerWaveOneSide />
     </motion.section>
   )
 }
@@ -116,4 +124,5 @@ interface Props {
   img3: IGatsbyImageData
   img4: IGatsbyImageData
   textWidth?: string
+  containerStyles?: string
 }

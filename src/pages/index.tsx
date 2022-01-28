@@ -64,7 +64,7 @@ const IndexPage = () => {
   return (
     <>
       <SEO />
-      <Landing />
+      <Landing containerStyles='marginBottomForSections' />
 
       {/* <div className='absolute w-10 h-10 top-20 left-20'></div>
             <motion.svg
@@ -93,8 +93,8 @@ const IndexPage = () => {
                </g>
             </motion.svg> */}
 
-      <motion.main id='mainContent' className='flex flex-col'>
-        <Divider />
+      <motion.main id='mainContent' className=' flex flex-col'>
+        {/* <Divider /> */}
         {hero2img1 && hero2img2 && hero2img3 && hero2img4 && (
           <Hero2
             img1={hero2img1}
@@ -102,10 +102,9 @@ const IndexPage = () => {
             img3={hero2img3}
             img4={hero2img4}
             textWidth='70%'
+            containerStyles='marginBottomForSections'
           />
         )}
-        <Divider />
-
         {hero1freeTime && (
           <AnimOnScroll>
             <TextImg
@@ -115,10 +114,10 @@ const IndexPage = () => {
               alt='Vo voľnom čase'
               imgStyle='max-w-[25rem]'
               id='aboutMe'
+              containerStyle='marginBottomForSections'
             />
           </AnimOnScroll>
         )}
-        <Divider />
 
         {hero1insidePiano && (
           <AnimOnScroll>
@@ -130,10 +129,10 @@ const IndexPage = () => {
               alt='Vnútro klavíru'
               imgStyle='max-w-[25rem]'
               id='education'
+              containerStyle='marginBottomForSections'
             />
           </AnimOnScroll>
         )}
-        <Divider />
         <Footer />
       </motion.main>
     </>

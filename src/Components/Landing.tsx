@@ -21,7 +21,12 @@ export const appear = (ease = 'easeOut', delay = 0, duration = 1) => ({
     },
   },
 })
-export const Landing = () => {
+interface Props {
+  containerStyles?: string
+}
+
+export const Landing = (props: Props) => {
+  const { containerStyles } = props
   const data = useStaticQuery(graphql`
     {
       file(relativePath: { eq: "milan-fb.jpg" }) {
@@ -33,7 +38,8 @@ export const Landing = () => {
   `)
   const hero1Image = getImage(data.file)
   return (
-    <section className='relative flex min-h-screen w-full flex-col items-center'>
+    <section
+      className={`${containerStyles} relative flex min-h-screen w-full flex-col items-center`}>
       {/* <Daco/> */}
       <motion.div
         id='background'
