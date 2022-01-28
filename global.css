@@ -6,11 +6,11 @@
    .horizontalPadding {
       @apply px-[2rem] lg:px-[8rem];
    }
-   .marginBottom{
-      @apply mb-[4rem] sm:mb-[7rem] lg:mb-[9rem]
+   .paddingY-2-5rem {
+      @apply py-[2rem] sm:py-[3.5rem] lg:py-[5rem]
    }
-   .marginBottomForSections{
-      @apply mb-[6rem] sm:mb-[7rem] lg:mb-[12rem]
+   .paddingY-3-6rem {
+      @apply py-[3rem] sm:py-[4rem] lg:py-[6rem]
    }
 }
 .landingBackground {
