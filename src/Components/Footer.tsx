@@ -50,14 +50,7 @@ export const Footer = (props: Props) => {
         </a>
       </div>
       <div className='flex justify-center items-center font-light text-center text-gray-500'>
-        <span>
-          Milan Uhrin, 0905 405 802, uhrinmilan@gmail.com Milan Uhrin, 0905 405
-          802, uhrinmilan@gmail.comMilan Uhrin, 0905 405 802,
-          uhrinmilan@gmail.comMilan Uhrin, 0905 405 802,
-          uhrinmilan@gmail.comMilan Uhrin, 0905 405 802,
-          uhrinmilan@gmail.comMilan Uhrin, 0905 405 802,
-          uhrinmilan@gmail.comMilan Uhrin, 0905 405 802, uhrinmilan@gmail.com
-        </span>
+        <span>Milan Uhrin, 0905 405 802</span>
       </div>
     </motion.footer>
   )

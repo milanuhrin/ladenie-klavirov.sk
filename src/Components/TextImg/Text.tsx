@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import React from 'react';
+import { motion } from 'framer-motion'
+import React from 'react'
 
 export const Text = React.forwardRef((props: Props, ref: any) => {
   const {
@@ -7,34 +7,36 @@ export const Text = React.forwardRef((props: Props, ref: any) => {
     paragraphStyle,
     headerText,
     headerStyle,
-    textWrapperStyle
-  } = props;
+    textWrapperStyle,
+  } = props
 
   return (
-      <motion.div
-         id='textWrapper'
-         className={` ${textWrapperStyle} text-center w-full z-10 flex flex-col self-center justify-self-center gap-9 sm:w-[100%]`}
-         ref={ref}>
-         {headerText && (
-            <motion.h3 className={`${headerStyle} `}>
-               <span
-                  className={'text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-snakeGr1 to-snakeGr2'}>
-                  {headerText}
-               </span>
-            </motion.h3>
-         )}
-         {paragraphText && (
-            <motion.p className={`${paragraphStyle} black  text-xl  `}>
-               {paragraphText}
-            </motion.p>
-         )}
-      </motion.div>
-  );
-});
+    <motion.div
+      id='textWrapper'
+      className={` ${textWrapperStyle} text-center w-full z-10 flex flex-col self-center justify-self-center gap-9 sm:w-[100%]`}
+      ref={ref}>
+      {headerText && (
+        <motion.h3 className={`${headerStyle} `}>
+          <span
+            className={
+              'text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-snakeGr1 to-snakeGr2'
+            }>
+            {headerText}
+          </span>
+        </motion.h3>
+      )}
+      {paragraphText && (
+        <motion.p className={`${paragraphStyle} black  text-xl  `}>
+          {paragraphText}
+        </motion.p>
+      )}
+    </motion.div>
+  )
+})
 interface Props {
-   paragraphText?: string | React.ReactElement;
-   paragraphStyle?: string;
-   headerText?: string | React.ReactElement;
-   headerStyle?: string;
-   textWrapperStyle?: string;
+  paragraphText?: string | React.ReactElement
+  paragraphStyle?: string
+  headerText?: string | React.ReactElement
+  headerStyle?: string
+  textWrapperStyle?: string
 }

@@ -1,40 +1,26 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
   },
-  extends: [ 
+  extends: [
     'plugin:react/recommended',
     'standard',
-    'plugin:tailwindcss/recommended'
-    'plugin:prettier/recommended'
+    'plugin:tailwindcss/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'tailwindcss',
-    'prettier'
-
-  ],
-  overrides: [
-    {
-      rules: {
-        'max-len': 50 
-      }
-    }
-  ],
+  plugins: ['react', '@typescript-eslint', 'tailwindcss'],
   rules: {
-    'max-len': {
-      'code': 30
-    },
+    'comma-dangle': 'off',
+    'no-warning-comments': 'warn',
+    'no-inline-comments': 'warn',
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
     'no-unused-vars': 'warn',
@@ -44,10 +30,10 @@ module.exports = {
       'single',
       {
         avoidEscape: true,
-        allowTemplateLiterals: true
-      }
+        allowTemplateLiterals: true,
+      },
     ],
     'react/display-name': 'off',
-    'no-console': 'warn'
-  }
-};
+    'no-console': 'warn',
+  },
+}

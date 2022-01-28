@@ -1,19 +1,19 @@
-import { motion, useCycle } from 'framer-motion';
-import { Link } from 'gatsby';
-import { IGatsbyImageData, StaticImage } from 'gatsby-plugin-image';
-import React, { useRef, useState } from 'react';
-import { useOnClickOutside } from 'usehooks-ts';
-import { MenuToggle } from '../Components/Menu/MenuToggle';
-import { appear } from './Landing';
-import { MenuItem } from './MenuItem';
+import { motion, useCycle } from 'framer-motion'
+import { Link } from 'gatsby'
+import { IGatsbyImageData, StaticImage } from 'gatsby-plugin-image'
+import React, { useRef, useState } from 'react'
+import { useOnClickOutside } from 'usehooks-ts'
+import { MenuToggle } from '../Components/Menu/MenuToggle'
+import { appear } from './Landing'
+import { MenuItem } from './MenuItem'
 const sidebar = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 254px 35px)`,
     transition: {
       type: 'spring',
       stiffness: 20,
-      restDelta: 2
-    }
+      restDelta: 2,
+    },
   }),
   closed: {
     clipPath: 'circle(1px at 254px 35px)',
@@ -21,134 +21,135 @@ const sidebar = {
       delay: 0.5,
       type: 'spring',
       stiffness: 400,
-      damping: 40
-    }
-  }
-};
+      damping: 40,
+    },
+  },
+}
 const container = {
   hidden: {},
   show: {
     transition: {
       delayChildren: 0.3,
-      staggerChildren: 0.1
-    }
-  }
-};
+      staggerChildren: 0.1,
+    },
+  },
+}
 
 const item = {
   hidden: { y: -70 },
-  show: { y: 0 }
-};
+  show: { y: 0 },
+}
 
 const variants = {
   open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.2 }
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
   },
   closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 }
-  }
-};
+    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+  },
+}
 
 const itemIds = [
   {
     name: 'Skúsenosti',
-    link: '#experience'
+    link: '#experience',
   },
   {
     name: 'O mne',
-    link: '#aboutMe'
+    link: '#aboutMe',
   },
   {
     name: 'Kontakt',
-    link: '#contact'
+    link: '#contact',
   },
   {
     name: 'Vzdelanie',
-    link: '#education'
-  }
-];
+    link: '#education',
+  },
+]
 
 export const Nav = (props: Props) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const ref = useRef(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const ref = useRef(null)
   const handleClickOutside = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-  useOnClickOutside(ref, handleClickOutside);
-  const [isOpen, toggleOpen] = useCycle(false, true);
+    setIsMenuOpen(!isMenuOpen)
+  }
+  useOnClickOutside(ref, handleClickOutside)
+  const [isOpen, toggleOpen] = useCycle(false, true)
   return (
-      <>
-         <motion.div
-            className='flex relative z-30 items-center w-full bg-[#1f1f1f] sm:justify-center sm:py-8 sm:max-w-full lg:space-x-16'>
+    <>
+      <motion.div className='flex relative z-30 items-center w-full bg-[#1f1f1f] sm:justify-center sm:py-8 sm:max-w-full lg:space-x-16'>
+        <motion.ul
+          initial={'hidden'}
+          animate={'show'}
+          variants={container}
+          className='hidden z-20 items-center sm:flex sm:space-x-8'>
+          <motion.li className='text-silver' variants={item}>
+            <Link to='#experience' aria-label='Skúsenosti'>
+              Skúsenosti
+            </Link>
+          </motion.li>
+          <motion.li className='text-silver' variants={item}>
+            <Link to='#aboutMe' aria-label='O mne'>
+              O mne
+            </Link>
+          </motion.li>
+          <motion.li className='text-silver' variants={item}>
+            <Link aria-label='logo' to='/'>
+              <StaticImage
+                src='../images/logo-white.png'
+                alt='logo'
+                className='w-20'
+                placeholder='none'
+              />
+            </Link>
+          </motion.li>
+          <motion.li className='text-silver' variants={item}>
+            <Link to='#contact' aria-label='Kontakt'>
+              Kontakt
+            </Link>
+          </motion.li>
+          <motion.li className='text-silver' variants={item}>
+            <Link aria-label='Vzdelanie' to='#education'>
+              Vzdelanie
+            </Link>
+          </motion.li>
+        </motion.ul>
+
+        <motion.div
+          className='flex relative justify-between items-center py-3 px-6 w-full sm:hidden'
+          initial={false}
+          animate={isOpen ? 'open' : 'closed'}
+          variants={appear()}>
+          <motion.div
+            className={
+              'flex absolute inset-y-0 right-0 z-[20] justify-center w-[300px] h-[1000px] bg-lightBlack'
+            }
+            variants={sidebar}>
             <motion.ul
-               initial={'hidden'}
-               animate={'show'}
-               variants={container}
-               className='hidden z-20 items-center sm:flex sm:space-x-8'>
-               <motion.li className='text-silver' variants={item}>
-                  <Link to='#experience' aria-label='Skúsenosti'>
-                     Skúsenosti
-                  </Link>
-               </motion.li>
-               <motion.li className='text-silver' variants={item}>
-                  <Link to='#aboutMe' aria-label='O mne'>
-                     O mne
-                  </Link>
-               </motion.li>
-               <motion.li className='text-silver' variants={item}>
-                  <Link aria-label='logo' to='/'>
-                     <StaticImage
-                        src='../images/logo-white.png'
-                        alt='logo'
-                        className='w-20'
-                        placeholder='none'
-                     />
-                  </Link>
-               </motion.li>
-               <motion.li className='text-silver' variants={item}>
-                  <Link to='#contact' aria-label='Kontakt'>
-                     Kontakt
-                  </Link>
-               </motion.li>
-               <motion.li className='text-silver' variants={item}>
-                  <Link aria-label='Vzdelanie' to='#education'>
-                     Vzdelanie
-                  </Link>
-               </motion.li>
+              className='flex absolute top-[7rem] z-50 flex-col ml-11'
+              variants={variants}>
+              {itemIds.map((item, i) => (
+                <MenuItem
+                  i={i}
+                  key={i}
+                  text={item.name}
+                  link={item.link}
+                  toggleOpen={toggleOpen}
+                />
+              ))}
             </motion.ul>
+          </motion.div>
+          <StaticImage
+            src='../images/logo-darkGrey.png'
+            alt='logo'
+            className='relative w-20'
+            placeholder='none'
+          />
 
-            <motion.div
-               className='flex relative justify-between items-center py-3 px-6 w-full sm:hidden'
-               initial={false}
-               animate={isOpen ? 'open' : 'closed'}
-               variants={appear()}>
-               <motion.div
-                  className={'flex absolute inset-y-0 right-0 z-[20] justify-center w-[300px] h-[1000px] bg-lightBlack'}
-                  variants={sidebar}>
-                  <motion.ul
-                     className='flex absolute top-[7rem] z-50 flex-col ml-11'
-                     variants={variants}>
-                     {itemIds.map((item, i) => (
-                        <MenuItem
-                           i={i}
-                           key={i}
-                           text={item.name}
-                           link={item.link}
-                           toggleOpen={toggleOpen}
-                        />
-                     ))}
-                  </motion.ul>
-               </motion.div>
-               <StaticImage
-                  src='../images/logo-darkGrey.png'
-                  alt='logo'
-                  className='relative w-20'
-                  placeholder='none'
-               />
+          <MenuToggle toggle={() => toggleOpen()} />
 
-               <MenuToggle toggle={() => toggleOpen()} />
-
-               {/* <button
+          {/* <button
                   aria-label='Open Menu'
                   title='Open Menu'
                   className='p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50'
@@ -229,14 +230,14 @@ export const Nav = (props: Props) => {
                      </motion.div>
                   )}
                </AnimatePresence> */}
-            </motion.div>
-         </motion.div>
-      </>
-  );
-};
+        </motion.div>
+      </motion.div>
+    </>
+  )
+}
 
 interface Props {
-   logo?: IGatsbyImageData;
-   itemsCount?: number;
-   items?: { [key: string]: string };
+  logo?: IGatsbyImageData
+  itemsCount?: number
+  items?: { [key: string]: string }
 }

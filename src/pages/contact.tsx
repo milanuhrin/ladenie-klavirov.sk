@@ -1,24 +1,24 @@
-import { motion } from 'framer-motion';
-import { graphql, useStaticQuery } from 'gatsby';
-import React from 'react';
-import { Footer, Nav } from '../Components/export';
+import { motion } from 'framer-motion'
+import { graphql, useStaticQuery } from 'gatsby'
+import React from 'react'
+import { Footer, Nav } from '../Components/export'
 
 const Contact = () => {
   const logo = useStaticQuery(graphql`
-      {
-         file(relativePath: { eq: "logo-black.png" }) {
-            childImageSharp {
-               gatsbyImageData(placeholder: BLURRED)
-            }
-         }
+    {
+      file(relativePath: { eq: "logo-black.png" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED)
+        }
       }
-   `);
+    }
+  `)
   return (
-      <>
-         <Nav logo={logo} />
-         <motion.main>
-            {/* <TextImgWrapper> */}
-            {/* <TextImg
+    <>
+      <Nav logo={logo} />
+      <motion.main>
+        {/* <TextImgWrapper> */}
+        {/* <TextImg
                title='Neváhajte a zavolajte mi pre viac informácii'
                img={PianoIllustration}
                alt='animovaný obrázok s dvomi ľudmi pri klavíri'
@@ -29,10 +29,10 @@ const Contact = () => {
                   </>
                }
             /> */}
-            {/* </TextImgWrapper> */}
-         </motion.main>
-         <Footer />
-      </>
-  );
-};
-export default Contact;
+        {/* </TextImgWrapper> */}
+      </motion.main>
+      <Footer />
+    </>
+  )
+}
+export default Contact
