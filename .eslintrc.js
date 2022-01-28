@@ -3,10 +3,11 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: [
+  extends: [ 
     'plugin:react/recommended',
     'standard',
     'plugin:tailwindcss/recommended'
+    'plugin:prettier/recommended'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -19,9 +20,21 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
-    'tailwindcss'
+    'tailwindcss',
+    'prettier'
+
+  ],
+  overrides: [
+    {
+      rules: {
+        'max-len': 50 
+      }
+    }
   ],
   rules: {
+    'max-len': {
+      'code': 30
+    },
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
     'no-unused-vars': 'warn',

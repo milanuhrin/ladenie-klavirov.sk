@@ -23,8 +23,7 @@ export const MenuItem = (props: Props) => {
 
   return (
       <motion.li
-         className='my-[1rem] font-bold text-mediumSilver'
-         variants={variants}
+           className='my-[1rem] font-bold text-mediumSilver' variants={variants}
          whileHover={{ scale: 1.1 }}
          whileTap={{ scale: 0.8 }}>
          <Link
