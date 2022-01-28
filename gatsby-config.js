@@ -4,21 +4,22 @@ module.exports = {
     siteUrl: 'https://ladenie-klavirov.sk',
     titleTemplate: '%s · Ladenie a oprava klavírov',
     description: 'Profesionálne ladenie a oprava klavírov',
-    image: '/milan-fb.jpg'
+    image: '/milan-fb.jpg',
   },
   plugins: [
+    'gatsby-plugin-pnpm',
     'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-s3',
       options: {
-        bucketName: 'tatiho-stranka'
-      }
+        bucketName: 'tatiho-stranka',
+      },
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'G-QLGH6XXEYR'
-      }
+        trackingId: 'G-QLGH6XXEYR',
+      },
     },
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
@@ -27,18 +28,18 @@ module.exports = {
       resolve: 'gatsby-plugin-sharp',
       options: {
         defaults: {
-          formats: ['auto', 'avif']
-        }
-      }
+          formats: ['auto', 'avif'],
+        },
+      },
     },
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: './src/images/'
+        path: './src/images/',
       },
-      __key: 'images'
-    }
-  ]
-};
+      __key: 'images',
+    },
+  ],
+}
