@@ -13,13 +13,13 @@ export const Text = React.forwardRef((props: Props, ref: any) => {
   return (
     <motion.div
       id='textWrapper'
-      className={` ${textWrapperStyle} text-center w-full z-10 flex flex-col self-center justify-self-center gap-9 sm:w-[100%]`}
+      className={` ${textWrapperStyle} z-10 flex w-full flex-col gap-9 self-center justify-self-center text-center sm:w-[100%]`}
       ref={ref}>
       {headerText && (
         <motion.h3 className={`${headerStyle} `}>
           <span
             className={
-              'text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-snakeGr1 to-snakeGr2'
+              'bg-gradient-to-r from-snakeGr1 to-snakeGr2 bg-clip-text text-center text-4xl font-extrabold text-transparent'
             }>
             {headerText}
           </span>
