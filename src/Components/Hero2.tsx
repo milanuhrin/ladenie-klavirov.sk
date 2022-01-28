@@ -39,10 +39,10 @@ export const Hero2 = (props: Props) => {
   return (
     <motion.section
       id='experience'
-      className='flex relative flex-col gap-10 px-8 pb-16 max-w-full bg-gradient-to-b from-white to-silver sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:gap-8 sm:items-center sm:px-6 sm:pt-20 lg:px-20'>
+      className='relative flex max-w-full flex-col gap-10 bg-gradient-to-b from-white to-silver px-8 pb-16 sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:items-center sm:gap-8 sm:px-6 sm:pt-20 lg:px-20'>
       <motion.div
         id='textWrapper'
-        className='flex flex-col gap-6 justify-self-center ml-auto sm:col-start-2 sm:row-start-1 sm:self-center sm:max-w-2xl'
+        className='ml-auto flex flex-col gap-6 justify-self-center sm:col-start-2 sm:row-start-1 sm:max-w-2xl sm:self-center'
         initial='offscreen'
         whileInView='onscreen'
         viewport={{ margin: '400px', once: true }}
@@ -56,14 +56,13 @@ export const Hero2 = (props: Props) => {
                ladím a zastrešujem väčšinu hudobných škôl a domácností, ktoré sa
                rozhodli zavolať odborníka.'
         />
-        <div className='my-4' />
         <ul
-          className={`${textWidth}  flex-col self-center gap-6 sm:grid sm:grid-cols-2 flex justify-self-center`}>
+          className={`${textWidth} flex flex-col gap-6 self-center justify-self-center  sm:grid sm:grid-cols-2`}>
           {pole.map((name) => (
             <motion.li className='flex lg:mt-0' key={uuidv4()}>
-              <motion.span className='flex shrink-0 justify-center items-center w-6 h-6 text-green-800 bg-green-100 rounded-full'>
+              <motion.span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-800'>
                 <svg
-                  className='w-4 h-4'
+                  className='h-4 w-4'
                   viewBox='0 0 20 20'
                   fill='currentColor'>
                   <path
@@ -82,7 +81,7 @@ export const Hero2 = (props: Props) => {
 
       <motion.div
         id='imageWrapper'
-        className='grid z-10 grid-cols-12 grid-rows-2 gap-4 sm:col-start-1 sm:row-start-1'>
+        className='z-10 grid grid-cols-12 grid-rows-2 gap-4 sm:col-start-1 sm:row-start-1'>
         {ha.map((item, index) => (
           <motion.div
             key={uuidv4()}
@@ -96,7 +95,7 @@ export const Hero2 = (props: Props) => {
                 y: 150,
               },
             }}
-            className={`z-20 rounded-lg h-auto ${item.class}`}>
+            className={`z-20 h-auto rounded-lg ${item.class}`}>
             <GatsbyImage
               imgClassName={'rounded-lg '}
               className={'rounded-lg shadow-xl'}

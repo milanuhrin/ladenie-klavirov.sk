@@ -33,14 +33,14 @@ export const Landing = () => {
   `)
   const hero1Image = getImage(data.file)
   return (
-    <section className='flex relative flex-col items-center w-full min-h-screen'>
+    <section className='relative flex min-h-screen w-full flex-col items-center'>
       {/* <Daco/> */}
       <motion.div
         id='background'
         initial='hidden'
         animate='visible'
         variants={appear('backOut')}
-        className='absolute w-full h-screen bg-center bg-no-repeat bg-cover landingBackground'>
+        className='landingBackground absolute h-screen w-full bg-cover bg-center bg-no-repeat'>
         <SectionDivider fill='white' />
       </motion.div>
 
@@ -65,5 +65,4 @@ export const Landing = () => {
     </section>
   )
 }
-
 ;<div className='my-10 sm:my-24' />
