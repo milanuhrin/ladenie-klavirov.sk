@@ -28,8 +28,6 @@ specifiers:
   gatsby-plugin-sitemap: ^5.4.0
   gatsby-source-filesystem: ^4.4.0
   gatsby-transformer-sharp: ^4.4.0
-  install: ^0.13.0
-  npm: ^8.3.2
   postcss: ^8.4.5
   prettier: ^2.5.1
   prettier-plugin-tailwindcss: ^0.1.4
@@ -55,8 +53,6 @@ dependencies:
   gatsby-plugin-sitemap: 5.6.0_828755b72121487b1d79626ceb726134
   gatsby-source-filesystem: 4.6.0_gatsby@4.6.0
   gatsby-transformer-sharp: 4.6.0_e37a3c144b7a66dda1cab2039d7ccb4d
-  install: 0.13.0
-  npm: 8.4.0
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-helmet: 6.1.0_react@17.0.2
@@ -3394,8 +3390,8 @@ packages:
     dependencies:
       ansi-align: 3.0.1
       camelcase: 5.3.1
-      chalk: 3.0.0
       cli-boxes: 2.2.1
+      chalk: 3.0.0
       string-width: 4.2.3
       term-size: 2.2.1
       type-fest: 0.8.1
@@ -3408,8 +3404,8 @@ packages:
     dependencies:
       ansi-align: 3.0.1
       camelcase: 6.3.0
-      chalk: 4.1.2
       cli-boxes: 2.2.1
+      chalk: 4.1.2
       string-width: 4.2.3
       type-fest: 0.20.2
       widest-line: 3.1.0
@@ -4109,8 +4105,8 @@ packages:
       postcss-modules-scope: 3.0.0_postcss@8.4.5
       postcss-modules-values: 4.0.0_postcss@8.4.5
       postcss-value-parser: 4.2.0
-      schema-utils: 3.1.1
       semver: 7.3.5
+      schema-utils: 3.1.1
       webpack: 5.67.0
     dev: false
 
@@ -4131,8 +4127,8 @@ packages:
       jest-worker: 26.6.2
       p-limit: 3.1.0
       postcss: 8.4.5
-      schema-utils: 3.1.1
       serialize-javascript: 5.0.1
+      schema-utils: 3.1.1
       source-map: 0.6.1
       webpack: 5.67.0
     dev: false
@@ -4221,8 +4217,8 @@ packages:
       postcss-minify-gradients: 5.0.5_postcss@8.4.5
       postcss-minify-params: 5.0.4_postcss@8.4.5
       postcss-minify-selectors: 5.1.2_postcss@8.4.5
-      postcss-normalize-charset: 5.0.2_postcss@8.4.5
       postcss-normalize-display-values: 5.0.2_postcss@8.4.5
+      postcss-normalize-charset: 5.0.2_postcss@8.4.5
       postcss-normalize-positions: 5.0.3_postcss@8.4.5
       postcss-normalize-repeat-style: 5.0.3_postcss@8.4.5
       postcss-normalize-string: 5.0.3_postcss@8.4.5
@@ -5136,7 +5132,6 @@ packages:
       '@eslint/eslintrc': 0.4.3
       '@humanwhocodes/config-array': 0.5.0
       ajv: 6.12.6
-      chalk: 4.1.2
       cross-spawn: 7.0.3
       debug: 4.3.3
       doctrine: 3.0.0
@@ -5153,6 +5148,7 @@ packages:
       functional-red-black-tree: 1.0.1
       glob-parent: 5.1.2
       globals: 13.12.0
+      chalk: 4.1.2
       ignore: 4.0.6
       import-fresh: 3.3.0
       imurmurhash: 0.1.4
@@ -5795,7 +5791,6 @@ packages:
       '@types/common-tags': 1.8.1
       better-opn: 2.1.1
       boxen: 5.1.2
-      chalk: 4.1.2
       clipboardy: 2.3.0
       common-tags: 1.8.2
       configstore: 5.0.1
@@ -5808,6 +5803,7 @@ packages:
       gatsby-core-utils: 3.6.0
       gatsby-telemetry: 3.6.0
       hosted-git-info: 3.0.8
+      chalk: 4.1.2
       is-valid-path: 0.1.1
       joi: 17.6.0
       lodash: 4.17.21
@@ -5887,10 +5883,10 @@ packages:
     dependencies:
       '@babel/runtime': 7.16.7
       bluebird: 3.7.2
-      chokidar: 3.5.3
       fs-exists-cached: 1.0.0
       gatsby-core-utils: 3.6.0
       glob: 7.2.0
+      chokidar: 3.5.3
       lodash: 4.17.21
       micromatch: 4.0.4
     dev: false
@@ -5928,13 +5924,13 @@ packages:
       babel-jsx-utils: 1.1.0
       babel-plugin-remove-graphql-queries: 4.6.0_gatsby@4.6.0
       camelcase: 5.3.1
-      chokidar: 3.5.3
       common-tags: 1.8.2
       fs-extra: 10.0.0
       gatsby: 4.6.0_c5c6f1c3218fa1c1e978d0893d617b86
       gatsby-core-utils: 3.6.0
       gatsby-plugin-sharp: 4.6.0_gatsby@4.6.0
       gatsby-source-filesystem: 4.6.0_gatsby@4.6.0
+      chokidar: 3.5.3
       objectFitPolyfill: 2.3.5
       prop-types: 15.8.1
       react: 17.0.2
@@ -5952,7 +5948,6 @@ packages:
       '@babel/runtime': 7.16.7
       '@babel/traverse': 7.16.10
       '@sindresorhus/slugify': 1.1.2
-      chokidar: 3.5.3
       fs-exists-cached: 1.0.0
       gatsby: 4.6.0_c5c6f1c3218fa1c1e978d0893d617b86
       gatsby-core-utils: 3.6.0
@@ -5960,6 +5955,7 @@ packages:
       gatsby-plugin-utils: 3.0.0_gatsby@4.6.0
       gatsby-telemetry: 3.6.0
       globby: 11.1.0
+      chokidar: 3.5.3
       lodash: 4.17.21
     transitivePeerDependencies:
       - encoding
@@ -6015,11 +6011,11 @@ packages:
       '@types/node': 12.20.42
       async: 2.6.3
       aws-sdk: 2.1065.0
-      chalk: 2.4.2
       fs-extra: 7.0.1
       fs-posix: 6.0.0
       gatsby: 4.6.0_c5c6f1c3218fa1c1e978d0893d617b86
       glob-to-regexp: 0.4.1
+      chalk: 2.4.2
       inquirer: 6.5.2
       is-ci: 2.0.0
       klaw: 3.0.0
@@ -6143,13 +6139,13 @@ packages:
       gatsby: ^4.0.0-next
     dependencies:
       '@babel/runtime': 7.16.7
-      chokidar: 3.5.3
       fastq: 1.13.0
       file-type: 16.5.3
       fs-extra: 10.0.0
       gatsby: 4.6.0_c5c6f1c3218fa1c1e978d0893d617b86
       gatsby-core-utils: 3.6.0
       got: 9.6.0
+      chokidar: 3.5.3
       md5-file: 5.0.0
       mime: 2.6.0
       pretty-bytes: 5.6.0
@@ -6249,8 +6245,6 @@ packages:
       body-parser: 1.19.1
       browserslist: 4.19.1
       cache-manager: 2.11.1
-      chalk: 4.1.2
-      chokidar: 3.5.3
       common-tags: 1.8.2
       compression: 1.7.4
       cookie: 0.4.1
@@ -6303,6 +6297,8 @@ packages:
       graphql-playground-middleware-express: 1.7.23_express@4.17.2
       hasha: 5.2.2
       http-proxy: 1.18.1_debug@3.2.7
+      chalk: 4.1.2
+      chokidar: 3.5.3
       invariant: 2.2.4
       is-relative: 1.0.0
       is-relative-url: 3.0.0
@@ -7074,11 +7070,11 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       ansi-escapes: 3.2.0
-      chalk: 2.4.2
       cli-cursor: 2.1.0
       cli-width: 2.2.1
       external-editor: 3.1.0
       figures: 2.0.0
+      chalk: 2.4.2
       lodash: 4.17.21
       mute-stream: 0.0.7
       run-async: 2.4.1
@@ -7093,11 +7089,11 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       ansi-escapes: 4.3.2
-      chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-width: 3.0.0
       external-editor: 3.1.0
       figures: 3.2.0
+      chalk: 4.1.2
       lodash: 4.17.21
       mute-stream: 0.0.8
       run-async: 2.4.1
@@ -7105,11 +7101,6 @@ packages:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       through: 2.3.8
-    dev: false
-
-  /install/0.13.0:
-    resolution: {integrity: sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==}
-    engines: {node: '>= 0.10'}
     dev: false
 
   /internal-slot/1.0.3:
@@ -8527,84 +8518,6 @@ packages:
       path-key: 3.1.1
     dev: false
 
-  /npm/8.4.0:
-    resolution: {integrity: sha512-j32JsNpXI0TwuZd2p67X+U83lEqHrc0+CGIUGNwQqubMPj610+BongAfX0SmTCvyz7PzSIkxftuInNSmweF0hQ==}
-    engines: {node: ^12.13.0 || ^14.15.0 || >=16}
-    hasBin: true
-    dev: false
-    bundledDependencies:
-      - '@isaacs/string-locale-compare'
-      - '@npmcli/arborist'
-      - '@npmcli/ci-detect'
-      - '@npmcli/config'
-      - '@npmcli/map-workspaces'
-      - '@npmcli/package-json'
-      - '@npmcli/run-script'
-      - abbrev
-      - ansicolors
-      - ansistyles
-      - archy
-      - cacache
-      - chalk
-      - chownr
-      - cli-columns
-      - cli-table3
-      - columnify
-      - fastest-levenshtein
-      - glob
-      - graceful-fs
-      - hosted-git-info
-      - ini
-      - init-package-json
-      - is-cidr
-      - json-parse-even-better-errors
-      - libnpmaccess
-      - libnpmdiff
-      - libnpmexec
-      - libnpmfund
-      - libnpmhook
-      - libnpmorg
-      - libnpmpack
-      - libnpmpublish
-      - libnpmsearch
-      - libnpmteam
-      - libnpmversion
-      - make-fetch-happen
-      - minipass
-      - minipass-pipeline
-      - mkdirp
-      - mkdirp-infer-owner
-      - ms
-      - node-gyp
-      - nopt
-      - npm-audit-report
-      - npm-install-checks
-      - npm-package-arg
-      - npm-pick-manifest
-      - npm-profile
-      - npm-registry-fetch
-      - npm-user-validate
-      - npmlog
-      - opener
-      - pacote
-      - parse-conflict-json
-      - proc-log
-      - qrcode-terminal
-      - read
-      - read-package-json
-      - read-package-json-fast
-      - readdir-scoped-modules
-      - rimraf
-      - semver
-      - ssri
-      - tar
-      - text-table
-      - tiny-relative-date
-      - treeverse
-      - validate-npm-package-name
-      - which
-      - write-file-atomic
-
   /npmlog/4.1.2:
     resolution: {integrity: sha512-2uUqazuKlTaSI/dC8AzicUck7+IrEaOnN/e0jd3Xtt1KcGpwx30v50mL7oPyr/h9bL3E4aZccVwpwP+5W9Vjkg==}
     dependencies:
@@ -8847,9 +8760,9 @@ packages:
     resolution: {integrity: sha512-eNwHudNbO1folBP3JsZ19v9azXWtQZjICdr3Q0TDPIaeBQ3mXLrh54wM+er0+hSp+dWKf+Z8KM58CYzEyIYxYg==}
     engines: {node: '>=6'}
     dependencies:
-      chalk: 2.4.2
       cli-cursor: 2.1.0
       cli-spinners: 2.6.1
+      chalk: 2.4.2
       log-symbols: 2.2.0
       strip-ansi: 5.2.0
       wcwidth: 1.0.1
@@ -9350,8 +9263,8 @@ packages:
       klona: 2.0.5
       loader-utils: 2.0.2
       postcss: 8.4.5
-      schema-utils: 3.1.1
       semver: 7.3.5
+      schema-utils: 3.1.1
     dev: false
 
   /postcss-loader/5.3.0_postcss@8.4.5+webpack@5.67.0:
@@ -9953,7 +9866,6 @@ packages:
       '@babel/code-frame': 7.10.4
       address: 1.1.2
       browserslist: 4.14.2
-      chalk: 2.4.2
       cross-spawn: 7.0.3
       detect-port-alt: 1.1.6
       escape-string-regexp: 2.0.0
@@ -9963,6 +9875,7 @@ packages:
       global-modules: 2.0.0
       globby: 11.0.1
       gzip-size: 5.1.1
+      chalk: 2.4.2
       immer: 8.0.1
       is-root: 2.1.0
       loader-utils: 2.0.0
@@ -11220,12 +11133,12 @@ packages:
     deprecated: This SVGO version is no longer supported. Upgrade to v2.x.x.
     hasBin: true
     dependencies:
-      chalk: 2.4.2
       coa: 2.0.2
       css-select: 2.1.0
       css-select-base-adapter: 0.1.1
       css-tree: 1.0.0-alpha.37
       csso: 4.2.0
+      chalk: 2.4.2
       js-yaml: 3.14.1
       mkdirp: 0.5.5
       object.values: 1.1.5
@@ -11292,8 +11205,6 @@ packages:
     dependencies:
       arg: 5.0.1
       autoprefixer: 10.4.2_postcss@8.4.5
-      chalk: 4.1.2
-      chokidar: 3.5.3
       color-name: 1.1.4
       cosmiconfig: 7.0.1
       detective: 5.2.0
@@ -11301,6 +11212,8 @@ packages:
       dlv: 1.1.3
       fast-glob: 3.2.11
       glob-parent: 6.0.2
+      chalk: 4.1.2
+      chokidar: 3.5.3
       is-glob: 4.0.3
       normalize-path: 3.0.0
       object-hash: 2.2.0
@@ -11368,8 +11281,8 @@ packages:
         optional: true
     dependencies:
       jest-worker: 27.4.6
-      schema-utils: 3.1.1
       serialize-javascript: 6.0.0
+      schema-utils: 3.1.1
       source-map: 0.6.1
       terser: 5.10.0_acorn@8.7.0
       webpack: 5.67.0
@@ -11394,8 +11307,8 @@ packages:
         optional: true
     dependencies:
       jest-worker: 27.4.6
-      schema-utils: 3.1.1
       serialize-javascript: 6.0.0
+      schema-utils: 3.1.1
       source-map: 0.6.1
       terser: 5.10.0
       webpack: 5.67.0
@@ -11804,9 +11717,9 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       boxen: 5.1.2
-      chalk: 4.1.2
       configstore: 5.0.1
       has-yarn: 2.1.0
+      chalk: 4.1.2
       import-lazy: 2.1.0
       is-ci: 2.0.0
       is-installed-globally: 0.4.0
@@ -12043,13 +11956,13 @@ packages:
       acorn: 8.7.0
       acorn-import-assertions: 1.8.0_acorn@8.7.0
       browserslist: 4.19.1
-      chrome-trace-event: 1.0.3
       enhanced-resolve: 5.8.3
       es-module-lexer: 0.9.3
       eslint-scope: 5.1.1
       events: 3.3.0
       glob-to-regexp: 0.4.1
       graceful-fs: 4.2.9
+      chrome-trace-event: 1.0.3
       json-parse-better-errors: 1.0.2
       loader-runner: 4.2.0
       mime-types: 2.1.34
