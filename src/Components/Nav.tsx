@@ -79,7 +79,7 @@ export const Nav = (props: Props) => {
   return (
     <>
       <motion.div
-        className='relative z-30 flex w-full items-center bg-[#1f1f1f] sm:w-full sm:justify-end sm:py-[1rem] lg:space-x-16'
+        className='fixed top-0 z-30 flex w-full items-center bg-[#1f1f1f] sm:w-full sm:justify-end sm:py-[1rem] lg:space-x-16'
         initial='hidden'
         animate='visible'
         variants={appear('backOut')}>
