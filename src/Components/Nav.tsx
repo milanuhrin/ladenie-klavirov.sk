@@ -78,7 +78,11 @@ export const Nav = (props: Props) => {
   const [isOpen, toggleOpen] = useCycle(false, true)
   return (
     <>
-      <motion.div className='relative z-30 flex w-full items-center bg-[#1f1f1f] sm:max-w-full sm:justify-center sm:py-8 lg:space-x-16'>
+      <motion.div
+        className='relative z-30 flex w-full items-center bg-[#1f1f1f] sm:max-w-full sm:justify-center sm:py-8 lg:space-x-16'
+        initial='hidden'
+        animate='visible'
+        variants={appear('backOut')}>
         <motion.ul
           initial={'hidden'}
           animate={'show'}
