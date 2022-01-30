@@ -1,12 +1,10 @@
 import React from 'react'
-import { SectionDividerSharp } from 'svg/SectionDividerSharp'
 
 export const Footer = () => {
   return (
     <footer
       id='contact'
       className='relative flex w-full flex-col items-center justify-center gap-7 bg-silver py-10 sm:gap-6 sm:py-12'>
-      {/* <SectionDividerSharp containerStyles='!rotate-0 !top-[-3rem]' /> */}
       <h1 className='bg-gradient-to-r from-snakeGr1 to-snakeGr2 bg-clip-text text-3xl font-extrabold text-transparent'>
         Kontakt
       </h1>

@@ -41,12 +41,10 @@ export const Hero2 = (props: Props) => {
   return (
     <motion.section
       id='experience'
-      className={`${containerStyles} horizontalPadding relative flex  max-w-full flex-col gap-10 bg-gradient-to-b from-white to-silver   sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:items-center sm:justify-center sm:gap-8 `}>
-      {/* <SectionDivider /> */}
-
+      className={`${containerStyles} padding-X-2-12rem relative flex  max-w-full flex-col gap-3o5-6rem  bg-gradient-to-b from-white to-silver sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:items-center sm:justify-center  `}>
       <motion.div
         id='textWrapper'
-        className='z-10 flex flex-col gap-6 sm:col-start-2 sm:row-start-1  sm:self-center sm:justify-self-center'
+        className='z-10 flex flex-col gap-2o5 sm:col-start-2 sm:row-start-1  sm:self-center sm:justify-self-center'
         initial='offscreen'
         whileInView='onscreen'
         viewport={{ margin: '400px', once: true }}
@@ -61,9 +59,13 @@ export const Hero2 = (props: Props) => {
                rozhodli zavolať odborníka.'
         />
         <ul
-          className={`${textWidth} flex flex-col gap-6 self-center justify-self-center  sm:grid sm:grid-cols-2`}>
-          {pole.map((name) => (
-            <motion.li className='flex lg:mt-0' key={uuidv4()}>
+          className={`${textWidth} flex flex-col gap-6 self-center justify-self-center sm:grid sm:grid-cols-2`}>
+          {pole.map((name, index) => (
+            <motion.li
+              className={`${
+                index % 2 === 1 && 'ml-[1.5rem]'
+              } flex sm:ml-0 lg:mt-0`}
+              key={uuidv4()}>
               <motion.span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-800'>
                 <svg
                   className='h-4 w-4'

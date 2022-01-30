@@ -1,10 +1,9 @@
+import { Nav, SectionDivider } from 'Components/export'
+import { TextImg } from 'Components/TextImg/TextImg'
 import { motion } from 'framer-motion'
 import { graphql, useStaticQuery } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import React from 'react'
-import { Divider } from 'Components/Divider'
-import { Nav, SectionDivider } from 'Components/export'
-import { TextImg } from 'Components/TextImg/TextImg'
 
 export const appear = (ease = 'easeOut', delay = 0, duration = 1) => ({
   hidden: {
@@ -51,7 +50,6 @@ export const Landing = (props: Props) => {
       </motion.div>
 
       <Nav itemsCount={5} />
-      <Divider />
       <motion.div
         className='z-20 '
         initial='hidden'
@@ -65,6 +63,7 @@ export const Landing = (props: Props) => {
             imgStyle='!max-w-[25rem]'
             alt='Milan Uhrin, ladič klavírov'
             loading='eager'
+            containerStyles='padding-Y-3-6rem '
           />
         )}
       </motion.div>

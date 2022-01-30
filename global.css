@@ -3,14 +3,20 @@
 @tailwind utilities;
 
 @layer components {
-   .horizontalPadding {
+   .padding-X-2-12rem {
       @apply px-[2rem] lg:px-[12rem];
    }
-   .paddingY-2-5rem {
+   .padding-Y-2-5rem {
       @apply py-[2rem] sm:py-[3.5rem] lg:py-[5rem]
    }
-   .paddingY-3-6rem {
+   .padding-Y-3-6rem {
       @apply py-[3rem] sm:py-[4rem] lg:py-[6rem]
+   }
+   .gap-3o5-6rem {
+      @apply gap-[3.5rem] sm:gap-[6rem]
+   }
+   .gap-2o5{
+      @apply gap-[2.5rem]
    }
 }
 .landingBackground {

@@ -13,7 +13,7 @@ export const Text = React.forwardRef((props: Props, ref: any) => {
   return (
     <motion.div
       id='textWrapper'
-      className={` ${textWrapperStyle} z-10 flex w-full flex-col gap-9 self-center justify-self-center text-center sm:w-[100%]`}
+      className={`${textWrapperStyle} z-10  w-full flex-col  gap-2o5 self-center flex justify-self-center text-center sm:w-[100%]`}
       ref={ref}>
       {headerText && (
         <motion.h3 className={`${headerStyle} `}>

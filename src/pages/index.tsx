@@ -102,7 +102,7 @@ const IndexPage = () => {
             img3={hero2img3}
             img4={hero2img4}
             textWidth='70%'
-            containerStyles='paddingY-3-6rem'
+            containerStyles='padding-Y-3-6rem'
           />
         )}
         <div className='bg-gradient-to-b from-[#fafdfd] via-[#edf2ff] to-[#e7eefd]'>
@@ -115,7 +115,7 @@ const IndexPage = () => {
                 alt='Vo voľnom čase'
                 imgStyle='max-w-[25rem]'
                 id='aboutMe'
-                containerStyles='paddingY-3-6rem '
+                containerStyles='padding-Y-3-6rem '
                 // sectionDivider={<SectionDividerWaveOneSide fill='black' />}
               />
             </AnimOnScroll>
@@ -131,8 +131,8 @@ const IndexPage = () => {
                 alt='Vnútro klavíru'
                 imgStyle='max-w-[25rem]'
                 id='education'
-                containerStyles='paddingY-3-6rem '
-                // containerStyles='paddingY-3-6rem bg-gradient-to-br from-[#e2f7f7] to-[#dffff0]'
+                containerStyles='padding-Y-3-6rem '
+                // containerStyles='padding-Y-3-6rem bg-gradient-to-br from-[#e2f7f7] to-[#dffff0]'
                 // sectionDivider={<SectionDividerWaveOneSide fill='black' />}
               />
             </AnimOnScroll>

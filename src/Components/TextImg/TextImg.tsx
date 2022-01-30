@@ -36,7 +36,7 @@ export const TextImg = (props: Props) => {
   return (
     <motion.section
       id={id}
-      className={`${containerStyles} horizontalPadding relative z-20 grid w-full gap-14 sm:grid-cols-2 sm:grid-rows-1 sm:flex-row sm:items-center sm:justify-center sm:gap-24 `}>
+      className={`${containerStyles} padding-X-2-12rem gap-3o5-6rem z-20 grid w-full relative sm:grid-cols-2 sm:grid-rows-1 sm:flex-row sm:items-center sm:justify-center  `}>
       {/* Firtst element Text */}
 
       <Text
