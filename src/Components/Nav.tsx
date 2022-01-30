@@ -79,7 +79,7 @@ export const Nav = (props: Props) => {
   return (
     <>
       <motion.div
-        className='relative z-30 flex w-full items-center bg-[#1f1f1f] sm:max-w-full sm:justify-center sm:py-8 lg:space-x-16'
+        className='relative z-30 flex w-full items-center bg-[#1f1f1f] sm:w-full sm:justify-end sm:py-8 lg:space-x-16'
         initial='hidden'
         animate='visible'
         variants={appear('backOut')}>
@@ -87,7 +87,17 @@ export const Nav = (props: Props) => {
           initial={'hidden'}
           animate={'show'}
           variants={container}
-          className='z-20 hidden items-center sm:flex sm:space-x-8'>
+          className='padding-X-2-12rem lg:px-[21rem]  w-full sm:justify-end z-20 hidden items-center sm:flex sm:space-x-8'>
+          <motion.li className='text-silver mr-auto' variants={item}>
+            <Link aria-label='logo' to='/'>
+              <StaticImage
+                src='../images/logo-white.png'
+                alt='logo'
+                className='w-[7rem]'
+                placeholder='none'
+              />
+            </Link>
+          </motion.li>
           <motion.li className='text-silver' variants={item}>
             <Link to='#experience' aria-label='Skúsenosti'>
               Skúsenosti
@@ -98,16 +108,7 @@ export const Nav = (props: Props) => {
               O mne
             </Link>
           </motion.li>
-          <motion.li className='text-silver' variants={item}>
-            <Link aria-label='logo' to='/'>
-              <StaticImage
-                src='../images/logo-white.png'
-                alt='logo'
-                className='w-20'
-                placeholder='none'
-              />
-            </Link>
-          </motion.li>
+
           <motion.li className='text-silver' variants={item}>
             <Link to='#contact' aria-label='Kontakt'>
               Kontakt

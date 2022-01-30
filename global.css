@@ -4,7 +4,7 @@
 
 @layer components {
    .padding-X-2-12rem {
-      @apply px-[2rem] lg:px-[12rem];
+      @apply px-[2rem] sm:px-[5rem] lg:px-[20rem];
    }
    .padding-Y-2-5rem {
       @apply py-[2rem] sm:py-[3.5rem] lg:py-[5rem]

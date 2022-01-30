@@ -30,7 +30,9 @@ export const TextImg = (props: Props) => {
   let dynamicStyle
   if (width) {
     dynamicStyle =
-      width > 640 && reversed ? { gridColumn: '1', gridRow: '1' } : {}
+      width > 640 && reversed
+        ? { gridColumn: '1', gridRow: '1', justifySelf: 'start' }
+        : {}
   }
 
   return (
@@ -54,7 +56,7 @@ export const TextImg = (props: Props) => {
         alt &&
         (typeof img === 'string' ? (
           <motion.img
-            className={`${imgStyle}  flex max-w-[30rem] justify-self-center object-cover object-center`}
+            className={`${imgStyle}  flex max-w-[30rem] justify-self-end object-cover object-center`}
             style={{ ...dynamicStyle }}
             src={img}
             whileTap={{ scale: 0.55 }}
@@ -64,7 +66,7 @@ export const TextImg = (props: Props) => {
             <GatsbyImage
               style={{ ...dynamicStyle }}
               imgStyle={{}}
-              className={`${imgStyle} flex max-w-[30rem]  justify-self-center rounded-2xl  object-cover object-center shadow-2xl `}
+              className={`${imgStyle} flex max-w-[30rem]  justify-self-end rounded-2xl  object-cover object-center shadow-2xl `}
               imgClassName={`${imgStyleGatsbyImgTag} shadow-2xl`}
               image={img}
               alt={alt}
