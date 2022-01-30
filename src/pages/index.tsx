@@ -105,37 +105,41 @@ const IndexPage = () => {
             containerStyles='paddingY-3-6rem'
           />
         )}
-        {hero1freeTime && (
-          <AnimOnScroll>
-            <TextImg
-              headerText='Pár slov o mne'
-              paragraphText='Mojim najväčším hobby sa za posledných 5 rokov stalo fotenie. Podarilo sa mi dosiahnuť prvenstvá či už v slovenských, ale aj medzinárodných súťažiach. Najlepšie fotky sú prezentované na voľne dostupných dočasných výstavách či múzeách.'
-              img={hero1freeTime}
-              alt='Vo voľnom čase'
-              imgStyle='max-w-[25rem]'
-              id='aboutMe'
-              containerStyles='paddingY-3-6rem bg-gradient-to-br from-[#8d9fb0] to-[#7c779a]'
-              // sectionDivider={<SectionDividerWaveOneSide fill='black' />}
-            />
-          </AnimOnScroll>
-        )}
+        <div className='bg-gradient-to-b from-[#fafdfd] via-[#edf2ff] to-[#e7eefd]'>
+          {hero1freeTime && (
+            <AnimOnScroll>
+              <TextImg
+                headerText='Pár slov o mne'
+                paragraphText='Mojim najväčším hobby sa za posledných 5 rokov stalo fotenie. Podarilo sa mi dosiahnuť prvenstvá či už v slovenských, ale aj medzinárodných súťažiach. Najlepšie fotky sú prezentované na voľne dostupných dočasných výstavách či múzeách.'
+                img={hero1freeTime}
+                alt='Vo voľnom čase'
+                imgStyle='max-w-[25rem]'
+                id='aboutMe'
+                containerStyles='paddingY-3-6rem '
+                // sectionDivider={<SectionDividerWaveOneSide fill='black' />}
+              />
+            </AnimOnScroll>
+          )}
 
-        {hero1insidePiano && (
-          <AnimOnScroll>
-            <TextImg
-              reversed
-              headerText='Vzdelanie'
-              paragraphText='Vyštudoval som odbornú školu v Hradci Králové. Stal som sa tam mechanikom hudobných nástrojov, naučil sa opraviť klavír správne tak, aby fungoval najbližšie roky.'
-              img={hero1insidePiano}
-              alt='Vnútro klavíru'
-              imgStyle='max-w-[25rem]'
-              id='education'
-              containerStyles='paddingY-3-6rem bg-gradient-to-br from-[#e2f7f7] to-[#dffff0]'
-              // sectionDivider={<SectionDividerWaveOneSide fill='black' />}
-            />
-          </AnimOnScroll>
-        )}
-        <SectionDivider />
+          {hero1insidePiano && (
+            <AnimOnScroll>
+              <TextImg
+                reversed
+                headerText='Vzdelanie'
+                paragraphText='Vyštudoval som odbornú školu v Hradci Králové. Stal som sa tam mechanikom hudobných nástrojov, naučil sa opraviť klavír správne tak, aby fungoval najbližšie roky.'
+                img={hero1insidePiano}
+                alt='Vnútro klavíru'
+                imgStyle='max-w-[25rem]'
+                id='education'
+                containerStyles='paddingY-3-6rem '
+                // containerStyles='paddingY-3-6rem bg-gradient-to-br from-[#e2f7f7] to-[#dffff0]'
+                // sectionDivider={<SectionDividerWaveOneSide fill='black' />}
+              />
+            </AnimOnScroll>
+          )}
+        </div>
+
+        {/* <SectionDivider /> */}
       </motion.main>
       <Footer />
     </>

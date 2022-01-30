@@ -109,7 +109,7 @@ export const Hero2 = (props: Props) => {
           </motion.div>
         ))}
       </motion.div>
-      <SectionDividerSharp />
+      <SectionDividerSharp fill='#fafdfd' />
     </motion.section>
   )
 }

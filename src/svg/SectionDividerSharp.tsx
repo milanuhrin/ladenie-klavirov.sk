@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const SectionDividerSharp = ({
-  fill = 'green',
+  fill = 'white',
   containerStyles,
 }: {
   fill?: string
