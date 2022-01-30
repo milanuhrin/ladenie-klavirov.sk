@@ -49,7 +49,10 @@ export const Landing = (props: Props) => {
         <SectionDivider fill='white' />
       </motion.div>
 
-      <div id='fixedNavHeightReplacement' className='h-[70px] sm:h-[85px]' />
+      <div
+        data-name='fixedNavHeightReplacement'
+        className='h-[70px] sm:h-[85px]'
+      />
       <Nav itemsCount={5} />
       <motion.div
         className='z-20 '

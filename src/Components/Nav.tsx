@@ -1,4 +1,4 @@
-import { motion, useCycle } from 'framer-motion'
+import { motion, useCycle, useViewportScroll } from 'framer-motion'
 import { Link } from 'gatsby'
 import { IGatsbyImageData, StaticImage } from 'gatsby-plugin-image'
 import React, { useRef, useState } from 'react'
@@ -76,12 +76,18 @@ export const Nav = (props: Props) => {
   }
   useOnClickOutside(ref, handleClickOutside)
   const [isOpen, toggleOpen] = useCycle(false, true)
+  const [isUp, toggleUp] = useCycle(false, true)
+  const { scrollYProgress } = useViewportScroll()
+  console.log(Number(scrollYProgress))
   return (
     <>
       <motion.div
-        className='fixed top-0 z-30 flex w-full items-center bg-[#1f1f1f] sm:w-full sm:justify-end sm:py-[1rem] lg:space-x-16'
+        className={`${
+          Number(scrollYProgress) !== 0 ? 'bg-[#1f1f1f38]' : 'bg-[#1f1f1f]'
+        } fixed top-0 z-30 flex w-full items-center sm:w-full sm:justify-end sm:py-[1rem] lg:space-x-16`}
         initial='hidden'
         animate='visible'
+        layout
         variants={appear('backOut')}>
         <motion.ul
           initial={'hidden'}
