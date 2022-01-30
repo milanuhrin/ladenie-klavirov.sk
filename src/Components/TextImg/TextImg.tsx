@@ -38,7 +38,7 @@ export const TextImg = (props: Props) => {
   return (
     <motion.section
       id={id}
-      className={`${containerStyles} padding-X-2-12rem gap-3o5-6rem z-20 grid w-full relative sm:grid-cols-2 sm:grid-rows-1 sm:flex-row sm:items-center sm:justify-center  `}>
+      className={`${containerStyles} padding-X-2-18rem gap-3o5-6rem z-20 grid w-full relative sm:grid-cols-2 sm:grid-rows-1 sm:flex-row sm:items-center sm:justify-center  `}>
       {/* Firtst element Text */}
 
       <Text
@@ -59,19 +59,21 @@ export const TextImg = (props: Props) => {
             className={`${imgStyle}  flex max-w-[30rem] justify-self-end object-cover object-center`}
             style={{ ...dynamicStyle }}
             src={img}
-            whileTap={{ scale: 0.55 }}
           />
         ) : (
           dynamicStyle && (
-            <GatsbyImage
+            <motion.div
               style={{ ...dynamicStyle }}
-              imgStyle={{}}
-              className={`${imgStyle} flex max-w-[30rem]  justify-self-end rounded-2xl  object-cover object-center shadow-2xl `}
-              imgClassName={`${imgStyleGatsbyImgTag} shadow-2xl`}
-              image={img}
-              alt={alt}
-              loading={loading}
-            />
+              className={`${imgStyle} flex max-w-[30rem]  justify-self-end rounded-2xl  object-cover object-center shadow-2xl `}>
+              <GatsbyImage
+                imgStyle={{}}
+                className={`${imgStyle} flex max-w-[30rem]  justify-self-end rounded-2xl  object-cover object-center shadow-2xl `}
+                imgClassName={`${imgStyleGatsbyImgTag} shadow-2xl`}
+                image={img}
+                alt={alt}
+                loading={loading}
+              />
+            </motion.div>
           )
         ))}
       {sectionDivider}

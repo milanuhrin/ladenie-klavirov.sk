@@ -41,7 +41,7 @@ export const Hero2 = (props: Props) => {
   return (
     <motion.section
       id='experience'
-      className={`${containerStyles} padding-X-2-12rem relative flex  max-w-full flex-col gap-3o5-6rem  bg-gradient-to-b from-white to-silver sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:items-center sm:justify-center  `}>
+      className={`${containerStyles} padding-X-2-18rem relative flex  max-w-full flex-col gap-3o5-6rem  bg-gradient-to-b from-white to-silver sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:items-center sm:justify-center  `}>
       <motion.div
         id='textWrapper'
         className='z-10 flex flex-col gap-2o5 sm:col-start-2 sm:row-start-1  sm:self-center sm:justify-self-center'
@@ -87,7 +87,7 @@ export const Hero2 = (props: Props) => {
 
       <motion.div
         id='imageWrapper'
-        className='z-10 grid max-w-[33rem] grid-cols-12 grid-rows-2 gap-4 justify-self-center overflow-hidden sm:col-start-1 sm:row-start-1'>
+        className='z-10 grid max-w-[33rem] grid-cols-12 grid-rows-2 gap-4 justify-self-center sm:col-start-1 sm:row-start-1'>
         {ha.map((item, index) => (
           <motion.div
             key={uuidv4()}

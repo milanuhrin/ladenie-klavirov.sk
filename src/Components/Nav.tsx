@@ -79,7 +79,7 @@ export const Nav = (props: Props) => {
   return (
     <>
       <motion.div
-        className='relative z-30 flex w-full items-center bg-[#1f1f1f] sm:w-full sm:justify-end sm:py-8 lg:space-x-16'
+        className='relative z-30 flex w-full items-center bg-[#1f1f1f] sm:w-full sm:justify-end sm:py-[1rem] lg:space-x-16'
         initial='hidden'
         animate='visible'
         variants={appear('backOut')}>
@@ -87,7 +87,7 @@ export const Nav = (props: Props) => {
           initial={'hidden'}
           animate={'show'}
           variants={container}
-          className='padding-X-2-12rem lg:px-[21rem]  w-full sm:justify-end z-20 hidden items-center sm:flex sm:space-x-8'>
+          className='padding-X-2-18rem lg:px-[20rem]  w-full sm:justify-end z-20 hidden items-center sm:flex sm:space-x-8'>
           <motion.li className='text-silver mr-auto' variants={item}>
             <Link aria-label='logo' to='/'>
               <StaticImage
