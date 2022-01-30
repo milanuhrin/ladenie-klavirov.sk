@@ -4,7 +4,7 @@
 
 @layer components {
    .horizontalPadding {
-      @apply px-[2rem] lg:px-[8rem];
+      @apply px-[2rem] lg:px-[12rem];
    }
    .paddingY-2-5rem {
       @apply py-[2rem] sm:py-[3.5rem] lg:py-[5rem]

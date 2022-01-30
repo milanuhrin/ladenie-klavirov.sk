@@ -41,7 +41,7 @@ export const Hero2 = (props: Props) => {
   return (
     <motion.section
       id='experience'
-      className={`${containerStyles} horizontalPadding relative flex  max-w-full flex-col gap-10 bg-gradient-to-b from-white to-silver px-8  sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:items-center sm:justify-center sm:gap-8 sm:px-6 lg:px-20`}>
+      className={`${containerStyles} horizontalPadding relative flex  max-w-full flex-col gap-10 bg-gradient-to-b from-white to-silver   sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:items-center sm:justify-center sm:gap-8 `}>
       {/* <SectionDivider /> */}
 
       <motion.div
