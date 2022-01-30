@@ -51,6 +51,7 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-tailwindcss": "^3.3.2",
+    "gatsby-plugin-root-import": "^2.0.8",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.4",

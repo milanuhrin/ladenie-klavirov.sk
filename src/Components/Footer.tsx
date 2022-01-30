@@ -1,7 +1,5 @@
-import { motion } from 'framer-motion'
-import { SectionDividerSharp } from '../svg/SectionDividerSharp'
-import { cardVariants } from './export'
 import React from 'react'
+import { SectionDividerSharp } from 'svg/SectionDividerSharp'
 
 export const Footer = () => {
   return (

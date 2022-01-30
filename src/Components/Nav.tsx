@@ -3,12 +3,9 @@ import { Link } from 'gatsby'
 import { IGatsbyImageData, StaticImage } from 'gatsby-plugin-image'
 import React, { useRef, useState } from 'react'
 import { useOnClickOutside } from 'usehooks-ts'
-import { MenuToggle } from '../Components/Menu/MenuToggle'
-import { appear } from './Landing'
-import { MenuItem } from './MenuItem'
-import { SectionDivider } from '../svg/SectionDivider'
-import { SectionDividerWaveOneSide } from '../svg/SectionDividerWaveOneSide'
-import { SectionDividerSharp } from '../svg/SectionDividerSharp'
+import { MenuToggle } from 'Components/Menu/MenuToggle'
+import { appear } from 'Components/Landing'
+import { MenuItem } from 'Components/MenuItem'
 const sidebar = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 254px 35px)`,

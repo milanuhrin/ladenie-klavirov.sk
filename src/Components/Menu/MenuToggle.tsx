@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import React from 'react'
-import { appear } from '../Landing'
+import { appear } from 'Components/Landing'
 const Path = (props: any) => (
   <motion.path
     fill='transparent'

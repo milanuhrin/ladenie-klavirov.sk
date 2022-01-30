@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import * as React from 'react'
-import { Text as MotionText } from './Text'
+import { Text as MotionText } from 'Components/TextImg/Text'
 
 export const TextImg = (props: Props) => {
   const {

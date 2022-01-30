@@ -2,9 +2,9 @@ import { motion } from 'framer-motion'
 import { graphql, useStaticQuery } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import React from 'react'
-import { Divider } from './Divider'
-import { Nav, SectionDivider } from './export'
-import { TextImg } from './TextImg/TextImg'
+import { Divider } from 'Components/Divider'
+import { Nav, SectionDivider } from 'Components/export'
+import { TextImg } from 'Components/TextImg/TextImg'
 
 export const appear = (ease = 'easeOut', delay = 0, duration = 1) => ({
   hidden: {

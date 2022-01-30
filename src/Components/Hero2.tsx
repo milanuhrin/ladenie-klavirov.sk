@@ -1,14 +1,12 @@
-import { SectionDivider } from './export'
-import { cardVariants } from './AnimOnScroll'
 import { motion } from 'framer-motion'
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
-import { Text as MotionText } from './TextImg/Text'
-import { appear } from './Landing'
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import '../../global.css'
-import { SectionDividerWaveOneSide } from '../svg/SectionDividerWaveOneSide'
-import { SectionDividerSharp } from '../svg/SectionDividerSharp'
+import { SectionDividerSharp } from 'svg/SectionDividerSharp'
+import { cardVariants } from 'Components/AnimOnScroll'
+import { appear } from 'Components/Landing'
+import { Text as MotionText } from 'Components/TextImg/Text'
 
 const Text = motion(MotionText)
 const pole = [

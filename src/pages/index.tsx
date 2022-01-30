@@ -3,16 +3,15 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import * as React from 'react'
 import '../../global.css'
-import { SectionDividerWaveOneSide } from '../svg/SectionDividerWaveOneSide'
-import { SectionDivider } from '../svg/SectionDivider'
 import {
   AnimOnScroll,
   Footer,
   Hero2,
   Landing,
   TextImg,
-} from '../Components/export'
-import SEO from '../Components/seo.js'
+} from 'Components/export'
+import SEO from 'Components/seo.js'
+import { SectionDivider } from 'svg/SectionDivider'
 
 const IndexPage = () => {
   // const { scrollY } = useViewportScroll()
