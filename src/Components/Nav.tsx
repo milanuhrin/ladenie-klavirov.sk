@@ -22,7 +22,7 @@ const sidebar = {
     },
   }),
   closed: {
-    clipPath: 'circle(1px at 254px 35px)',
+    clipPath: 'circle(0px at 254px 35px)',
     transition: {
       delay: 0.5,
       type: 'spring',
