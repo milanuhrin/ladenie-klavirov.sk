@@ -1,32 +1,14 @@
 import * as React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'gatsby'
-
-const variants = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
-    y: 50,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
-}
-
+import { mobileMenuListItem } from 'Utilities/motionVariants'
 export const MenuItem = (props: Props) => {
   const { text, link, toggleOpen } = props
 
   return (
     <motion.li
       className='my-[1rem] font-bold text-mediumSilver'
-      variants={variants}
-      whileHover={{ scale: 1.1 }}
+      variants={mobileMenuListItem}
       whileTap={{ scale: 0.8 }}>
       <Link
         onClick={() => toggleOpen()}
@@ -39,7 +21,6 @@ export const MenuItem = (props: Props) => {
   )
 }
 interface Props {
-  i: number
   text: string
   link: string
   toggleOpen: () => void

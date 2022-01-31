@@ -4,35 +4,12 @@ import React from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import '../../global.css'
 import { SectionDividerSharp } from 'svg/SectionDividerSharp'
-import { cardVariants } from 'Components/AnimOnScroll'
-import { appear } from 'Components/Landing'
+import { appear, cardVariants } from 'Utilities/motionVariants'
 import { Text as MotionText } from 'Components/TextImg/Text'
+import { hero2Items, hero2ImageLayouts } from 'Utilities/Data'
 
 const Text = motion(MotionText)
-const pole = [
-  'Hudobné školy',
-  'Profesionálni hudobníci',
-  'Rekreační amatéri',
-  'Oprava mechaniky',
-]
-const ha = [
-  {
-    alt: '2',
-    class: ' object-contain col-span-6 w-[100%]   self-end ',
-  },
-  {
-    alt: '2',
-    class: ' w-[80%]    self-end col-span-6 ',
-  },
-  {
-    alt: '2',
-    class: ' w-[75%] justify-self-end  col-span-5',
-  },
-  {
-    alt: '2',
-    class: 'w-[90%]   col-span-6',
-  },
-]
+
 export const Hero2 = (props: Props) => {
   const { containerStyles } = props
   const { img1, img2, img3, img4, textWidth = '100%' } = props
@@ -60,7 +37,7 @@ export const Hero2 = (props: Props) => {
         />
         <ul
           className={`${textWidth} flex flex-col gap-6 self-center justify-self-center sm:grid sm:grid-cols-2`}>
-          {pole.map((name, index) => (
+          {hero2Items.map((name, index) => (
             <motion.li
               className={`${
                 index % 2 === 1 && 'ml-[1.5rem]'
@@ -88,7 +65,7 @@ export const Hero2 = (props: Props) => {
       <motion.div
         id='imageWrapper'
         className='z-10 grid max-w-[33rem] grid-cols-12 grid-rows-2 gap-4 justify-self-center sm:col-start-1 sm:row-start-1'>
-        {ha.map((item, index) => (
+        {hero2ImageLayouts.map((item, index) => (
           <motion.div
             key={uuidv4()}
             initial='offscreen'

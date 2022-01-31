@@ -1,20 +1,6 @@
-import { motion, Variants } from 'framer-motion'
+import { motion } from 'framer-motion'
 import React from 'react'
-
-export const cardVariants: Variants = {
-  offscreen: {
-    y: 400,
-    opacity: 0,
-  },
-  onscreen: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      ease: 'easeOut',
-      duration: 0.4,
-    },
-  },
-}
+import { cardVariants } from 'Utilities/motionVariants'
 
 export const AnimOnScroll = ({
   children,

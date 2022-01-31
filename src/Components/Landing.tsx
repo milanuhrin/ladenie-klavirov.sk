@@ -4,29 +4,7 @@ import { motion } from 'framer-motion'
 import { graphql, useStaticQuery } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import React from 'react'
-
-export const appear = (ease = 'easeOut', delay = 0, duration = 1) => ({
-  initialColor: {
-    backgroundColor: '#5e84b1',
-  },
-  finalColor: {
-    backgroundColor: '#1f1f1f',
-    transition: {
-      duration: 1,
-    },
-  },
-  hidden: {
-    scale: 0,
-  },
-  visible: {
-    scale: 1,
-    transition: {
-      ease: ease,
-      delay: delay,
-      duration: duration,
-    },
-  },
-})
+import { appear } from 'Utilities/motionVariants'
 interface Props {
   containerStyles?: string
 }
