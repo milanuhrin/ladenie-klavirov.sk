@@ -1,7 +1,13 @@
-import { motion, useCycle, useViewportScroll } from 'framer-motion'
+import {
+  motion,
+  useCycle,
+  useViewportScroll,
+  useTransform,
+  useMotionValue,
+} from 'framer-motion'
 import { Link } from 'gatsby'
 import { IGatsbyImageData, StaticImage } from 'gatsby-plugin-image'
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { useOnClickOutside } from 'usehooks-ts'
 import { MenuToggle } from 'Components/Menu/MenuToggle'
 import { appear } from 'Components/Landing'
@@ -26,11 +32,15 @@ const sidebar = {
   },
 }
 const container = {
-  hidden: {},
+  hidden: {
+    backgroundColor: '#111111',
+  },
   show: {
+    backgroundColor: '#114252',
     transition: {
       delayChildren: 0.3,
       staggerChildren: 0.1,
+      duration: 2,
     },
   },
 }
@@ -76,30 +86,35 @@ export const Nav = (props: Props) => {
   }
   useOnClickOutside(ref, handleClickOutside)
   const [isOpen, toggleOpen] = useCycle(false, true)
-  const [isUp, toggleUp] = useCycle(false, true)
   const { scrollYProgress } = useViewportScroll()
-  console.log(Number(scrollYProgress))
+  const bg = useTransform(scrollYProgress, [0, 0.25], ['#1f1f1f', '#1f1f1fdd'])
+  const scaleY = useTransform(scrollYProgress, [0, 0.25], [1, 0.85])
+  const pa = useTransform(scrollYProgress, [0, 0.25], ['7rem', '5rem'])
+
   return (
     <>
       <motion.div
-        className={`${
-          Number(scrollYProgress) !== 0 ? 'bg-[#1f1f1f38]' : 'bg-[#1f1f1f]'
-        } fixed top-0 z-30 flex w-full items-center sm:w-full sm:justify-end sm:py-[1rem] lg:space-x-16`}
-        initial='hidden'
-        animate='visible'
-        layout
+        style={{
+          backgroundColor: bg,
+        }}
+        className={`fixed top-0 z-30 flex w-full items-center sm:w-full sm:justify-end sm:py-[1rem] lg:space-x-16`}
+        initial={['hidden', 'initialColor']}
+        animate={['visible', 'finalColor']}
         variants={appear('backOut')}>
         <motion.ul
           initial={'hidden'}
           animate={'show'}
-          variants={container}
           className='padding-X-2-18rem lg:px-[20rem]  w-full sm:justify-end z-20 hidden items-center sm:flex sm:space-x-8'>
-          <motion.li className='text-silver mr-auto' variants={item}>
+          <motion.li
+            className='text-silver mr-auto w-[7rem]'
+            variants={item}
+            style={{
+              width: pa,
+            }}>
             <Link aria-label='logo' to='/'>
               <StaticImage
                 src='../images/logo-white.png'
                 alt='logo'
-                className='w-[7rem]'
                 placeholder='none'
               />
             </Link>

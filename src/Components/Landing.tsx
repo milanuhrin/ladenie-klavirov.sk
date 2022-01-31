@@ -6,13 +6,20 @@ import { getImage } from 'gatsby-plugin-image'
 import React from 'react'
 
 export const appear = (ease = 'easeOut', delay = 0, duration = 1) => ({
+  initialColor: {
+    backgroundColor: '#5e84b1',
+  },
+  finalColor: {
+    backgroundColor: '#1f1f1f',
+    transition: {
+      duration: 1,
+    },
+  },
   hidden: {
     scale: 0,
-    opacity: 0,
   },
   visible: {
     scale: 1,
-    opacity: 1,
     transition: {
       ease: ease,
       delay: delay,
