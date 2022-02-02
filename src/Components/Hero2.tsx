@@ -7,8 +7,15 @@ import { SectionDividerSharp } from 'svg/SectionDividerSharp'
 import { appear, cardVariants } from 'Utilities/motionVariants'
 import { Text as MotionText } from 'Components/TextImg/Text'
 import { hero2Items, hero2ImageLayouts } from 'Utilities/Data'
-
 const Text = motion(MotionText)
+interface Props {
+  img1: IGatsbyImageData
+  img2: IGatsbyImageData
+  img3: IGatsbyImageData
+  img4: IGatsbyImageData
+  textWidth?: string
+  containerStyles?: string
+}
 
 export const Hero2 = (props: Props) => {
   const { containerStyles } = props
@@ -91,13 +98,4 @@ export const Hero2 = (props: Props) => {
       <SectionDividerSharp fill='#fafdfd' />
     </motion.section>
   )
-}
-
-interface Props {
-  img1: IGatsbyImageData
-  img2: IGatsbyImageData
-  img3: IGatsbyImageData
-  img4: IGatsbyImageData
-  textWidth?: string
-  containerStyles?: string
 }

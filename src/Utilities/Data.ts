@@ -1,4 +1,3 @@
-
 export const hero2Items = [
   'Hudobné školy',
   'Profesionálni hudobníci',

@@ -24,7 +24,6 @@ export const Landing = (props: Props) => {
   return (
     <section
       className={`${containerStyles} relative flex min-h-screen w-full flex-col items-center`}>
-      {/* <Daco/> */}
       <motion.div
         id='background'
         initial='hidden'

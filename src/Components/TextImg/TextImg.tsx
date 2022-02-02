@@ -3,6 +3,26 @@ import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import * as React from 'react'
 import { Text as MotionText } from 'Components/TextImg/Text'
 
+interface Props {
+  // Native
+  containerStyles?: string
+  reversed?: boolean
+  loading?: 'lazy' | 'eager'
+  id?: string
+  sectionDivider?: React.ReactElement
+  // Text Comp
+  headerText?: string | React.ReactElement
+  headerStyle?: string
+  paragraphText?: string | React.ReactElement
+  paragraphStyle?: string
+  textWrapperStyle?: string
+  // Image Comp
+  img?: IGatsbyImageData | string
+  alt?: string
+  imgStyle?: string
+  imgStyleGatsbyImgTag?: string
+}
+
 export const TextImg = (props: Props) => {
   const {
     containerStyles,
@@ -79,24 +99,4 @@ export const TextImg = (props: Props) => {
       {sectionDivider}
     </motion.section>
   )
-}
-
-interface Props {
-  // Native
-  containerStyles?: string
-  reversed?: boolean
-  loading?: 'lazy' | 'eager'
-  id?: string
-  sectionDivider?: React.ReactElement
-  // Text Comp
-  headerText?: string | React.ReactElement
-  headerStyle?: string
-  paragraphText?: string | React.ReactElement
-  paragraphStyle?: string
-  textWrapperStyle?: string
-  // Image Comp
-  img?: IGatsbyImageData | string
-  alt?: string
-  imgStyle?: string
-  imgStyleGatsbyImgTag?: string
 }

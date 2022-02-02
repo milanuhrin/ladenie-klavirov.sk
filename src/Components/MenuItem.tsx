@@ -2,6 +2,13 @@ import * as React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'gatsby'
 import { mobileMenuListItem } from 'Utilities/motionVariants'
+
+interface Props {
+  text: string
+  link: string
+  toggleOpen: () => void
+}
+
 export const MenuItem = (props: Props) => {
   const { text, link, toggleOpen } = props
 
@@ -19,9 +26,4 @@ export const MenuItem = (props: Props) => {
       </Link>
     </motion.li>
   )
-}
-interface Props {
-  text: string
-  link: string
-  toggleOpen: () => void
 }

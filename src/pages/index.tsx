@@ -14,12 +14,6 @@ import SEO from 'Components/seo.js'
 import { SectionDivider } from 'svg/SectionDivider'
 
 const IndexPage = () => {
-  // const { scrollY } = useViewportScroll()
-  // const y = useTransform(scrollY, [0, 1], [0, -0.2], {
-  //   clamp: false,
-  // })
-  // console.log(y);
-
   const data = useStaticQuery(graphql`
     {
       a: file(relativePath: { eq: "freeTime.jpg" }) {
@@ -116,7 +110,6 @@ const IndexPage = () => {
                 imgStyle='max-w-[25rem]'
                 id='aboutMe'
                 containerStyles='padding-Y-3-6rem '
-                // sectionDivider={<SectionDividerWaveOneSide fill='black' />}
               />
             </AnimOnScroll>
           )}
@@ -132,14 +125,10 @@ const IndexPage = () => {
                 imgStyle='max-w-[25rem]'
                 id='education'
                 containerStyles='padding-Y-3-6rem '
-                // containerStyles='padding-Y-3-6rem bg-gradient-to-br from-[#e2f7f7] to-[#dffff0]'
-                // sectionDivider={<SectionDividerWaveOneSide fill='black' />}
               />
             </AnimOnScroll>
           )}
         </div>
-
-        {/* <SectionDivider /> */}
       </motion.main>
       <Footer />
     </>

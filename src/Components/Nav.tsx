@@ -19,6 +19,11 @@ import {
   appear,
 } from 'Utilities/motionVariants'
 import { v4 as uuidv4 } from 'uuid'
+interface Props {
+  logo?: IGatsbyImageData
+  itemsCount?: number
+  items?: { [key: string]: string }
+}
 
 export const Nav = (props: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -116,10 +121,4 @@ export const Nav = (props: Props) => {
       </motion.div>
     </>
   )
-}
-
-interface Props {
-  logo?: IGatsbyImageData
-  itemsCount?: number
-  items?: { [key: string]: string }
 }

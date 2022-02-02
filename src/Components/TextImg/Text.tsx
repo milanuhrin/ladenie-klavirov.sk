@@ -1,5 +1,12 @@
 import { motion } from 'framer-motion'
 import React from 'react'
+interface Props {
+  paragraphText?: string | React.ReactElement
+  paragraphStyle?: string
+  headerText?: string | React.ReactElement
+  headerStyle?: string
+  textWrapperStyle?: string
+}
 
 export const Text = React.forwardRef((props: Props, ref: any) => {
   const {
@@ -33,10 +40,3 @@ export const Text = React.forwardRef((props: Props, ref: any) => {
     </motion.div>
   )
 })
-interface Props {
-  paragraphText?: string | React.ReactElement
-  paragraphStyle?: string
-  headerText?: string | React.ReactElement
-  headerStyle?: string
-  textWrapperStyle?: string
-}

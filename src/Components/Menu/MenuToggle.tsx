@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import { appear } from 'Utilities/motionVariants'
+
 const Path = (props: any) => (
   <motion.path
     fill='transparent'
