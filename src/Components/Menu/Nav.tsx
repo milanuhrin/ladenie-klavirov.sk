@@ -94,15 +94,16 @@ export const Nav = (props: Props) => {
           {/* Sidebard bg */}
           <motion.div
             className={
-              'absolute inset-y-0 right-0 z-[20] flex h-[1000px] w-[250px] justify-center bg-lightBlack'
+              'absolute inset-y-0 right-0 z-[20] flex h-[1000px] w-[250px] justify-center bg-gmailLightBlack'
             }
             variants={sidebarVariants}>
             <motion.div
               data-name='line divider'
-              className='absolute border-b-[1px] top-[6rem] h-[2rem] w-full'></motion.div>
+              className='absolute border-b-[1px] border-gmailGreyText  top-[6rem] h-[2rem] w-full'
+            />
             <motion.div
               data-name='title'
-              className='absolute text-lg w-full top-[5rem] left-[4.75rem] font-bold text-mediumSilver'>
+              className='absolute text-lg w-full font-sans top-[5rem] left-[4.75rem]  text-gmailSilverText'>
               Milan Uhrin
             </motion.div>
             <motion.ul
@@ -111,7 +112,7 @@ export const Nav = (props: Props) => {
               {menuItems.map(({ link, name }) => (
                 <motion.li
                   key={uuidv4()}
-                  className='my-[1rem] font-bold text-mediumSilver'
+                  className='my-[1rem] font-sans text-gmailSilverText'
                   variants={mobileMenuListItem}
                   whileTap={{ scale: 0.8 }}>
                   <Link
