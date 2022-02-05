@@ -7,6 +7,7 @@ module.exports = {
     image: '/milan-fb.jpg',
   },
   plugins: [
+    `gatsby-plugin-fontawesome-css`,
     'gatsby-plugin-root-import',
     'gatsby-plugin-pnpm',
     'gatsby-plugin-postcss',

@@ -1,12 +1,12 @@
+import { Text as MotionText } from 'Components/TextImg/Text'
 import { motion } from 'framer-motion'
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import React from 'react'
+import { SectionDividerSharp } from 'svg/SectionDividerSharp'
+import { hero2ImageLayouts, hero2Items } from 'Utilities/Data'
+import { appear, cardVariants } from 'Utilities/motionVariants'
 import { v4 as uuidv4 } from 'uuid'
 import '../../global.css'
-import { SectionDividerSharp } from 'svg/SectionDividerSharp'
-import { appear, cardVariants } from 'Utilities/motionVariants'
-import { Text as MotionText } from 'Components/TextImg/Text'
-import { hero2Items, hero2ImageLayouts } from 'Utilities/Data'
 const Text = motion(MotionText)
 interface Props {
   img1: IGatsbyImageData
@@ -18,8 +18,7 @@ interface Props {
 }
 
 export const Hero2 = (props: Props) => {
-  const { containerStyles } = props
-  const { img1, img2, img3, img4, textWidth = '100%' } = props
+  const { img1, img2, img3, img4, textWidth = '100%', containerStyles } = props
   const images = [img1, img2, img3, img4]
 
   return (
