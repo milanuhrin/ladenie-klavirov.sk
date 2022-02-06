@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'gatsby'
 import React from 'react'
 import { motion } from 'framer-motion'
-import { mobileMenuListItem } from '../../Utilities/motionVariants'
+import { mobileMenuListItem } from '../../../Utilities/motionVariants'
 
 interface Props {
    toggleOpen?: () => void

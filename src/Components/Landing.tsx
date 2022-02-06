@@ -1,10 +1,11 @@
-import { Nav, SectionDivider } from 'Components/export'
+import { SectionDivider } from 'Components/export'
 import { TextImg } from 'Components/TextImg/TextImg'
 import { motion } from 'framer-motion'
 import { graphql, useStaticQuery } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import React from 'react'
 import { appear } from 'Utilities/motionVariants'
+import { Navigation } from './Navigation/Navigation'
 interface Props {
    containerStyles?: string
 }
@@ -34,7 +35,7 @@ export const Landing = (props: Props) => {
          </motion.div>
          {/* fixedNavHeightReplacement */}
          <div className='h-[70px] sm:h-[85px]' />
-         <Nav itemsCount={5} />
+         <Navigation itemsCount={5} />
          <motion.div
             className='z-20 '
             initial='hidden'
