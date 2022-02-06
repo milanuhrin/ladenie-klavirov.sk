@@ -1,10 +1,5 @@
 import { MenuIconToggle } from 'Components/Menu/MenuIconToggle'
-import {
-   motion,
-   useCycle,
-   useTransform,
-   useViewportScroll,
-} from 'framer-motion'
+import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { Link } from 'gatsby'
 import { IGatsbyImageData, StaticImage } from 'gatsby-plugin-image'
 import React, { useRef, useState } from 'react'
@@ -28,18 +23,15 @@ interface Props {
 export const Nav = (props: Props) => {
    const [isMenuOpen, setIsMenuOpen] = useState(false)
    const ref = useRef(null)
-   const handleClickOutside = () => {
-      setIsMenuOpen(!isMenuOpen)
-   }
+   const handleClickOutside = () => isMenuOpen && setIsMenuOpen(false)
    useOnClickOutside(ref, handleClickOutside)
-   const [isOpen, toggleOpen] = useCycle(false, true)
    const { scrollYProgress } = useViewportScroll()
    const bg = useTransform(scrollYProgress, [0, 0.25], ['#1f1f1f', '#1f1f1fdd'])
    const pa = useTransform(scrollYProgress, [0, 0.25], ['7rem', '5rem'])
-   //  const aaa = [1, 2, 3]
    return (
       <>
          <motion.div
+            ref={ref}
             style={{
                backgroundColor: bg,
             }}
@@ -83,7 +75,7 @@ export const Nav = (props: Props) => {
             <motion.div
                className='relative flex w-full items-center justify-between py-3 px-6 sm:hidden'
                initial={false}
-               animate={isOpen ? 'open' : 'closed'}>
+               animate={isMenuOpen ? 'open' : 'closed'}>
                {/* Logo */}
                <StaticImage
                   src='../../images/logo-darkGrey.png'
@@ -92,7 +84,7 @@ export const Nav = (props: Props) => {
                   placeholder='none'
                />
                {/* MenuIconToggle */}
-               <MenuIconToggle toggle={() => toggleOpen()} />
+               <MenuIconToggle toggle={() => setIsMenuOpen(!isMenuOpen)} />
                {/* Sidebard Background Container */}
                <motion.div
                   className={

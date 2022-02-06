@@ -37,7 +37,7 @@ export const mobileMenuListItem = {
       x: 0,
    },
    closed: {
-      x: 250,
+      x: 270,
    },
 }
 
