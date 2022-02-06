@@ -21,7 +21,7 @@ export const Hero2 = (props: Props) => {
    const images = [img1, img2, img3, img4]
 
    return (
-      <motion.section
+      <section
          id='experience'
          className={`${containerStyles} padding-X-2-18rem relative flex  max-w-full flex-col gap-3o5-6rem  bg-gradient-to-b from-white to-silver sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:items-center sm:justify-center  `}>
          <motion.div
@@ -43,12 +43,12 @@ export const Hero2 = (props: Props) => {
             <ul
                className={`${textWidth} flex flex-col gap-6 self-center justify-self-center sm:grid sm:grid-cols-2`}>
                {hero2Items.map((name, i) => (
-                  <motion.li
+                  <li
                      className={`${
                         i % 2 === 1 && 'ml-[1.5rem]'
                      } flex sm:ml-0 lg:mt-0`}
                      key={i}>
-                     <motion.span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-800'>
+                     <span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-800'>
                         <svg
                            className='h-4 w-4'
                            viewBox='0 0 20 20'
@@ -58,16 +58,16 @@ export const Hero2 = (props: Props) => {
                               d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
                               clipRule='evenodd'></path>
                         </svg>
-                     </motion.span>
-                     <motion.span className='ml-4 text-base font-medium leading-6 text-gray-500'>
+                     </span>
+                     <span className='ml-4 text-base font-medium leading-6 text-gray-500'>
                         {name}
-                     </motion.span>
-                  </motion.li>
+                     </span>
+                  </li>
                ))}
             </ul>
          </motion.div>
 
-         <motion.div
+         <div
             id='imageWrapper'
             className='z-10 grid max-w-[33rem] grid-cols-12 grid-rows-2 gap-4 justify-self-center sm:col-start-1 sm:row-start-1'>
             {hero2ImageLayouts.map((item, i) => (
@@ -92,8 +92,8 @@ export const Hero2 = (props: Props) => {
                   />
                </motion.div>
             ))}
-         </motion.div>
+         </div>
          <SectionDividerSharp fill='#fafdfd' />
-      </motion.section>
+      </section>
    )
 }

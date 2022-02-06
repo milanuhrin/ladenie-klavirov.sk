@@ -6,7 +6,6 @@ import {
    TextImg,
 } from 'Components/export'
 import SEO from 'Components/seo.js'
-import { motion } from 'framer-motion'
 import { graphql, useStaticQuery } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import React from 'react'
@@ -87,7 +86,7 @@ const IndexPage = () => {
                </g>
             </motion.svg> */}
 
-         <motion.main id='mainContent' className=' flex flex-col'>
+         <main id='mainContent' className=' flex flex-col'>
             {hero2img1 && hero2img2 && hero2img3 && hero2img4 && (
                <Hero2
                   img1={hero2img1}
@@ -128,7 +127,7 @@ const IndexPage = () => {
                   </AnimOnScroll>
                )}
             </div>
-         </motion.main>
+         </main>
          <Footer />
       </>
    )
