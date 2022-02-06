@@ -14,4 +14,3 @@ rules:
   react/display-name: 0
   no-unused-vars: 1
   no-console: 1
-  no-warning-comments: 1

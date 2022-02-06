@@ -8,5 +8,7 @@
         "editor.suggestOnTriggerCharacters": true,
     },
        "typescript.tsserver.experimental.enableProjectDiagnostics": true,
-
+"editor.tokenColorCustomizations": {
+    "comments": "#d4922f"
+}
 }
