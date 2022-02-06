@@ -35,7 +35,7 @@ export const Landing = (props: Props) => {
          </motion.div>
          {/* fixedNavHeightReplacement */}
          <div className='h-[70px] sm:h-[85px]' />
-         <Navigation itemsCount={5} />
+         <Navigation />
          <motion.div
             className='z-20 '
             initial='hidden'

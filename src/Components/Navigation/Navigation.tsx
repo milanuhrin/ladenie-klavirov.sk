@@ -1,17 +1,11 @@
+import { DesktopNav } from 'Components/Navigation/Desktop/DesktopNav'
 import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import React, { useRef, useState } from 'react'
 import { useOnClickOutside } from 'usehooks-ts'
 import { appear } from 'Utilities/motionVariants'
-import { DesktopNav } from 'Components/Navigation/Desktop/DesktopNav'
 import { MobileNav } from './Mobile/MobileNav'
-import { IGatsbyImageData } from 'gatsby-plugin-image'
 
-interface Props {
-   logo?: IGatsbyImageData
-   itemsCount?: number
-   items?: { [key: string]: string }
-}
-export const Navigation = (props: Props) => {
+export const Navigation = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false)
    const ref = useRef(null)
    const handleClickOutside = () => isMenuOpen && setIsMenuOpen(false)

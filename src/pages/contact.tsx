@@ -1,21 +1,20 @@
 import { motion } from 'framer-motion'
-import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Footer, Navigation } from '../Components/export'
 
 const Contact = () => {
-   const logo = useStaticQuery(graphql`
-      {
-         file(relativePath: { eq: "logo-black.png" }) {
-            childImageSharp {
-               gatsbyImageData(placeholder: BLURRED)
-            }
-         }
-      }
-   `)
+   //  const logo = useStaticQuery(graphql`
+   //     {
+   //        file(relativePath: { eq: "logo-black.png" }) {
+   //           childImageSharp {
+   //              gatsbyImageData(placeholder: BLURRED)
+   //           }
+   //        }
+   //     }
+   //  `)
    return (
       <>
-         <Navigation logo={logo} />
+         <Navigation />
          <motion.main>
             {/* <TextImgWrapper> */}
             {/* <TextImg
