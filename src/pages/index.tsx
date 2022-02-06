@@ -140,7 +140,7 @@ const IndexPage = () => {
          {width < 640 && (
             <div
                onClick={() => window.open('tel:900300400', '_self')}
-               className='flex bg-[#dfe4ed] items-center justify-center fixed z-50 rounded-full w-[4rem] h-[4rem] bottom-10 right-7'>
+               className='flex bg-[#dfe4ed] items-center justify-center fixed z-50 rounded-full w-[4rem] h-[4rem] bottom-5 right-5'>
                <FontAwesomeIcon
                   size='lg'
                   className='flex text-[#17303b]'
