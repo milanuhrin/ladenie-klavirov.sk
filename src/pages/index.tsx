@@ -5,6 +5,9 @@ import {
    Landing,
    TextImg,
 } from 'Components/export'
+import { faPhone } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import SEO from 'Components/seo.js'
 import { graphql, useStaticQuery } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
@@ -12,6 +15,11 @@ import React from 'react'
 import '../../global.css'
 
 const IndexPage = () => {
+   let width = 0
+   if (typeof window !== 'undefined') {
+      const { innerWidth } = window
+      width = innerWidth
+   }
    const data = useStaticQuery(graphql`
       {
          a: file(relativePath: { eq: "freeTime.jpg" }) {
@@ -129,6 +137,17 @@ const IndexPage = () => {
             </div>
          </main>
          <Footer />
+         {width < 640 && (
+            <div
+               onClick={() => window.open('tel:900300400', '_self')}
+               className='flex bg-[#dfe4ed] items-center justify-center fixed z-50 rounded-full w-[4rem] h-[4rem] bottom-10 right-7'>
+               <FontAwesomeIcon
+                  size='lg'
+                  className='flex text-[#17303b]'
+                  icon={faPhone}
+               />
+            </div>
+         )}
       </>
    )
 }
