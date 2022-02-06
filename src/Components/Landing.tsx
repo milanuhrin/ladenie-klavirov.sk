@@ -21,23 +21,34 @@ export const Landing = (props: Props) => {
          }
       }
    `)
+
    const hero1Image = getImage(data.file)
+   let width = 0
+   if (typeof window !== 'undefined') {
+      const { innerWidth } = window
+      width = innerWidth
+   }
+   const HeroBackground =
+      (width < 640 && 'h-[120vh]') ||
+      (width > 640 && width < 900 && 'h-[60vh]') ||
+      (width > 900 && 'h-[80vh]')
+
    return (
       <section
-         className={`${containerStyles} relative flex min-h-screen w-full flex-col items-center`}>
+         className={`${containerStyles} ${HeroBackground} relative flex  w-full flex-col items-center`}>
          <motion.div
             id='background'
             initial='hidden'
             animate='visible'
             variants={appear('backOut')}
-            className='landingBackground absolute h-screen w-full bg-cover bg-center bg-no-repeat'>
+            className={`landingBackground absolute  ${HeroBackground} w-full bg-cover bg-center bg-no-repeat`}>
             <SectionDivider fill='white' />
          </motion.div>
          {/* fixedNavHeightReplacement */}
          <div className='h-[70px] sm:h-[85px]' />
          <Navigation />
          <motion.div
-            className='z-20 '
+            className='z-20 pt-[5rem] sm:pt-[4rem]'
             initial='hidden'
             animate='visible'
             variants={appear('backOut')}>
