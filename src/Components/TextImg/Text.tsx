@@ -23,12 +23,12 @@ export const Text = React.forwardRef((props: Props, ref: any) => {
          ref={ref}>
          {headerText && (
             <h3 className={`${headerStyle} `}>
-               <span
+               <div
                   className={
                      'bg-gradient-to-r from-snakeGr1 to-snakeGr2 bg-clip-text text-center text-4xl font-extrabold text-transparent'
                   }>
                   {headerText}
-               </span>
+               </div>
             </h3>
          )}
          {paragraphText && (
