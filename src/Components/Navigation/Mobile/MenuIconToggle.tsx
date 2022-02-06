@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import React from 'react'
-import { appear } from 'Utilities/motionVariants'
 
 const Path = (props: any) => (
    <motion.path
@@ -13,10 +12,7 @@ const Path = (props: any) => (
 )
 
 export const MenuIconToggle = ({ toggle }: any) => (
-   <motion.button
-      variants={appear()}
-      onClick={toggle}
-      className='z-50 w-[35px] h-[35px]'>
+   <motion.div onClick={toggle} className='z-50 w-[35px] h-[35px]'>
       <svg width='100%' viewBox='0 0 23 19'>
          <Path
             variants={{
@@ -39,5 +35,5 @@ export const MenuIconToggle = ({ toggle }: any) => (
             }}
          />
       </svg>
-   </motion.button>
+   </motion.div>
 )
