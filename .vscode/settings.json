@@ -7,8 +7,8 @@
         // "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.suggestOnTriggerCharacters": true,
     },
-       "typescript.tsserver.experimental.enableProjectDiagnostics": true,
-"editor.tokenColorCustomizations": {
-    "comments": "#d4922f"
-}
+    "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+    "editor.tokenColorCustomizations": {
+        "comments": "#d4922f"
+    }
 }

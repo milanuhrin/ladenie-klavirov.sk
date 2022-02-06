@@ -1,4 +1,4 @@
-import { MenuToggle } from 'Components/Menu/MenuToggle'
+import { MenuIconToggle } from 'Components/Menu/MenuIconToggle'
 import {
    motion,
    useCycle,
@@ -60,7 +60,7 @@ export const Nav = (props: Props) => {
                   }}>
                   <Link aria-label='logo' to='/'>
                      <StaticImage
-                        src='../images/logo-white.png'
+                        src='../../images/logo-darkGrey.png'
                         alt='logo'
                         placeholder='none'
                      />
@@ -79,37 +79,34 @@ export const Nav = (props: Props) => {
                ))}
             </motion.ul>
 
-            {/* Mobile nav */}
+            {/* Main Mobile Nav container */}
             <motion.div
-               data-name='Main Mobile Nav container'
                className='relative flex w-full items-center justify-between py-3 px-6 sm:hidden'
                initial={false}
                animate={isOpen ? 'open' : 'closed'}>
+               {/* Logo */}
                <StaticImage
-                  data-name='Logo'
-                  src='../images/logo-darkGrey.png'
+                  src='../../images/logo-darkGrey.png'
                   alt='logo'
                   className='relative w-20'
                   placeholder='none'
                />
-               <MenuToggle data-name='Menu Icon' toggle={() => toggleOpen()} />
-               {/* Sidebard bg */}
+               <MenuIconToggle toggle={() => toggleOpen()} />
+               {/* Sidebard container bg */}
                <motion.div
-                  data-name='Sidebar container bg'
                   className={
                      'absolute inset-y-0 text-gmailSilverText right-0 z-[20] flex h-[1000px] w-[250px] items-start bg-gradient-to-r from-[#383838] to-gmailLightBlack'
                   }
                   variants={sidebarVariants}>
+                  {/* GRID */}
                   <motion.div
-                     data-name='GRID'
                      className=' ml-[2rem] grid grid-cols-1  gap-x-[1rem] gap-y-[2rem] absolute top-[5.5rem]   z-50 '
                      variants={mobileMenuItems}>
-                     <motion.div
-                        data-name='title'
-                        className='mb-[1rem] col-start-2 text-lg w-full font-sans top-[5rem]'>
+                     {/* Title */}
+                     <motion.div className='mb-[1rem] col-start-2 text-lg w-full font-sans top-[5rem]'>
                         Milan Uhrin
                      </motion.div>
-                     {menuItems.map(({ link, name, icon }, i) => (
+                     {menuItems.map(({ link, name, icon }) => (
                         <NavItem
                            link={link}
                            name={name}
@@ -118,10 +115,8 @@ export const Nav = (props: Props) => {
                         />
                      ))}
                   </motion.div>
-                  <motion.div
-                     data-name='line divider'
-                     className='absolute border-b-[1px] border-gmailGreyText  top-[6rem] h-[2rem] w-full'
-                  />
+                  {/* line divider */}
+                  <motion.div className='absolute border-b-[1px] border-gmailGreyText  top-[6rem] h-[2rem] w-full' />
                </motion.div>
             </motion.div>
          </motion.div>
