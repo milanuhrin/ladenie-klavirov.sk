@@ -25,7 +25,7 @@ export const sidebarVariants = {
    closed: {
       clipPath: 'circle(0px at 254px 0px)',
       transition: {
-         delay: 0.5,
+         delay: 0.3,
          type: 'spring',
          stiffness: 400,
          damping: 40,
@@ -65,7 +65,7 @@ export const cardVariants = {
    },
 }
 
-export const appear = (ease = 'easeOut', delay = 0, duration = 1) => ({
+export const appear = (ease = 'easeOut', delay = 0, duration = 0.3) => ({
    initialColor: {
       backgroundColor: '#5e84b1',
    },
