@@ -95,7 +95,7 @@ export const Nav = (props: Props) => {
                {/* Sidebard container bg */}
                <motion.div
                   className={
-                     'absolute inset-y-0 text-gmailSilverText right-0 z-[20] flex h-[1000px] w-[250px] items-start bg-gradient-to-r from-[#383838] to-gmailLightBlack'
+                     'absolute inset-y-0 text-gmailSilverText right-0 z-[20] flex h-[1000px] w-[250px] items-start bg-gradient-to-br from-[#242424] to-[#373737]'
                   }
                   variants={sidebarVariants}>
                   {/* GRID */}
