@@ -8,7 +8,7 @@ import {
    mobileMenuListItem,
    sidebarVariants,
 } from 'Utilities/motionVariants'
-import { NavItem } from './MobileNavItem'
+import { MobileNavItem } from './MobileNavItem'
 
 interface Props {
    isMenuOpen: boolean
@@ -49,7 +49,13 @@ export const MobileNav = (props: Props) => {
                </motion.div>
                {/* Nav Items */}
                {menuItems.map(({ name, link, icon }, i) => (
-                  <NavItem link={link} name={name} icon={icon} key={i} />
+                  <MobileNavItem
+                     toggle={() => setIsMenuOpen(!isMenuOpen)}
+                     link={link}
+                     name={name}
+                     icon={icon}
+                     key={i}
+                  />
                ))}
             </motion.div>
             {/* line divider */}
