@@ -26,7 +26,7 @@ export const DesktopNav = (props: Props) => {
                }}>
                <Link aria-label='logo' to='/'>
                   <StaticImage
-                     src='../../images/logo-darkGrey.png'
+                     src='../../../images/logo-darkGrey.png'
                      alt='logo'
                      placeholder='none'
                   />

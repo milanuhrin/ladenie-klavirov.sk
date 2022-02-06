@@ -24,7 +24,7 @@ export const MobileNav = (props: Props) => {
          animate={isMenuOpen ? 'open' : 'closed'}>
          {/* Logo */}
          <StaticImage
-            src='../../images/logo-darkGrey.png'
+            src='../../../images/logo-darkGrey.png'
             alt='logo'
             className='relative w-20'
             placeholder='none'
