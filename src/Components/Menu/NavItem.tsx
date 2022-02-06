@@ -1,6 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'gatsby'
 import React from 'react'
+import { motion } from 'framer-motion'
+import { mobileMenuListItem } from '../../Utilities/motionVariants'
+
 interface Props {
    toggleOpen?: () => void
    link: string
@@ -11,17 +14,17 @@ export const NavItem = (props: Props) => {
    const { toggleOpen, link, name, icon } = props
    return (
       <>
-         <div className='col-span-1'>
+         <motion.div variants={mobileMenuListItem}>
             <FontAwesomeIcon className='' icon={icon} />
-         </div>
-         <div className='col-start-2'>
+         </motion.div>
+         <motion.div variants={mobileMenuListItem} className='col-start-2'>
             <Link
                onClick={() => toggleOpen && toggleOpen()}
                to={link}
                aria-label={name}>
                {name}
             </Link>
-         </div>
+         </motion.div>
       </>
    )
 }

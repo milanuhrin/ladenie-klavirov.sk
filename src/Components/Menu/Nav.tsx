@@ -15,9 +15,9 @@ import {
    container,
    desktopMenuItems,
    mobileMenuItems,
+   mobileMenuListItem,
    sidebarVariants,
 } from 'Utilities/motionVariants'
-import { v4 as uuidv4 } from 'uuid'
 import { NavItem } from './NavItem'
 interface Props {
    logo?: IGatsbyImageData
@@ -36,7 +36,7 @@ export const Nav = (props: Props) => {
    const { scrollYProgress } = useViewportScroll()
    const bg = useTransform(scrollYProgress, [0, 0.25], ['#1f1f1f', '#1f1f1fdd'])
    const pa = useTransform(scrollYProgress, [0, 0.25], ['7rem', '5rem'])
-
+   //  const aaa = [1, 2, 3]
    return (
       <>
          <motion.div
@@ -71,7 +71,7 @@ export const Nav = (props: Props) => {
                   <motion.li
                      className='text-silver'
                      variants={desktopMenuItems}
-                     key={uuidv4()}>
+                     key={i}>
                      <Link to={item.link} aria-label={item.name}>
                         {item.name}
                      </Link>
@@ -91,8 +91,9 @@ export const Nav = (props: Props) => {
                   className='relative w-20'
                   placeholder='none'
                />
+               {/* MenuIconToggle */}
                <MenuIconToggle toggle={() => toggleOpen()} />
-               {/* Sidebard container bg */}
+               {/* Sidebard Background Container */}
                <motion.div
                   className={
                      'absolute inset-y-0 text-gmailSilverText right-0 z-[20] flex h-[1000px] w-[250px] items-start bg-gradient-to-br from-[#242424] to-[#373737]'
@@ -103,16 +104,14 @@ export const Nav = (props: Props) => {
                      className=' ml-[2rem] grid grid-cols-1  gap-x-[1rem] gap-y-[2rem] absolute top-[5.5rem]   z-50 '
                      variants={mobileMenuItems}>
                      {/* Title */}
-                     <motion.div className='mb-[1rem] col-start-2 text-lg w-full font-sans top-[5rem]'>
+                     <motion.div
+                        variants={mobileMenuListItem}
+                        className='mb-[1rem] col-start-2 text-lg w-full font-sans top-[5rem]'>
                         Milan Uhrin
                      </motion.div>
-                     {menuItems.map(({ link, name, icon }) => (
-                        <NavItem
-                           link={link}
-                           name={name}
-                           icon={icon}
-                           key={uuidv4()}
-                        />
+                     {/* Nav Items */}
+                     {menuItems.map(({ name, link, icon }, i) => (
+                        <NavItem link={link} name={name} icon={icon} key={i} />
                      ))}
                   </motion.div>
                   {/* line divider */}
