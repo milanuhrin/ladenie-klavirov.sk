@@ -84,11 +84,11 @@ export const TextImg = (props: Props) => {
                dynamicStyle && (
                   <div
                      style={{ ...dynamicStyle }}
-                     className={`${imgStyle} flex max-w-[30rem] justify-self-center sm:justify-self-end rounded-2xl  object-cover object-center shadow-2xl `}>
+                     className={`${imgStyle} flex max-w-[30rem] justify-self-center sm:justify-self-end  object-cover object-center rounded-2xl  shadow-2xl `}>
                      <GatsbyImage
                         imgStyle={{}}
                         className={`${imgStyle} flex max-w-[30rem]  justify-self-end rounded-2xl  object-cover object-center shadow-2xl `}
-                        imgClassName={`${imgStyleGatsbyImgTag} shadow-2xl`}
+                        imgClassName={`${imgStyleGatsbyImgTag} shadow-2xl rounded-2xl `}
                         image={img}
                         alt={alt}
                         loading={loading}
