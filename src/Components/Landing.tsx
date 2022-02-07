@@ -34,9 +34,13 @@ export const Landing = (props: Props) => {
 
    return (
       <>
+         {/* Fixed Navigation */}
+         <Navigation />
          {/* Content Container */}
+         {/* <div className='h-[10rem] sm:h-[85px] w-full' /> */}
+
          <motion.section
-            className={`${containerStyles}  ${HeroBackgroundHeight} z-20 pt-[5rem] relative sm:pt-[4rem] landingBackground w-full bg-cover bg-center bg-no-repeat`}
+            className={`${containerStyles}  ${HeroBackgroundHeight} z-20  relative sm:pt-[4rem] landingBackground w-full bg-cover bg-center bg-no-repeat`}
             initial='hidden'
             animate='visible'
             variants={appear('backOut')}>
@@ -53,8 +57,6 @@ export const Landing = (props: Props) => {
             )}
             {/* Absolute Wavy Section Divider */}
             <SectionDivider fill='white' />
-            {/* Fixed Navigation */}
-            <Navigation />
          </motion.section>
       </>
    )

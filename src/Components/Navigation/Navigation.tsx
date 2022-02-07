@@ -19,29 +19,34 @@ export const Navigation = () => {
    const paddingTransition = useTransform(
       scrollYProgress,
       [0, 0.25],
-      ['7rem', '5rem'],
+      ['4rem', '3.5rem'],
    )
    return (
       <>
-         {/* Height fix die to fixed navigation */}
-         <div className='h-[1.25rem] sm:h-[85px] w-full'>
+         {/* Height fix due to fixed navigation */}
+         <motion.div
+            className=' w-full'
+            style={{
+               height: paddingTransition,
+            }}>
             {/* Fixed nav */}
             <motion.div
                ref={ref}
                style={{
                   backgroundColor: backgroundColorTransition,
+                  height: paddingTransition,
                }}
-               className={`fixed top-0 z-30 flex w-full items-center sm:justify-end sm:py-[1rem] lg:space-x-16`}
+               className={`fixed h-[4rem] top-0 z-30 flex w-full items-center sm:justify-end sm:py-[1rem] lg:space-x-16`}
                initial={['hidden', 'initialColor']}
                animate={['visible', 'finalColor']}
                variants={appear('backOut')}>
-               <DesktopNav paddingTransition={paddingTransition} />
+               <DesktopNav />
                <MobileNav
                   isMenuOpen={isMenuOpen}
                   setIsMenuOpen={setIsMenuOpen}
                />
             </motion.div>
-         </div>
+         </motion.div>
       </>
    )
 }

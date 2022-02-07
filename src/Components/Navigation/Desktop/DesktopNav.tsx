@@ -1,16 +1,13 @@
-import { motion, MotionValue } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import { menuItems } from 'Utilities/Data'
 import { container, desktopMenuItems } from 'Utilities/motionVariants'
 
-interface Props {
-   paddingTransition?: MotionValue<string>
-}
+interface Props {}
 
 export const DesktopNav = (props: Props) => {
-   const { paddingTransition } = props
    return (
       <>
          <motion.ul
@@ -20,10 +17,7 @@ export const DesktopNav = (props: Props) => {
             className='padding-X-2-18rem lg:px-[20rem]  w-full sm:justify-end z-20 hidden items-center sm:flex sm:space-x-8'>
             <motion.li
                className='text-silver mr-auto w-[7rem]'
-               variants={desktopMenuItems}
-               style={{
-                  width: paddingTransition,
-               }}>
+               variants={desktopMenuItems}>
                <Link aria-label='logo' to='/'>
                   <StaticImage
                      src='../../../images/logo-darkGrey.png'

@@ -26,7 +26,7 @@ export const MobileNav = (props: Props) => {
          <StaticImage
             src='../../../images/logo-darkGrey.png'
             alt='logo'
-            className='relative w-20'
+            className=' max-w-[4rem]'
             placeholder='none'
          />
          {/* MenuIconToggle */}

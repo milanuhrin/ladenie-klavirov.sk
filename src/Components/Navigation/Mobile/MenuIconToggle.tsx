@@ -12,7 +12,7 @@ const Path = (props: any) => (
 )
 
 export const MenuIconToggle = ({ toggle }: any) => (
-   <motion.div onClick={toggle} className='z-50 w-[35px] h-[35px]'>
+   <motion.div onClick={toggle} className='z-50 max-w-[2.25rem] '>
       <svg width='100%' viewBox='0 0 23 19'>
          <Path
             variants={{
