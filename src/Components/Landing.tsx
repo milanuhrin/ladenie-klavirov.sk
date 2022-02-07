@@ -28,27 +28,15 @@ export const Landing = (props: Props) => {
       const { innerWidth } = window
       width = innerWidth
    }
-   const HeroBackground =
-      (width < 640 && 'h-[120vh]') ||
-      (width > 640 && width < 900 && 'h-[60vh]') ||
-      (width > 900 && 'h-[80vh]')
+   const HeroBackgroundHeight =
+      (width > 640 && width < 900 && 'min-h-[60vh]') ||
+      (width > 900 && 'min-h-[80vh]')
 
    return (
-      <section
-         className={`${containerStyles} ${HeroBackground} relative flex  w-full flex-col items-center`}>
-         <motion.div
-            id='background'
-            initial='hidden'
-            animate='visible'
-            variants={appear('backOut')}
-            className={`landingBackground absolute  ${HeroBackground} w-full bg-cover bg-center bg-no-repeat`}>
-            <SectionDivider fill='white' />
-         </motion.div>
-         {/* fixedNavHeightReplacement */}
-         <div className='h-[70px] sm:h-[85px]' />
-         <Navigation />
-         <motion.div
-            className='z-20 pt-[5rem] sm:pt-[4rem]'
+      <>
+         {/* Content Container */}
+         <motion.section
+            className={`${containerStyles}  ${HeroBackgroundHeight} z-20 pt-[5rem] relative sm:pt-[4rem] landingBackground w-full bg-cover bg-center bg-no-repeat`}
             initial='hidden'
             animate='visible'
             variants={appear('backOut')}>
@@ -63,7 +51,11 @@ export const Landing = (props: Props) => {
                   containerStyles='padding-Y-3-6rem '
                />
             )}
-         </motion.div>
-      </section>
+            {/* Absolute Wavy Section Divider */}
+            <SectionDivider fill='white' />
+            {/* Fixed Navigation */}
+            <Navigation />
+         </motion.section>
+      </>
    )
 }

@@ -22,17 +22,26 @@ export const Navigation = () => {
       ['7rem', '5rem'],
    )
    return (
-      <motion.div
-         ref={ref}
-         style={{
-            backgroundColor: backgroundColorTransition,
-         }}
-         className={`fixed top-0 z-30 flex w-full items-center sm:w-full sm:justify-end sm:py-[1rem] lg:space-x-16`}
-         initial={['hidden', 'initialColor']}
-         animate={['visible', 'finalColor']}
-         variants={appear('backOut')}>
-         <DesktopNav paddingTransition={paddingTransition} />
-         <MobileNav isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      </motion.div>
+      <>
+         {/* Height fix die to fixed navigation */}
+         <div className='h-[1.25rem] sm:h-[85px] w-full'>
+            {/* Fixed nav */}
+            <motion.div
+               ref={ref}
+               style={{
+                  backgroundColor: backgroundColorTransition,
+               }}
+               className={`fixed top-0 z-30 flex w-full items-center sm:justify-end sm:py-[1rem] lg:space-x-16`}
+               initial={['hidden', 'initialColor']}
+               animate={['visible', 'finalColor']}
+               variants={appear('backOut')}>
+               <DesktopNav paddingTransition={paddingTransition} />
+               <MobileNav
+                  isMenuOpen={isMenuOpen}
+                  setIsMenuOpen={setIsMenuOpen}
+               />
+            </motion.div>
+         </div>
+      </>
    )
 }
