@@ -37,8 +37,8 @@ export const Navigation = () => {
                   height: paddingTransition,
                }}
                className={`fixed h-[4rem] top-0 z-30 flex w-full items-center sm:justify-end sm:py-[1rem] lg:space-x-16`}
-               initial={['hidden', 'initialColor']}
-               animate={['visible', 'finalColor']}
+               initial={['initialColor']}
+               animate={['finalColor']}
                variants={appear('backOut')}>
                <DesktopNav />
                <MobileNav
