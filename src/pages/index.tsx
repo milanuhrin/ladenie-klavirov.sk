@@ -137,9 +137,10 @@ const IndexPage = () => {
             </div>
          </main>
          <Footer />
+         {/* Fixed round Phone button */}
          {width < 640 && (
             <div
-               onClick={() => window.open('tel:900300400', '_self')}
+               onClick={() => window.open('tel:+421949829663', '_self')}
                className='flex bg-[#dfe4ed] items-center justify-center fixed z-50 rounded-full w-[4rem] h-[4rem] bottom-5 right-5'>
                <FontAwesomeIcon
                   size='lg'
