@@ -23,7 +23,7 @@ export const Hero2 = (props: Props) => {
    return (
       <section
          id='experience'
-         className={`${containerStyles} padding-X-2-18rem relative flex  max-w-full flex-col gap-3o5-6rem  bg-gradient-to-b from-white to-silver sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:items-center sm:justify-center  `}>
+         className={`${containerStyles} padding-X-2-18rem relative flex  max-w-full flex-col gap-3o5-6rem  bg-gradient-to-b from-white to-[#f0f0f0] sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:items-center sm:justify-center  `}>
          <motion.div
             id='textWrapper'
             className='z-10 flex flex-col gap-[3.5rem] sm:col-start-2 sm:row-start-1  sm:self-center sm:justify-self-center'
