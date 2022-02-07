@@ -58,7 +58,7 @@ export const TextImg = (props: Props) => {
    return (
       <section
          id={id}
-         className={`${containerStyles} padding-X-2-18rem gap-3o5-6rem z-20 grid w-full relative sm:grid-cols-2 sm:grid-rows-1 sm:flex-row sm:items-center sm:justify-center  `}>
+         className={`${containerStyles} padding-X-2-18rem gap-3o5-6rem z-20 grid w-full justify-center relative sm:grid-cols-2 sm:grid-rows-1 sm:flex-row sm:items-center sm:justify-center  `}>
          {/* Firtst element Text */}
 
          <Text
@@ -76,7 +76,7 @@ export const TextImg = (props: Props) => {
             alt &&
             (typeof img === 'string' ? (
                <img
-                  className={`${imgStyle}  flex max-w-[30rem] justify-self-end object-cover object-center`}
+                  className={`${imgStyle}  flex max-w-[30rem] justify-self-center sm:justify-self-end object-cover object-center`}
                   style={{ ...dynamicStyle }}
                   src={img}
                />
@@ -84,7 +84,7 @@ export const TextImg = (props: Props) => {
                dynamicStyle && (
                   <div
                      style={{ ...dynamicStyle }}
-                     className={`${imgStyle} flex max-w-[30rem]  justify-self-end rounded-2xl  object-cover object-center shadow-2xl `}>
+                     className={`${imgStyle} flex max-w-[30rem] justify-self-center sm:justify-self-end rounded-2xl  object-cover object-center shadow-2xl `}>
                      <GatsbyImage
                         imgStyle={{}}
                         className={`${imgStyle} flex max-w-[30rem]  justify-self-end rounded-2xl  object-cover object-center shadow-2xl `}

@@ -14,7 +14,7 @@ export const DesktopNav = (props: Props) => {
             initial={'hidden'}
             animate={'show'}
             variants={container}
-            className='padding-X-2-18rem lg:px-[20rem]  w-full sm:justify-end z-20 hidden items-center sm:flex sm:space-x-8'>
+            className='padding-X-2-18rem whitespace-nowrap w-full sm:justify-end z-20 hidden items-center sm:flex sm:space-x-8'>
             <motion.li
                className='text-silver mr-auto w-[7rem]'
                variants={desktopMenuItems}>

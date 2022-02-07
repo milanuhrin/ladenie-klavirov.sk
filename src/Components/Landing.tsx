@@ -52,7 +52,7 @@ export const Landing = (props: Props) => {
                   imgStyle='!max-w-[25rem]'
                   alt='Milan Uhrin, ladič klavírov'
                   loading='eager'
-                  containerStyles='padding-Y-3-6rem '
+                  containerStyles='padding-Y-3-6rem'
                />
             )}
             {/* Absolute Wavy Section Divider */}
