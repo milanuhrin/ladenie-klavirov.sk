@@ -11,5 +11,8 @@
     "typescript.tsserver.experimental.enableProjectDiagnostics": true,
     "editor.tokenColorCustomizations": {
         "comments": "#d4922f"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
     }
 }
