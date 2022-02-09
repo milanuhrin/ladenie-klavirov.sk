@@ -8,6 +8,7 @@ import { container, desktopMenuItems } from 'Utilities/motionVariants'
 interface Props {}
 
 export const DesktopNav = (props: Props) => {
+   const wat = 1
    return (
       <>
          <motion.ul
