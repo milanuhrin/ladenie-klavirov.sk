@@ -7,6 +7,7 @@ export const SectionDividerSharp = ({
    fill?: string
    containerStyles?: string
 }) => {
+   const nieco = 2
    return (
       <div
          className={`${containerStyles} custom-shape-divider-bottom-1643366277`}>
