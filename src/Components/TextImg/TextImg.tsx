@@ -73,7 +73,9 @@ export const TextImg = (props: Props) => {
             paragraphStyle={paragraphStyle}
             headerText={headerText}
             headerStyle={headerStyle}
-            textWrapperStyle={textWrapperStyle}
+            
+            // textWrapperStyle={textWrapperStyle}
+            
          />
 
          {/* Second element Img */}
