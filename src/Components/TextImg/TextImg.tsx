@@ -1,5 +1,5 @@
 import { Text as MotionText } from 'Components/TextImg/Text'
-import { motion, useTransform, useViewportScroll } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import * as React from 'react'
 
@@ -54,10 +54,10 @@ export const TextImg = (props: Props) => {
             ? { gridColumn: '1', gridRow: '1', justifySelf: 'start' }
             : {}
    }
-   const { scrollY } = useViewportScroll()
-   const y = useTransform(scrollY, [0, 1], [0, -0.1], {
-      clamp: false,
-   })
+   //  const { scrollY } = useViewportScroll()
+   //  const y = useTransform(scrollY, [0, 1], [0, -0.1], {
+   //     clamp: false,
+   //  })
 
    return (
       <motion.section
@@ -73,9 +73,7 @@ export const TextImg = (props: Props) => {
             paragraphStyle={paragraphStyle}
             headerText={headerText}
             headerStyle={headerStyle}
-            
-            // textWrapperStyle={textWrapperStyle}
-            
+            textWrapperStyle={textWrapperStyle}
          />
 
          {/* Second element Img */}

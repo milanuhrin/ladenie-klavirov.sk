@@ -1,14 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { motion } from 'framer-motion'
 import { Link } from 'gatsby'
 import React from 'react'
-import { motion } from 'framer-motion'
 import { mobileMenuListItem } from '../../../Utilities/motionVariants'
 
 interface Props {
    link: string
+   toggle: any
+
    name?: string
    icon?: any
-   toggle: any
 }
 export const MobileNavItem = (props: Props) => {
    const { link, name, icon, toggle } = props

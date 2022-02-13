@@ -4,7 +4,7 @@ export const Footer = () => {
    return (
       <footer
          id='contact'
-         className='relative flex w-full flex-col items-center justify-center gap-[2rem] bg-silver py-10 sm:gap-[2rem] sm:py-[2.5rem]'>
+         className='relative w-full flex-col items-center flex justify-center gap-[2rem] bg-silver py-10 sm:gap-[2rem] sm:py-[2.5rem]'>
          <h1 className='bg-gradient-to-r from-snakeGr1 to-snakeGr2 bg-clip-text text-3xl font-extrabold text-transparent'>
             Kontakt
          </h1>
