@@ -1,13 +1,38 @@
 {
 	// See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
 	// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
-
 	// List of extensions which should be recommended for users of this workspace.
 	"recommendations": [
-		"dbaeumer.vscode-eslint", "esbenp.prettier-vscode"
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"christian-kohler.path-intellisense",
+		"visualstudioexptteam.vscodeintellicode",
+		"formulahendry.auto-rename-tag",
+		"coenraads.bracket-pair-colorizer",
+		"dsznajder.es7-react-js-snippets",
+		"ivangabriele.vscode-git-add-and-commit",
+		"mhutchie.git-graph",
+		"donjayamanne.githistory",
+		"eamodio.gitlens",
+		"vincaslt.highlight-matching-tag",
+		"wix.vscode-import-cost",
+		"pkief.material-icon-theme",
+		"rvest.vs-code-prettier-eslint",
+		"artdiniz.quitcontrol-vscode",
+		"bradlc.vscode-tailwindcss",
+		"pflannery.vscode-versionlens",
+		"redhat.vscode-yaml"
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
-		"firefox-devtools.vscode-firefox-debug","ms-edgedevtools.vscode-edge-devtools","HookyQR.beautify", "dbaeumer.jshint","christian-kohler.npm-intellisense","felipecaputo.git-project-manager", "DotJoshJohnson.xml",
-"GitHub.vscode-pull-request-github", "vscodevim.vim"	]
+		"firefox-devtools.vscode-firefox-debug",
+		"ms-edgedevtools.vscode-edge-devtools",
+		"HookyQR.beautify",
+		"dbaeumer.jshint",
+		"christian-kohler.npm-intellisense",
+		"felipecaputo.git-project-manager",
+		"DotJoshJohnson.xml",
+		"GitHub.vscode-pull-request-github",
+		"vscodevim.vim"
+	]
 }

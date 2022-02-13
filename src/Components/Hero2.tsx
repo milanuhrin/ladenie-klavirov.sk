@@ -14,10 +14,26 @@ interface Props {
   img4: IGatsbyImageData;
   textWidth?: string;
   containerStyles?: string;
+  textWrapperStyles?: string;
+  ulStyles?: string;
+  liStyles?: string;
+  liTextStyles?: string;
+  imageWrapper?: string;
 }
 
 export const Hero2 = (props: Props) => {
-  const { img1, img2, img3, img4, textWidth = '100%', containerStyles } = props;
+  const {
+    img1,
+    img2,
+    img3,
+    img4,
+    textWrapperStyles,
+    containerStyles,
+    ulStyles,
+    liStyles,
+    liTextStyles,
+    imageWrapper,
+  } = props;
   const images = [img1, img2, img3, img4];
 
   return (
@@ -25,14 +41,15 @@ export const Hero2 = (props: Props) => {
       id="experience"
       className={`${containerStyles} padding-X-2-18rem gap-3o5-6rem relative flex max-w-full flex-col bg-gradient-to-b from-white to-[#f0f0f0] sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:items-center sm:justify-center  `}
     >
+      {/* textWrapper */}
       <motion.div
-        id="textWrapper"
-        className="z-10 flex flex-col gap-[3.5rem] sm:col-start-2 sm:row-start-1  sm:self-center sm:justify-self-center"
+        className={` ${textWrapperStyles}  z-10 flex flex-col gap-[3.5rem] sm:col-start-2 sm:row-start-1  sm:self-center sm:justify-self-center`}
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ margin: '400px', once: true }}
         variants={cardVariants}
       >
+        {/* main Text section */}
         <Text
           initial="hidden"
           animate="visible"
@@ -43,11 +60,13 @@ export const Hero2 = (props: Props) => {
                rozhodli zavolať odborníka."
         />
         <ul
-          className={`${textWidth} flex flex-col gap-6 self-center justify-self-center sm:grid sm:grid-cols-2`}
+          className={`${ulStyles} flex flex-col gap-6 self-center justify-self-center sm:grid sm:grid-cols-2`}
         >
           {hero2Items.map((name, i) => (
             <li
-              className={`${i % 2 === 1 && 'ml-[1.5rem]'} flex sm:ml-0 lg:mt-0`}
+              className={`${
+                i % 2 === 1 && 'ml-[1.5rem]'
+              } ${liStyles} flex sm:ml-0 lg:mt-0`}
               key={i}
             >
               <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-800">
@@ -63,17 +82,18 @@ export const Hero2 = (props: Props) => {
                   ></path>
                 </svg>
               </span>
-              <span className="ml-4 text-base font-medium leading-6 text-gray-500">
+              <span
+                className={`${liTextStyles} ml-4 text-base font-medium leading-6 text-gray-500`}
+              >
                 {name}
               </span>
             </li>
           ))}
         </ul>
       </motion.div>
-
+      {/* image wrapper  */}
       <div
-        id="imageWrapper"
-        className="z-10 grid max-w-[33rem] grid-cols-12 grid-rows-2 gap-4 justify-self-center sm:col-start-1 sm:row-start-1"
+        className={` ${imageWrapper} z-10 grid max-w-[33rem] grid-cols-12 grid-rows-2 gap-4 justify-self-center sm:col-start-1 sm:row-start-1 `}
       >
         {hero2ImageLayouts.map((item, i) => (
           <motion.div

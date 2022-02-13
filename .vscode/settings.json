@@ -2,15 +2,23 @@
     "tailwindCSS.classAttributes": [
         "class",
         "className",
-        "ngClass",
         "containerStyles",
         "containerStyles",
         "headerStyle",
+        "paragraphStyle",
+        "textWrapperStyle",
+        "imgStyleGatsbyImgTag",
+        "imgStyle",
+        "textWrapperStyles",
+        "ulStyles",
+        "liStyles",
+        "liTextStyles",
+        "h1Styles"
     ],
     "eslint.lintTask.enable": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-        "source.organizeImports": true,
+        "source.organizeImports": false,
         "source.fixAll.eslint": true,
     },
     "[typescriptreact]": {

@@ -1,14 +1,12 @@
 import React from 'react';
-
+import { TitleText } from './TitleText';
 export const Footer = () => {
   return (
     <footer
       id="contact"
       className="bg-silver relative flex w-full flex-col items-center justify-center gap-[2rem] py-10 sm:gap-[2rem] sm:py-[2.5rem]"
     >
-      <h1 className="from-snakeGr1 to-snakeGr2 bg-gradient-to-r bg-clip-text text-3xl font-extrabold text-transparent">
-        Kontakt
-      </h1>
+      <TitleText>Kontakt</TitleText>
 
       <div className=" flex items-center justify-center text-center font-light text-gray-500">
         <div className="mr-[0.5rem] flex max-w-xs items-center justify-center">

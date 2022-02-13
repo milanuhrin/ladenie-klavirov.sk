@@ -1,37 +1,31 @@
-import React from 'react'
+import React from 'react';
+import { TitleText } from '../Footer/TitleText';
 interface Props {
-   paragraphText?: string | React.ReactElement
-   paragraphStyle?: string
-   headerText?: string | React.ReactElement
-   headerStyle?: string
-   textWrapperStyle?: string
+  paragraphText?: string | React.ReactElement;
+  paragraphStyle?: string;
+  headerText?: string | React.ReactElement;
+  headerStyle?: string;
+  textWrapperStyle?: string;
 }
 
 export const Text = React.forwardRef((props: Props, ref: any) => {
-   const {
-      paragraphText,
-      paragraphStyle,
-      headerText,
-      headerStyle,
-      textWrapperStyle,
-   } = props
-
-   return (
-      <div
-         id='textWrapper'
-         className={`${textWrapperStyle} z-10  w-full flex-col  gap-2o5 self-center flex justify-self-center text-center sm:w-[100%]`}
-         ref={ref}>
-         {headerText && (
-            <h3
-               className={`${headerStyle} bg-gradient-to-r from-snakeGr1 to-snakeGr2 bg-clip-text text-center text-4xl font-extrabold text-transparent `}>
-               {headerText}
-            </h3>
-         )}
-         {paragraphText && (
-            <p className={`${paragraphStyle} black  text-xl  `}>
-               {paragraphText}
-            </p>
-         )}
-      </div>
-   )
-})
+  const {
+    paragraphText,
+    paragraphStyle,
+    headerText,
+    headerStyle,
+    textWrapperStyle,
+  } = props;
+  return (
+    <div
+      id="textWrapper"
+      className={`${textWrapperStyle} gap-2o5  z-10 flex  w-full flex-col self-center justify-self-center text-center sm:w-[100%]`}
+      ref={ref}
+    >
+      {headerText && <TitleText>{headerText}</TitleText>}
+      {paragraphText && (
+        <p className={`${paragraphStyle} black  text-xl  `}>{paragraphText}</p>
+      )}
+    </div>
+  );
+});
