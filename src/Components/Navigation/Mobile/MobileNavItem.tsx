@@ -15,9 +15,11 @@ export const MobileNavItem = (props: Props) => {
   const { link, name, icon, toggle } = props;
   return (
     <>
+      {/* Icon */}
       <motion.div variants={mobileMenuListItem}>
         <FontAwesomeIcon className="" icon={icon} />
       </motion.div>
+      {/* Text */}
       <motion.div variants={mobileMenuListItem} className="col-start-2">
         <Link onClick={toggle} to={link} aria-label={name}>
           {name}

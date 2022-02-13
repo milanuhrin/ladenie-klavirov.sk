@@ -74,7 +74,7 @@ const IndexPage = () => {
             img2={hero2img2}
             img3={hero2img3}
             img4={hero2img4}
-            textWidth="70%"
+            textWrapperStyles="!w-[70%]"
             containerStyles="padding-Y-3-6rem"
           />
         )}

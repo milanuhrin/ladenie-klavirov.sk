@@ -12,7 +12,6 @@ interface Props {
   img2: IGatsbyImageData;
   img3: IGatsbyImageData;
   img4: IGatsbyImageData;
-  textWidth?: string;
   containerStyles?: string;
   textWrapperStyles?: string;
   ulStyles?: string;
@@ -119,6 +118,7 @@ export const Hero2 = (props: Props) => {
           </motion.div>
         ))}
       </div>
+      {/* Absolute straight Section Divider */}
       <SectionDividerSharp fill="#fafdfd" />
     </section>
   );

@@ -37,8 +37,6 @@ export const Landing = (props: Props) => {
       {/* Fixed Navigation */}
       <Navigation />
       {/* Content Container */}
-      {/* <div className='h-[10rem] sm:h-[85px] w-full' /> */}
-
       <motion.section
         className={`${containerStyles}  ${HeroBackgroundHeight} landingBackground  relative z-10 w-full bg-cover bg-center bg-no-repeat sm:pt-[4rem]`}
         initial="hidden"

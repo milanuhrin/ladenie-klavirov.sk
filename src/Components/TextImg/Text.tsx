@@ -17,12 +17,16 @@ export const Text = React.forwardRef((props: Props, ref: any) => {
     textWrapperStyle,
   } = props;
   return (
+    // text wrapper
     <div
-      id="textWrapper"
       className={`${textWrapperStyle} gap-2o5  z-10 flex  w-full flex-col self-center justify-self-center text-center sm:w-[100%]`}
       ref={ref}
     >
-      {headerText && <TitleText>{headerText}</TitleText>}
+      {/* Header */}
+      {headerText && (
+        <TitleText headerStyle={headerStyle}>{headerText}</TitleText>
+      )}
+      {/* Paragraph */}
       {paragraphText && (
         <p className={`${paragraphStyle} black  text-xl  `}>{paragraphText}</p>
       )}
