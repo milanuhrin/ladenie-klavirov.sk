@@ -1,9 +1,0 @@
-trailingComma: all
-semi: false
-singleQuote: true
-jsxSingleQuote: true
-max-len: 80
-tabWidth: 3
-bracketSameLine: true
-parser: typescript
-tailwindConfig: ".tailwind.config.js"

@@ -1,28 +1,28 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { motion } from 'framer-motion'
-import { Link } from 'gatsby'
-import React from 'react'
-import { mobileMenuListItem } from '../../../Utilities/motionVariants'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion } from 'framer-motion';
+import { Link } from 'gatsby';
+import React from 'react';
+import { mobileMenuListItem } from '../../../Utilities/motionVariants';
 
 interface Props {
-   link: string
-   toggle: any
+  link: string;
+  toggle: any;
 
-   name?: string
-   icon?: any
+  name?: string;
+  icon?: any;
 }
 export const MobileNavItem = (props: Props) => {
-   const { link, name, icon, toggle } = props
-   return (
-      <>
-         <motion.div variants={mobileMenuListItem}>
-            <FontAwesomeIcon className='' icon={icon} />
-         </motion.div>
-         <motion.div variants={mobileMenuListItem} className='col-start-2'>
-            <Link onClick={toggle} to={link} aria-label={name}>
-               {name}
-            </Link>
-         </motion.div>
-      </>
-   )
-}
+  const { link, name, icon, toggle } = props;
+  return (
+    <>
+      <motion.div variants={mobileMenuListItem}>
+        <FontAwesomeIcon className="" icon={icon} />
+      </motion.div>
+      <motion.div variants={mobileMenuListItem} className="col-start-2">
+        <Link onClick={toggle} to={link} aria-label={name}>
+          {name}
+        </Link>
+      </motion.div>
+    </>
+  );
+};
