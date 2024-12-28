@@ -14,51 +14,56 @@ export const hero2Items = [
 
 export const hero2ImageLayouts = [
   {
-    alt: 'Pohľad z blízka na klavíristku',
-    class: ' object-contain col-span-6 w-[100%]   self-end ',
+    alt: 'Detska',
+    class: 'w-[100%] self-end col-span-6 object-contain ',
   },
   {
-    alt: 'Luxusný klavír',
-    class: ' w-[80%]    self-end col-span-6 ',
+    alt: 'Obyvacka',
+    class: ' w-[100%] self-end col-span-6 ',
   },
   {
-    alt: 'Muž hrá vonku na klavíri',
-    class: ' w-[75%] justify-self-end  col-span-5',
+    alt: 'Terasa',
+    class: ' w-[100%] col-span-5 justify-self-end',
   },
   {
-    alt: 'Žena a dieťa hrajú na klavíri',
-    class: 'w-[90%]   col-span-6',
+    alt: 'Spalna',
+    class: 'w-[100%] col-span-6',
   },
 ];
 
 export const menuItems = [
   {
-    name: 'Skúsenosti',
-    link: '#experience',
+    name: 'Domov',
+    link: '#home',
     icon: faClipboard,
   },
   {
-    name: 'O mne',
-    link: '#aboutMe',
+    name: 'O apartmáne',
+    link: '#about',
+    icon: faClipboard,
+  },
+  {
+    name: 'Galéria',
+    link: '#galery',
     icon: faAddressCard,
+  },
+  {
+    name: 'Cenník',
+    link: '#pricelist',
+    icon: faPhone,
   },
   {
     name: 'Kontakt',
     link: '#contact',
-    icon: faPhone,
-  },
-  {
-    name: 'Vzdelanie',
-    link: '#education',
     icon: faUserGraduate,
   },
 ];
 
 export const aaa = [
   {
-    name: 'Skúsenosti',
+    name: 'Služby',
     link: '#experience',
-    // icon: faClipboard,
+    icon: faClipboard,
   },
   {
     name: 'O mne',

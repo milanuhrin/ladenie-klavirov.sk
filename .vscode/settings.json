@@ -18,8 +18,8 @@
     "eslint.lintTask.enable": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-        "source.organizeImports": false,
-        "source.fixAll.eslint": true,
+        "source.organizeImports": "never",
+        "source.fixAll.eslint": "explicit"
     },
     "[typescriptreact]": {
         // "editor.defaultFormatter": "esbenp.prettier-vscode",

@@ -27,7 +27,7 @@
     "custom.d.ts",
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
+    "**/*.tsx", "nodemon.js", "server.js",
   ],
   "exclude": [
     "node_modules"

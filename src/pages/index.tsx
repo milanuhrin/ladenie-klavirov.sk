@@ -5,14 +5,15 @@ import {
   Footer,
   Hero2,
   Landing,
-  TextImg,
 } from 'Components/export';
 import SEO from 'Components/seo.js';
 import { graphql, useStaticQuery } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
+import { getImage, GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'; // Ensure IGatsbyImageData is imported
 import React from 'react';
 import '../../global.css';
-import { Clef } from '../svg/Clef';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import About from 'Components/About';
+import Availability from 'Components/Availability';
 
 const IndexPage = () => {
   let width = 0;
@@ -20,96 +21,74 @@ const IndexPage = () => {
     const { innerWidth } = window;
     width = innerWidth;
   }
-  const data = useStaticQuery(graphql`
-    {
-      a: file(relativePath: { eq: "freeTime.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
+
+  // Define the type for GraphQL query result
+  interface ImageNode {
+    node: {
+      childImageSharp: {
+        gatsbyImageData: IGatsbyImageData;
+      };
+    };
+  }
+
+  // UseStaticQuery data with types
+  const data: {
+    hero2: {
+      edges: ImageNode[];
+    };
+    gallery: {
+      edges: ImageNode[];
+    };
+  } = useStaticQuery(graphql`
+    query {
+      hero2: allFile(filter: { relativePath: { regex: "/small_.*\\.jpg$/" } }) {
+        edges {
+          node {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+          }
         }
       }
-      b: file(relativePath: { eq: "insidePiano.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-      c: file(relativePath: { eq: "pianoCloseLook.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-      d: file(relativePath: { eq: "luxuryPiano.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-      e: file(relativePath: { eq: "pianoOutSide.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-      f: file(relativePath: { eq: "pianoMotherWithChild.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
+      gallery: allFile(filter: { relativeDirectory: { eq: "gallery" } }) {
+        edges {
+          node {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+          }
         }
       }
     }
   `);
-  const hero1freeTime = getImage(data.a);
-  const hero1insidePiano = getImage(data.b);
-  const hero2img1 = getImage(data.c);
-  const hero2img2 = getImage(data.d);
-  const hero2img3 = getImage(data.e);
-  const hero2img4 = getImage(data.f);
+
+  const hero2Images = data.hero2.edges.map((edge) => getImage(edge.node));
+  const galleryImages = data.gallery.edges.map((edge) => getImage(edge.node));
 
   return (
     <>
       <SEO />
       <Landing containerStyles="" />
-      <Clef />
+      <About/>
 
-      <main id="mainContent" className=" flex flex-col">
-        {hero2img1 && hero2img2 && hero2img3 && hero2img4 && (
+      <main id="mainContent" className="flex flex-col">
+        {/* Hero2 Section */}
+        {hero2Images.length >= 4 && (
           <Hero2
-            img1={hero2img1}
-            img2={hero2img2}
-            img3={hero2img3}
-            img4={hero2img4}
+            img1={hero2Images[0]!} // Non-null assertion since we know the image exists
+            img2={hero2Images[1]!}
+            img3={hero2Images[2]!}
+            img4={hero2Images[3]!}
             textWrapperStyles="!w-[70%]"
             containerStyles="padding-Y-3-6rem"
           />
         )}
-        <div className="bg-gradient-to-b from-[#fafdfd] via-[#edf2ff] to-[#e7eefd]">
-          {hero1freeTime && (
-            <AnimOnScroll>
-              <TextImg
-                headerText="Pár slov o mne"
-                paragraphText="Mojim najväčším hobby sa za posledných 5 rokov stalo fotenie. Podarilo sa mi dosiahnuť prvenstvá či už v slovenských, ale aj medzinárodných súťažiach. Najlepšie fotky sú prezentované na voľne dostupných dočasných výstavách či múzeách."
-                img={hero1freeTime}
-                alt="Vo voľnom čase"
-                imgStyle="max-w-[25rem]"
-                id="aboutMe"
-                containerStyles="padding-Y-3-6rem "
-              />
-            </AnimOnScroll>
-          )}
-
-          {hero1insidePiano && (
-            <AnimOnScroll>
-              <TextImg
-                reversed
-                headerText="Vzdelanie"
-                paragraphText="Vyštudoval som odbornú školu v Hradci Králové. Stal som sa tam mechanikom hudobných nástrojov, naučil sa opraviť klavír správne tak, aby fungoval najbližšie roky."
-                img={hero1insidePiano}
-                alt="Vnútro klavíru"
-                imgStyle="max-w-[25rem]"
-                id="education"
-                containerStyles="padding-Y-3-6rem "
-              />
-            </AnimOnScroll>
-          )}
-        </div>
       </main>
+
+      <Availability/>
+
       <Footer />
+
       {/* Fixed round Phone button */}
       {width < 640 && (
         <div
@@ -119,7 +98,7 @@ const IndexPage = () => {
           <FontAwesomeIcon
             size="lg"
             className="flex text-[#17303b]"
-            icon={faPhone}
+            icon={faPhone as IconProp}
           />
         </div>
       )}
